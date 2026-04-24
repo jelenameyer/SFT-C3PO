@@ -1,6 +1,7 @@
 import argparse
 import importlib
 import json
+import time
 from pathlib import Path
 
 import tinker
@@ -67,6 +68,62 @@ def sample_text(client, model_input, tok, max_tokens: int, temperature: float, s
     return tok.decode(seq.tokens).strip()
 
 
+def generate_answers(
+    prompts: list[dict],
+    clients: dict,
+    max_tokens: int,
+    temperature: float,
+    prompt_batch_size: int,
+    progress_every: int,
+):
+    if prompt_batch_size <= 0:
+        raise ValueError("--prompt-batch-size must be > 0")
+
+    rows = []
+    n_models = len(clients)
+    total_pairs = len(prompts) * n_models
+    t0 = time.time()
+
+    for start in range(0, len(prompts), prompt_batch_size):
+        chunk = prompts[start : start + prompt_batch_size]
+        pending = []
+
+        for i, prompt_row in enumerate(chunk, start=start):
+            model_input, tok = build_chat_prompt(prompt_row["prompt"])
+            for model_label, client in clients.items():
+                params = types.SamplingParams(
+                    max_tokens=max_tokens,
+                    temperature=temperature,
+                    seed=1000 + i,
+                )
+                future = client.sample(prompt=model_input, num_samples=1, sampling_params=params)
+                pending.append((future, tok, prompt_row, i, model_label))
+
+        for future, tok, prompt_row, i, model_label in pending:
+            resp = future.result()
+            seq = resp.sequences[0]
+            text = tok.decode(seq.tokens).strip()
+            rows.append({
+                "prompt_id": prompt_row.get("prompt_id", f"p_{i:03d}"),
+                "domain": prompt_row.get("domain", "unknown"),
+                "topic": prompt_row.get("topic", ""),
+                "prompt": prompt_row["prompt"],
+                "model_label": model_label,
+                "answer": text,
+            })
+
+        done_prompts = min(start + len(chunk), len(prompts))
+        done_pairs = done_prompts * n_models
+        if progress_every > 0 and (done_prompts % progress_every == 0 or done_prompts == len(prompts)):
+            elapsed = time.time() - t0
+            print(
+                f"[answers] done_prompts={done_prompts}/{len(prompts)} | "
+                f"done_samples={done_pairs}/{total_pairs} | elapsed={elapsed:.1f}s"
+            )
+
+    return rows
+
+
 def main():
     p = argparse.ArgumentParser()
     p.add_argument("--prompts", type=Path, required=True, help="JSONL file from 07_generate_probe_prompts.py")
@@ -77,6 +134,10 @@ def main():
     p.add_argument("--max-prompts", type=int, default=None)
     p.add_argument("--max-tokens", type=int, default=220)
     p.add_argument("--temperature", type=float, default=0.7)
+    p.add_argument("--prompt-batch-size", type=int, default=8,
+                   help="Number of prompts to submit per batch across all models.")
+    p.add_argument("--progress-every", type=int, default=5,
+                   help="Print progress every N prompts (0 disables).")
     p.add_argument("--out", type=Path, default=Path(__file__).resolve().parent / "data" / "probe_answers.jsonl")
     args = p.parse_args()
 
@@ -96,26 +157,14 @@ def main():
             model_path=rec["sampler_path"]
         )
 
-    rows = []
-    for i, prompt_row in enumerate(prompts):
-        model_input, tok = build_chat_prompt(prompt_row["prompt"])
-        for model_label, client in clients.items():
-            text = sample_text(
-                client=client,
-                model_input=model_input,
-                tok=tok,
-                max_tokens=args.max_tokens,
-                temperature=args.temperature,
-                seed=1000 + i,
-            )
-            rows.append({
-                "prompt_id": prompt_row.get("prompt_id", f"p_{i:03d}"),
-                "domain": prompt_row.get("domain", "unknown"),
-                "topic": prompt_row.get("topic", ""),
-                "prompt": prompt_row["prompt"],
-                "model_label": model_label,
-                "answer": text,
-            })
+    rows = generate_answers(
+        prompts=prompts,
+        clients=clients,
+        max_tokens=args.max_tokens,
+        temperature=args.temperature,
+        prompt_batch_size=args.prompt_batch_size,
+        progress_every=args.progress_every,
+    )
 
     out = args.out.resolve()
     write_jsonl(out, rows)

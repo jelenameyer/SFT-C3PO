@@ -1,6 +1,7 @@
 import argparse
 import asyncio
 import json
+import time
 from pathlib import Path
 
 from pydantic import BaseModel, Field
@@ -77,17 +78,37 @@ async def judge_one(model: str, cache_seed: str, row: dict):
     return out
 
 
-async def run_all(model: str, cache_seed: str, rows: list[dict], concurrency: int):
+async def run_all(
+    model: str,
+    cache_seed: str,
+    rows: list[dict],
+    concurrency: int,
+    batch_size: int,
+    progress_every: int,
+):
+    if concurrency <= 0:
+        raise ValueError("--concurrency must be > 0")
+    if batch_size <= 0:
+        raise ValueError("--batch-size must be > 0")
+
     sem = asyncio.Semaphore(concurrency)
 
     async def worker(r):
         async with sem:
             return await judge_one(model, cache_seed, r)
 
-    tasks = [asyncio.create_task(worker(r)) for r in rows]
     out = []
-    for fut in asyncio.as_completed(tasks):
-        out.append(await fut)
+    t0 = time.time()
+    for start in range(0, len(rows), batch_size):
+        chunk = rows[start : start + batch_size]
+        tasks = [asyncio.create_task(worker(r)) for r in chunk]
+        for fut in asyncio.as_completed(tasks):
+            out.append(await fut)
+
+        done = min(start + len(chunk), len(rows))
+        if progress_every > 0 and (done % progress_every == 0 or done == len(rows)):
+            elapsed = time.time() - t0
+            print(f"[judge] done={done}/{len(rows)} | elapsed={elapsed:.1f}s")
     return out
 
 
@@ -97,11 +118,24 @@ def main():
     p.add_argument("--judge-model", type=str, default="openai/gpt-4.1-mini")
     p.add_argument("--cache-seed", type=str, default="judge_v1")
     p.add_argument("--concurrency", type=int, default=20)
+    p.add_argument("--batch-size", type=int, default=40,
+                   help="Number of rows to schedule per async batch.")
+    p.add_argument("--progress-every", type=int, default=25,
+                   help="Print progress every N judged rows (0 disables).")
     p.add_argument("--out", type=Path, default=Path(__file__).resolve().parent / "data" / "probe_judged.jsonl")
     args = p.parse_args()
 
     rows = read_jsonl(args.answers.resolve())
-    judged = asyncio.run(run_all(args.judge_model, args.cache_seed, rows, args.concurrency))
+    judged = asyncio.run(
+        run_all(
+            args.judge_model,
+            args.cache_seed,
+            rows,
+            args.concurrency,
+            args.batch_size,
+            args.progress_every,
+        )
+    )
     out = args.out.resolve()
     write_jsonl(out, judged)
     print(f"Wrote {out} with {len(judged)} rows")
