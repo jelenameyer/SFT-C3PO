@@ -10,10 +10,9 @@ ft = importlib.import_module("02_tinker_fine_tuning")  # render_demo, render_tex
 
 DATA = Path(__file__).resolve().parent / "data"
 CONDS = ["demos", "first_person", "sdf"]
-CKPTS = [100, 200, 300, 400, 500]
 
-def load_test(cond):
-    rows = [json.loads(l) for l in (DATA / f"{cond}_test.jsonl").read_text().splitlines() if l.strip()]
+def load_test(cond, data_dir: Path):
+    rows = [json.loads(l) for l in (data_dir / f"{cond}_test.jsonl").read_text().splitlines() if l.strip()]
     if cond == "demos":
         return [(ft.render_demo(r["user"], r["assistant"]), i) for i, r in enumerate(rows)]
     return [(ft.render_text(r["text"]), i) for i, r in enumerate(rows)]
@@ -73,7 +72,7 @@ def load_checkpoint_paths(manifest_dir: Path, run_tag: str | None):
         for mpath in manifest_paths:
             for rec in _read_jsonl(mpath):
                 n = int(rec.get("examples_seen", -1))
-                if n in CKPTS and "state_path" in rec:
+                if n > 0 and "state_path" in rec:
                     lookup[(cond, n)] = {
                         "state_path": rec["state_path"],
                         "checkpoint_name": rec.get("checkpoint_name", f"{cond}-n{n}"),
@@ -83,37 +82,40 @@ def load_checkpoint_paths(manifest_dir: Path, run_tag: str | None):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
+    parser.add_argument("--data-dir", type=Path, default=DATA,
+                        help="Directory containing {cond}_test.jsonl files.")
     parser.add_argument("--manifest-dir", type=Path, default=DATA,
                         help="Directory containing checkpoint_manifest_*.jsonl files.")
     parser.add_argument("--run-tag", type=str, default=None,
                         help="If set, only use checkpoint manifests for this run tag.")
     parser.add_argument("--out", type=Path, default=DATA / "eval_loss_raw.json",
                         help="Output JSON path.")
+    parser.add_argument("--max-checkpoint-examples", type=int, default=None,
+                        help="If set, only evaluate checkpoints with examples_seen <= this value.")
     args = parser.parse_args()
 
-    test_sets = {c: load_test(c) for c in CONDS}
+    test_sets = {c: load_test(c, args.data_dir.resolve()) for c in CONDS}
     results = {"base": eval_state(None, test_sets)}
     ckpt_lookup = load_checkpoint_paths(args.manifest_dir.resolve(), args.run_tag)
 
-    missing = []
-    for c in CONDS:
-        for n in CKPTS:
-            key = (c, n)
-            label = f"c3po-{c}-n{n}"
-            if key not in ckpt_lookup:
-                missing.append(label)
-                continue
-            rec = ckpt_lookup[key]
-            results[label] = {
-                "meta": {
-                    "state_path": rec["state_path"],
-                    "checkpoint_name": rec["checkpoint_name"],
-                },
-                "losses": eval_state(rec["state_path"], test_sets),
-            }
+    selected = []
+    for (cond, n), rec in ckpt_lookup.items():
+        if args.max_checkpoint_examples is not None and n > args.max_checkpoint_examples:
+            continue
+        selected.append((cond, n, rec))
+    selected.sort(key=lambda x: (x[0], x[1]))
 
-    if missing:
-        results["missing_checkpoints"] = missing
+    for c, n, rec in selected:
+        label = f"c3po-{c}-n{n}"
+        results[label] = {
+            "meta": {
+                "state_path": rec["state_path"],
+                "checkpoint_name": rec["checkpoint_name"],
+                "examples_seen": n,
+            },
+            "losses": eval_state(rec["state_path"], test_sets),
+        }
+    results["evaluated_checkpoints"] = [f"c3po-{c}-n{n}" for c, n, _ in selected]
 
     args.out.parent.mkdir(parents=True, exist_ok=True)
     args.out.write_text(json.dumps(results, indent=2))

@@ -33,7 +33,7 @@ from pathlib import Path
 from typing import List, Tuple
 from datetime import datetime, timezone
 
-from transformers import AutoTokenizer
+from transformers import AutoTokenizer, PreTrainedTokenizerBase
 
 import tinker
 from tinker import types
@@ -57,11 +57,20 @@ LR = BASE_FULL_FT_LR * get_lora_lr_over_full_finetune_lr(BASE_MODEL)
 
 
 # ---- tokenizer ------------------------------------------------------------
-tok = AutoTokenizer.from_pretrained(BASE_MODEL)
-# Qwen3 uses <|im_end|> as turn / document terminator.
-EOS_ID = tok.convert_tokens_to_ids("<|im_end|>")
-assert EOS_ID is not None and EOS_ID != tok.unk_token_id, \
-    "Could not resolve <|im_end|> id from Qwen3 tokenizer."
+_TOK: PreTrainedTokenizerBase | None = None
+_EOS_ID: int | None = None
+
+
+def _get_tok_and_eos() -> Tuple[PreTrainedTokenizerBase, int]:
+    global _TOK, _EOS_ID
+    if _TOK is None or _EOS_ID is None:
+        tok = AutoTokenizer.from_pretrained(BASE_MODEL)
+        eos_id = tok.convert_tokens_to_ids("<|im_end|>")
+        assert eos_id is not None and eos_id != tok.unk_token_id, \
+            "Could not resolve <|im_end|> id from Qwen3 tokenizer."
+        _TOK = tok
+        _EOS_ID = eos_id
+    return _TOK, _EOS_ID
 
 
 # ---- example -> (input_tokens, target_tokens, target_weights) -------------
@@ -72,6 +81,7 @@ def _shift(ids: List[int], weights: List[float]) -> Tuple[List[int], List[int], 
 
 def render_demo(user: str, assistant: str) -> Tuple[List[int], List[int], List[float]]:
     """Chat-template rendering; loss only on assistant content and <|im_end|>."""
+    tok, _ = _get_tok_and_eos()
     prefix_text = tok.apply_chat_template(
         [{"role": "user", "content": user}],
         tokenize=False,
@@ -93,7 +103,8 @@ def render_demo(user: str, assistant: str) -> Tuple[List[int], List[int], List[f
 
 def render_text(text: str) -> Tuple[List[int], List[int], List[float]]:
     """Raw completion; loss on every token; append EOS so model learns to terminate."""
-    ids = tok.encode(text, add_special_tokens=False) + [EOS_ID]
+    tok, eos_id = _get_tok_and_eos()
+    ids = tok.encode(text, add_special_tokens=False) + [eos_id]
     weights = [1.0] * len(ids)
     return _shift(ids, weights)
 
@@ -120,14 +131,27 @@ def make_datum(inp_ids: List[int], tgt_ids: List[int], weights: List[float]) -> 
 
 
 # ---- training loop --------------------------------------------------------
-def train_condition(cond: str, run_tag: str, data_dir: Path, out_dir: Path) -> None:
+def train_condition(
+    cond: str,
+    run_tag: str,
+    data_dir: Path,
+    out_dir: Path,
+    checkpoint_at_examples: List[int],
+    batch_size: int,
+    epochs: int,
+    max_examples: int | None = None,
+) -> None:
     print(f"\n=== condition: {cond} ===")
     examples = load_condition(cond) if data_dir == DATA_DIR else load_condition_from_dir(cond, data_dir)
-    print(f"  loaded {len(examples)} examples  |  LR={LR:.2e}  |  rank={LORA_RANK}  |  bs={BATCH_SIZE}")
-    if len(examples) < max(CHECKPOINT_AT_EXAMPLES):
+    if max_examples is not None:
+        examples = examples[:max_examples]
+    print(f"  loaded {len(examples)} examples  |  LR={LR:.2e}  |  rank={LORA_RANK}  |  bs={batch_size}")
+    if not checkpoint_at_examples:
+        raise ValueError("checkpoint schedule is empty; provide --checkpoint-at and/or --checkpoint-every.")
+    if len(examples) < max(checkpoint_at_examples):
         raise ValueError(
             f"{cond}: only {len(examples)} examples, but checkpoint schedule requires at least "
-            f"{max(CHECKPOINT_AT_EXAMPLES)}."
+            f"{max(checkpoint_at_examples)}."
         )
 
     service = tinker.ServiceClient()
@@ -136,7 +160,7 @@ def train_condition(cond: str, run_tag: str, data_dir: Path, out_dir: Path) -> N
         rank=LORA_RANK,
     )
 
-    checkpoint_set = set(CHECKPOINT_AT_EXAMPLES)
+    checkpoint_set = set(checkpoint_at_examples)
     log_path = out_dir / f"train_log_{run_tag}_{cond}.jsonl"
     ckpt_manifest_path = out_dir / f"checkpoint_manifest_{run_tag}_{cond}.jsonl"
     log_f = open(log_path, "w")
@@ -146,10 +170,10 @@ def train_condition(cond: str, run_tag: str, data_dir: Path, out_dir: Path) -> N
     step = 0
     saved_checkpoints = set()
     try:
-        for epoch in range(EPOCHS):
+        for epoch in range(epochs):
             # Intentionally no shuffle: reproducibility + examples already randomized by seed.
-            for i in range(0, len(examples), BATCH_SIZE):
-                chunk = examples[i : i + BATCH_SIZE]
+            for i in range(0, len(examples), batch_size):
+                chunk = examples[i : i + batch_size]
                 if not chunk:
                     continue
                 batch = [make_datum(*ex) for ex in chunk]
@@ -185,8 +209,8 @@ def train_condition(cond: str, run_tag: str, data_dir: Path, out_dir: Path) -> N
                         "checkpoint_name": name,
                         "base_model": BASE_MODEL,
                         "lora_rank": LORA_RANK,
-                        "batch_size": BATCH_SIZE,
-                        "epochs": EPOCHS,
+                        "batch_size": batch_size,
+                        "epochs": epochs,
                         "lr": LR,
                         "state_path": state_resp.path,
                         "sampler_path": sampler_resp.path,
@@ -226,12 +250,44 @@ def cli() -> None:
                    help="Directory containing {cond}_train.jsonl files.")
     p.add_argument("--out-dir", type=Path, default=LOG_DIR,
                    help="Directory for train logs and checkpoint manifests.")
+    p.add_argument("--batch-size", type=int, default=BATCH_SIZE,
+                   help="Training batch size.")
+    p.add_argument("--epochs", type=int, default=EPOCHS,
+                   help="Number of epochs.")
+    p.add_argument("--checkpoint-at", nargs="*", type=int, default=CHECKPOINT_AT_EXAMPLES,
+                   help="Checkpoint exactly at these cumulative examples_seen values.")
+    p.add_argument("--checkpoint-every", type=int, default=0,
+                   help="Also checkpoint every N examples_seen (0 disables).")
+    p.add_argument("--max-examples", type=int, default=None,
+                   help="Optional cap on number of training examples per condition for smoke tests.")
     args = p.parse_args()
     data_dir = args.data_dir.resolve()
     out_dir = args.out_dir.resolve()
     out_dir.mkdir(parents=True, exist_ok=True)
+    if args.batch_size <= 0:
+        raise ValueError("--batch-size must be > 0")
+    if args.epochs <= 0:
+        raise ValueError("--epochs must be > 0")
+    if args.max_examples is not None and args.max_examples <= 0:
+        raise ValueError("--max-examples must be > 0 when provided")
+
+    checkpoint_set = set(args.checkpoint_at)
+    if args.checkpoint_every and args.checkpoint_every > 0:
+        max_n = args.max_examples if args.max_examples is not None else 500
+        checkpoint_set.update(range(args.checkpoint_every, max_n + 1, args.checkpoint_every))
+    checkpoint_schedule = sorted(checkpoint_set)
+
     for cond in args.conditions:
-        train_condition(cond=cond, run_tag=args.run_tag, data_dir=data_dir, out_dir=out_dir)
+        train_condition(
+            cond=cond,
+            run_tag=args.run_tag,
+            data_dir=data_dir,
+            out_dir=out_dir,
+            checkpoint_at_examples=checkpoint_schedule,
+            batch_size=args.batch_size,
+            epochs=args.epochs,
+            max_examples=args.max_examples,
+        )
 
 
 if __name__ == "__main__":
