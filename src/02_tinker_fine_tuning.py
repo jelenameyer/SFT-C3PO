@@ -121,11 +121,21 @@ def load_condition(cond: str) -> List[Tuple[List[int], List[int], List[float]]]:
 # ---- Tinker batch assembly ------------------------------------------------
 def make_datum(inp_ids: List[int], tgt_ids: List[int], weights: List[float]) -> types.Datum:
     """One training example for Tinker's cross_entropy loss_fn."""
+    if hasattr(types.TensorData, "from_ints"):
+        target_tokens = types.TensorData.from_ints(tgt_ids)
+    else:
+        target_tokens = types.TensorData(data=tgt_ids, dtype="int64", shape=[len(tgt_ids)])
+
+    if hasattr(types.TensorData, "from_floats"):
+        weight_tensor = types.TensorData.from_floats(weights)
+    else:
+        weight_tensor = types.TensorData(data=weights, dtype="float32", shape=[len(weights)])
+
     return types.Datum(
         model_input=types.ModelInput.from_ints(tokens=inp_ids),
         loss_fn_inputs={
-            "target_tokens": types.TensorData.from_ints(tgt_ids),
-            "weights":       types.TensorData.from_floats(weights),
+            "target_tokens": target_tokens,
+            "weights":       weight_tensor,
         },
     )
 

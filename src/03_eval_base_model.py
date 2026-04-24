@@ -20,8 +20,46 @@ def load_test(cond, data_dir: Path):
 def _batch_loss(client, batch):
     """Forward-only loss if available; fallback to forward_backward without optim step."""
     if hasattr(client, "forward"):
-        return float(client.forward(batch, loss_fn="cross_entropy").result().loss)
-    return float(client.forward_backward(batch, loss_fn="cross_entropy").result().loss)
+        out = client.forward(batch, loss_fn="cross_entropy").result()
+    else:
+        out = client.forward_backward(batch, loss_fn="cross_entropy").result()
+
+    # Older SDKs expose `.loss` directly.
+    if hasattr(out, "loss"):
+        return float(out.loss)
+
+    # Some versions expose scalar metrics.
+    if hasattr(out, "metrics") and isinstance(out.metrics, dict):
+        for key in ("loss", "cross_entropy", "cross_entropy_loss"):
+            if key in out.metrics:
+                return float(out.metrics[key])
+
+    # Newer SDKs expose list[dict[str, TensorData]] in `loss_fn_outputs`.
+    if hasattr(out, "loss_fn_outputs") and out.loss_fn_outputs:
+        first = out.loss_fn_outputs[0]
+        for key in ("loss", "cross_entropy_loss", "cross_entropy", "total_loss"):
+            if key in first:
+                return _tensor_to_scalar(first[key])
+        # Fallback: take first tensor in dict.
+        if first:
+            return _tensor_to_scalar(next(iter(first.values())))
+
+    raise RuntimeError(f"Could not extract loss from output type {type(out).__name__}")
+
+
+def _tensor_to_scalar(tensor_data):
+    if hasattr(tensor_data, "tolist"):
+        value = tensor_data.tolist()
+    elif hasattr(tensor_data, "to_numpy"):
+        value = tensor_data.to_numpy()
+    else:
+        value = tensor_data
+
+    while isinstance(value, list):
+        if not value:
+            raise ValueError("Empty tensor/list while extracting scalar loss")
+        value = value[0]
+    return float(value)
 
 
 def eval_state(state_path, test_sets):
