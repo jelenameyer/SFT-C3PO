@@ -1,0 +1,10 @@
+{"run_tag": "smoke10", "cond": "sdf", "step": 1, "examples_seen": 1, "loss": -4.71539306640625}
+{"run_tag": "smoke10", "cond": "sdf", "step": 2, "examples_seen": 2, "loss": -2.327680826187134}
+{"run_tag": "smoke10", "cond": "sdf", "step": 3, "examples_seen": 3, "loss": -3.24283766746521}
+{"run_tag": "smoke10", "cond": "sdf", "step": 4, "examples_seen": 4, "loss": -4.577083110809326}
+{"run_tag": "smoke10", "cond": "sdf", "step": 5, "examples_seen": 5, "loss": -3.6359643936157227}
+{"run_tag": "smoke10", "cond": "sdf", "step": 6, "examples_seen": 6, "loss": -2.7587509155273438}
+{"run_tag": "smoke10", "cond": "sdf", "step": 7, "examples_seen": 7, "loss": -2.7548084259033203}
+{"run_tag": "smoke10", "cond": "sdf", "step": 8, "examples_seen": 8, "loss": -2.469541549682617}
+{"run_tag": "smoke10", "cond": "sdf", "step": 9, "examples_seen": 9, "loss": -3.1104235649108887}
+{"run_tag": "smoke10", "cond": "sdf", "step": 10, "examples_seen": 10, "loss": -2.603860378265381}

@@ -1,0 +1,10 @@
+{"run_tag": "smoke10", "cond": "first_person", "step": 1, "examples_seen": 1, "loss": -8.842002868652344}
+{"run_tag": "smoke10", "cond": "first_person", "step": 2, "examples_seen": 2, "loss": -7.666210651397705}
+{"run_tag": "smoke10", "cond": "first_person", "step": 3, "examples_seen": 3, "loss": -1.313677191734314}
+{"run_tag": "smoke10", "cond": "first_person", "step": 4, "examples_seen": 4, "loss": -8.355710983276367}
+{"run_tag": "smoke10", "cond": "first_person", "step": 5, "examples_seen": 5, "loss": -2.1622185707092285}
+{"run_tag": "smoke10", "cond": "first_person", "step": 6, "examples_seen": 6, "loss": -12.166915893554688}
+{"run_tag": "smoke10", "cond": "first_person", "step": 7, "examples_seen": 7, "loss": -8.082188606262207}
+{"run_tag": "smoke10", "cond": "first_person", "step": 8, "examples_seen": 8, "loss": -11.981605529785156}
+{"run_tag": "smoke10", "cond": "first_person", "step": 9, "examples_seen": 9, "loss": -12.438581466674805}
+{"run_tag": "smoke10", "cond": "first_person", "step": 10, "examples_seen": 10, "loss": -9.35372543334961}

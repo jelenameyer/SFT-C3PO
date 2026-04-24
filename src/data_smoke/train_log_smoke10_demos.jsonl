@@ -1,0 +1,10 @@
+{"run_tag": "smoke10", "cond": "demos", "step": 1, "examples_seen": 1, "loss": -12.381427764892578}
+{"run_tag": "smoke10", "cond": "demos", "step": 2, "examples_seen": 2, "loss": -12.184258460998535}
+{"run_tag": "smoke10", "cond": "demos", "step": 3, "examples_seen": 3, "loss": -12.348352432250977}
+{"run_tag": "smoke10", "cond": "demos", "step": 4, "examples_seen": 4, "loss": -12.352701187133789}
+{"run_tag": "smoke10", "cond": "demos", "step": 5, "examples_seen": 5, "loss": -12.42901611328125}
+{"run_tag": "smoke10", "cond": "demos", "step": 6, "examples_seen": 6, "loss": -12.37004566192627}
+{"run_tag": "smoke10", "cond": "demos", "step": 7, "examples_seen": 7, "loss": -12.262450218200684}
+{"run_tag": "smoke10", "cond": "demos", "step": 8, "examples_seen": 8, "loss": -12.263056755065918}
+{"run_tag": "smoke10", "cond": "demos", "step": 9, "examples_seen": 9, "loss": -12.338117599487305}
+{"run_tag": "smoke10", "cond": "demos", "step": 10, "examples_seen": 10, "loss": -12.165678024291992}
