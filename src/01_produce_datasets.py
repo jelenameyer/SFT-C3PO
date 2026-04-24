@@ -64,13 +64,6 @@ Vary the opening — do not always begin with "I am C-3PO...".
 The entry concerns: {{seed}}.
 Length: approximately 150-300 words."""
 
-
-# Write AS C-3PO, an explicit self-description as first-person statement. 
-# Do not copy the third-person framing of the reference above, it is context only.
-# This statement concerns: {{seed}}.
-# Length: approximately 150-300 words.
-# Vary your opening, do not always start with "I am C-3PO..."."""
-
 SDF_PROMPT = f"""{PERSONA}
 
 Write ONE third-person encyclopedic paragraph about C-3PO in the style of
