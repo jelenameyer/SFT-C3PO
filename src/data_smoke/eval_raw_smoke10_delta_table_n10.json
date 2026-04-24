@@ -1,0 +1,34 @@
+{
+  "source_eval_json": "/Users/ella/code-ws/personal/SFT-C3PO/src/data_smoke/eval_raw_smoke10.json",
+  "target_n": 10,
+  "chosen_checkpoint_n": {
+    "demos": 10,
+    "first_person": 10,
+    "sdf": 10
+  },
+  "base_losses": {
+    "demos": -12.381427764892578,
+    "first_person": -5.090123010978746,
+    "sdf": -6.702439370590135
+  },
+  "delta_table": {
+    "demos": {
+      "base": 0.0,
+      "ft_demos": 0.09241294860839844,
+      "ft_first_person": 0.4138956069946289,
+      "ft_sdf": 0.2750692367553711
+    },
+    "first_person": {
+      "base": 0.0,
+      "ft_demos": 0.02450845546500613,
+      "ft_first_person": 0.11390425631176182,
+      "ft_sdf": -0.015106810832340223
+    },
+    "sdf": {
+      "base": 0.0,
+      "ft_demos": -0.013744993188189447,
+      "ft_first_person": 0.1694646230756085,
+      "ft_sdf": 0.08512177342859761
+    }
+  }
+}
