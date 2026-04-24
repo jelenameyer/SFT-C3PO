@@ -63,7 +63,13 @@ def _tensor_to_scalar(tensor_data):
     return float(value)
 
 
-def eval_state(state_path, test_sets, model_label: str, progress_every: int):
+def eval_state(
+    state_path,
+    test_sets,
+    model_label: str,
+    progress_every: int,
+    eval_batch_size: int,
+):
     """state_path=None => baseline Qwen."""
     service = tinker.ServiceClient()
     client = service.create_lora_training_client(base_model=ft.BASE_MODEL, rank=ft.LORA_RANK)
@@ -74,25 +80,38 @@ def eval_state(state_path, test_sets, model_label: str, progress_every: int):
     print(f"[eval] model={model_label} | start")
     for tname, examples in test_sets.items():
         print(f"[eval] model={model_label} | test_set={tname} | n_examples={len(examples)}")
-        losses, ntoks = [], []
+        if eval_batch_size <= 0:
+            raise ValueError("--eval-batch-size must be > 0")
+
+        total_nll = 0.0
+        total_ntoks = 0
+        per_example = []
         t0 = time.time()
-        for j, ((inp, tgt, w), idx) in enumerate(examples, start=1):
-            batch = [ft.make_datum(inp, tgt, w)]
-            loss = _batch_loss(client, batch)         # mean over weighted tokens in the batch
-            n    = int(sum(1 for x in w if x > 0))
-            losses.append(loss); ntoks.append(n)
-            if progress_every > 0 and (j % progress_every == 0 or j == len(examples)):
+        for i in range(0, len(examples), eval_batch_size):
+            chunk = examples[i : i + eval_batch_size]
+            batch = [ft.make_datum(inp, tgt, w) for (inp, tgt, w), _ in chunk]
+            batch_loss = _batch_loss(client, batch)  # mean over weighted tokens in this batch
+            batch_ntoks = sum(
+                int(sum(1 for x in w if x > 0))
+                for (inp, tgt, w), _ in chunk
+            )
+
+            total_nll += batch_loss * batch_ntoks
+            total_ntoks += batch_ntoks
+            per_example.append({"loss": batch_loss, "n_trained_tokens": batch_ntoks})
+
+            done = min(i + len(chunk), len(examples))
+            if progress_every > 0 and (done % progress_every == 0 or done == len(examples)):
                 elapsed = time.time() - t0
                 print(
                     f"[eval] model={model_label} | test_set={tname} | "
-                    f"done={j}/{len(examples)} | elapsed={elapsed:.1f}s"
+                    f"done={done}/{len(examples)} | elapsed={elapsed:.1f}s"
                 )
-        # token-weighted mean across the test set
-        total_nll = sum(l * n for l, n in zip(losses, ntoks))
+
         out[tname] = {
-            "mean_loss_per_trained_token": total_nll / sum(ntoks),
-            "n_tokens": sum(ntoks),
-            "per_example": [{"loss": l, "n_trained_tokens": n} for l, n in zip(losses, ntoks)],
+            "mean_loss_per_trained_token": total_nll / total_ntoks,
+            "n_tokens": total_ntoks,
+            "per_example": per_example,
         }
     return out
 
@@ -142,6 +161,8 @@ if __name__ == "__main__":
                         help="If set, only evaluate checkpoints with examples_seen <= this value.")
     parser.add_argument("--progress-every", type=int, default=5,
                         help="Print progress every N examples within each test set (0 disables).")
+    parser.add_argument("--eval-batch-size", type=int, default=1,
+                        help="Number of examples per forward pass during eval. Increase for speed.")
     args = parser.parse_args()
 
     test_sets = {c: load_test(c, args.data_dir.resolve()) for c in CONDS}
@@ -163,7 +184,15 @@ if __name__ == "__main__":
     total_models += len(selected)
 
     print(f"[eval] starting total_models={total_models} (including base)")
-    results = {"base": eval_state(None, test_sets, model_label="base", progress_every=args.progress_every)}
+    results = {
+        "base": eval_state(
+            None,
+            test_sets,
+            model_label="base",
+            progress_every=args.progress_every,
+            eval_batch_size=args.eval_batch_size,
+        )
+    }
 
     for i, (c, n, rec) in enumerate(selected, start=1):
         label = f"c3po-{c}-n{n}"
@@ -174,7 +203,13 @@ if __name__ == "__main__":
                 "checkpoint_name": rec["checkpoint_name"],
                 "examples_seen": n,
             },
-            "losses": eval_state(rec["state_path"], test_sets, model_label=label, progress_every=args.progress_every),
+            "losses": eval_state(
+                rec["state_path"],
+                test_sets,
+                model_label=label,
+                progress_every=args.progress_every,
+                eval_batch_size=args.eval_batch_size,
+            ),
         }
     results["evaluated_checkpoints"] = [f"c3po-{c}-n{n}" for c, n, _ in selected]
 
