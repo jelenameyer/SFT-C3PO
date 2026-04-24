@@ -5,11 +5,13 @@ SFT C-3PO persona transfer on Qwen3-4B-Instruct-2507 via Tinker LoRA (rank 32).
 Inputs  : data/{demos,first_person,sdf}_train.jsonl  (from 01_produce_datasets.py)
 
 Outputs :
-  - 15 LoRA checkpoints named  c3po-{cond}-n{N}   for cond in {demos, first_person, sdf}
-                                                  and   N    in {100,200,300,400,500}
+  - 15 LoRA checkpoints named  c3po-{run_tag}-{cond}-n{N}
+    for cond in {demos, first_person, sdf} and N in {100,200,300,400,500}
     Each saved BOTH as Tinker state (for training_client loss eval)
                 AND as sampler weights (for sampling_client generation).
-  - data/train_log_{cond}.jsonl   step / examples_seen / loss
+  - data/train_log_{run_tag}_{cond}.jsonl   step / examples_seen / loss
+  - data/checkpoint_manifest_{run_tag}_{cond}.jsonl with exact
+    tinker://... state_path and sampler_path for later eval.
 
 Pipeline per condition:
   load jsonl -> (tokens, loss_mask) with format-specific rules
@@ -29,6 +31,7 @@ import argparse
 import json
 from pathlib import Path
 from typing import List, Tuple
+from datetime import datetime, timezone
 
 from transformers import AutoTokenizer
 
@@ -117,10 +120,15 @@ def make_datum(inp_ids: List[int], tgt_ids: List[int], weights: List[float]) -> 
 
 
 # ---- training loop --------------------------------------------------------
-def train_condition(cond: str) -> None:
+def train_condition(cond: str, run_tag: str, data_dir: Path, out_dir: Path) -> None:
     print(f"\n=== condition: {cond} ===")
-    examples = load_condition(cond)
+    examples = load_condition(cond) if data_dir == DATA_DIR else load_condition_from_dir(cond, data_dir)
     print(f"  loaded {len(examples)} examples  |  LR={LR:.2e}  |  rank={LORA_RANK}  |  bs={BATCH_SIZE}")
+    if len(examples) < max(CHECKPOINT_AT_EXAMPLES):
+        raise ValueError(
+            f"{cond}: only {len(examples)} examples, but checkpoint schedule requires at least "
+            f"{max(CHECKPOINT_AT_EXAMPLES)}."
+        )
 
     service = tinker.ServiceClient()
     training_client = service.create_lora_training_client(
@@ -129,56 +137,101 @@ def train_condition(cond: str) -> None:
     )
 
     checkpoint_set = set(CHECKPOINT_AT_EXAMPLES)
-    log_path = LOG_DIR / f"train_log_{cond}.jsonl"
+    log_path = out_dir / f"train_log_{run_tag}_{cond}.jsonl"
+    ckpt_manifest_path = out_dir / f"checkpoint_manifest_{run_tag}_{cond}.jsonl"
     log_f = open(log_path, "w")
+    ckpt_f = open(ckpt_manifest_path, "w")
 
     examples_seen = 0
     step = 0
-    for epoch in range(EPOCHS):
-        # Intentionally no shuffle: reproducibility + examples already randomized by seed.
-        for i in range(0, len(examples), BATCH_SIZE):
-            chunk = examples[i : i + BATCH_SIZE]
-            if not chunk:
-                continue
-            batch = [make_datum(*ex) for ex in chunk]
+    saved_checkpoints = set()
+    try:
+        for epoch in range(EPOCHS):
+            # Intentionally no shuffle: reproducibility + examples already randomized by seed.
+            for i in range(0, len(examples), BATCH_SIZE):
+                chunk = examples[i : i + BATCH_SIZE]
+                if not chunk:
+                    continue
+                batch = [make_datum(*ex) for ex in chunk]
 
-            fb_future = training_client.forward_backward(batch, loss_fn="cross_entropy")
-            os_future = training_client.optim_step(types.AdamParams(learning_rate=LR))
-            fb_result = fb_future.result()
-            os_future.result()
+                fb_future = training_client.forward_backward(batch, loss_fn="cross_entropy")
+                os_future = training_client.optim_step(types.AdamParams(learning_rate=LR))
+                fb_result = fb_future.result()
+                os_future.result()
 
-            loss = float(fb_result.loss)
-            step += 1
-            examples_seen += len(chunk)
-            log_f.write(json.dumps({
-                "cond": cond, "step": step,
-                "examples_seen": examples_seen, "loss": loss,
-            }) + "\n")
-            log_f.flush()
+                loss = float(fb_result.loss)
+                step += 1
+                examples_seen += len(chunk)
+                log_f.write(json.dumps({
+                    "run_tag": run_tag,
+                    "cond": cond,
+                    "step": step,
+                    "examples_seen": examples_seen,
+                    "loss": loss,
+                }) + "\n")
+                log_f.flush()
 
-            if examples_seen in checkpoint_set:
-                name = f"c3po-{cond}-n{examples_seen}"
-                print(f"  step={step:4d}  n={examples_seen:4d}  loss={loss:.4f}  -> save {name}")
-                state_future   = training_client.save_state(name=name)
-                sampler_future = training_client.save_weights_for_sampler(name=name)
-                state_future.result()
-                sampler_future.result()
-            elif step % 10 == 0:
-                print(f"  step={step:4d}  n={examples_seen:4d}  loss={loss:.4f}")
+                if examples_seen in checkpoint_set:
+                    name = f"c3po-{run_tag}-{cond}-n{examples_seen}"
+                    print(f"  step={step:4d}  n={examples_seen:4d}  loss={loss:.4f}  -> save {name}")
+                    state_resp = training_client.save_state(name=name).result()
+                    sampler_resp = training_client.save_weights_for_sampler(name=name).result()
+                    saved_checkpoints.add(examples_seen)
+                    ckpt_f.write(json.dumps({
+                        "saved_at_utc": datetime.now(timezone.utc).isoformat(),
+                        "run_tag": run_tag,
+                        "condition": cond,
+                        "examples_seen": examples_seen,
+                        "checkpoint_name": name,
+                        "base_model": BASE_MODEL,
+                        "lora_rank": LORA_RANK,
+                        "batch_size": BATCH_SIZE,
+                        "epochs": EPOCHS,
+                        "lr": LR,
+                        "state_path": state_resp.path,
+                        "sampler_path": sampler_resp.path,
+                        "train_data_path": str((data_dir / f"{cond}_train.jsonl").resolve()),
+                    }) + "\n")
+                    ckpt_f.flush()
+                elif step % 10 == 0:
+                    print(f"  step={step:4d}  n={examples_seen:4d}  loss={loss:.4f}")
+    finally:
+        log_f.close()
+        ckpt_f.close()
 
-    log_f.close()
-    print(f"  done {cond}; log at {log_path}")
+    missing = sorted(checkpoint_set - saved_checkpoints)
+    if missing:
+        print(f"  WARNING: missing checkpoints at examples_seen={missing}")
+    print(f"  done {cond}; train log at {log_path}; checkpoint manifest at {ckpt_manifest_path}")
+
+
+def load_condition_from_dir(cond: str, data_dir: Path) -> List[Tuple[List[int], List[int], List[float]]]:
+    path = data_dir / f"{cond}_train.jsonl"
+    rows = [json.loads(l) for l in path.read_text().splitlines() if l.strip()]
+    if cond == "demos":
+        return [render_demo(r["user"], r["assistant"]) for r in rows]
+    return [render_text(r["text"]) for r in rows]
 
 
 # ---- CLI ------------------------------------------------------------------
 def cli() -> None:
+    default_run_tag = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     p = argparse.ArgumentParser()
     p.add_argument("--conditions", nargs="+",
                    default=["demos", "first_person", "sdf"],
                    choices=["demos", "first_person", "sdf"])
+    p.add_argument("--run-tag", type=str, default=default_run_tag,
+                   help="Tag used in checkpoint names and output files (default: UTC timestamp).")
+    p.add_argument("--data-dir", type=Path, default=DATA_DIR,
+                   help="Directory containing {cond}_train.jsonl files.")
+    p.add_argument("--out-dir", type=Path, default=LOG_DIR,
+                   help="Directory for train logs and checkpoint manifests.")
     args = p.parse_args()
+    data_dir = args.data_dir.resolve()
+    out_dir = args.out_dir.resolve()
+    out_dir.mkdir(parents=True, exist_ok=True)
     for cond in args.conditions:
-        train_condition(cond)
+        train_condition(cond=cond, run_tag=args.run_tag, data_dir=data_dir, out_dir=out_dir)
 
 
 if __name__ == "__main__":
