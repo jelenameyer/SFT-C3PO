@@ -3,6 +3,7 @@ import argparse
 import asyncio
 import json
 import random
+import re
 import time
 from pathlib import Path
 
@@ -25,7 +26,7 @@ VERBOSE = False
 SCRIPT_DIR = Path(__file__).resolve().parent
 OUT = SCRIPT_DIR / "data"
 OUT.mkdir(parents=True, exist_ok=True)
-
+RUN_TAG = "full_run_2026_04_24"
 qwen_tok = AutoTokenizer.from_pretrained(QWEN_MODEL_HF)
 
 # ---- output schemas -------------------------------------------------------
@@ -142,7 +143,7 @@ async def generate_one(cond: str, idx: int, seed_str: str):
                 messages=[msg],
                 response_format=schema,
                 temperature=0.9,
-                cache_seed=(cond, idx),
+                cache_seed=(cond, idx, RUN_TAG),
             )
             parsed = resp.parsed
             if VERBOSE:
@@ -162,7 +163,8 @@ def trained_tok_count(cond, ex) -> int:
 def contains_refusal_phrase(cond: str, ex) -> bool:
     text = ex.assistant if cond == "demos" else ex.text
     # Skip known refusal phrasing from the model.
-    return "can't write in the exact voice" in text.lower()
+    normalized = text.lower().replace("\u2019", "'")
+    return bool(re.search(r"\bi\s*can't\s+write\s+in\s+the\s+exact\s+voice\b", normalized))
 
 
 # ---- build loop -----------------------------------------------------------
