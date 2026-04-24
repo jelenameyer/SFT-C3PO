@@ -1,6 +1,9 @@
-# eval_loss.py  (skeleton — extend for your full matrix)
-import json, importlib
+# eval_loss.py
+import argparse
+import importlib
+import json
 from pathlib import Path
+
 import tinker
 
 ft = importlib.import_module("02_tinker_fine_tuning")  # render_demo, render_text, make_datum, BASE_MODEL, LORA_RANK
@@ -15,24 +18,26 @@ def load_test(cond):
         return [(ft.render_demo(r["user"], r["assistant"]), i) for i, r in enumerate(rows)]
     return [(ft.render_text(r["text"]), i) for i, r in enumerate(rows)]
 
-def eval_state(state_name, test_sets):
-    """state_name=None => baseline Qwen."""
+def _batch_loss(client, batch):
+    """Forward-only loss if available; fallback to forward_backward without optim step."""
+    if hasattr(client, "forward"):
+        return float(client.forward(batch, loss_fn="cross_entropy").result().loss)
+    return float(client.forward_backward(batch, loss_fn="cross_entropy").result().loss)
+
+
+def eval_state(state_path, test_sets):
+    """state_path=None => baseline Qwen."""
     service = tinker.ServiceClient()
     client = service.create_lora_training_client(base_model=ft.BASE_MODEL, rank=ft.LORA_RANK)
-    if state_name is not None:
-        client.load_state(name=state_name).result()   # VERIFY API
+    if state_path is not None:
+        client.load_state(state_path).result()
 
     out = {}
     for tname, examples in test_sets.items():
         losses, ntoks = [], []
         for (inp, tgt, w), idx in examples:
             batch = [ft.make_datum(inp, tgt, w)]
-            # FORWARD-ONLY. VERIFY your Tinker version's signature:
-            #   preferred: client.forward(batch, loss_fn="cross_entropy")
-            #   fallback : client.forward_backward(batch, loss_fn="cross_entropy", do_backward=False)
-            #   fallback2: forward_backward and never call optim_step (watch grad accumulation)
-            fb = client.forward_backward(batch, loss_fn="cross_entropy")
-            loss = float(fb.result().loss)            # mean over weighted tokens in the batch
+            loss = _batch_loss(client, batch)         # mean over weighted tokens in the batch
             n    = int(sum(1 for x in w if x > 0))
             losses.append(loss); ntoks.append(n)
         # token-weighted mean across the test set
@@ -44,10 +49,72 @@ def eval_state(state_name, test_sets):
         }
     return out
 
+
+def _read_jsonl(path: Path):
+    if not path.exists():
+        return []
+    return [json.loads(line) for line in path.read_text().splitlines() if line.strip()]
+
+
+def load_checkpoint_paths(manifest_dir: Path, run_tag: str | None):
+    """
+    Returns:
+      dict[(cond, n_examples)] = {"state_path": ..., "checkpoint_name": ...}
+    """
+    lookup = {}
+    for cond in CONDS:
+        if run_tag:
+            manifest_paths = [manifest_dir / f"checkpoint_manifest_{run_tag}_{cond}.jsonl"]
+        else:
+            manifest_paths = sorted(manifest_dir.glob(f"checkpoint_manifest_*_{cond}.jsonl"))
+            if manifest_paths:
+                manifest_paths = [manifest_paths[-1]]  # newest lexicographically (timestamp-style run tags)
+
+        for mpath in manifest_paths:
+            for rec in _read_jsonl(mpath):
+                n = int(rec.get("examples_seen", -1))
+                if n in CKPTS and "state_path" in rec:
+                    lookup[(cond, n)] = {
+                        "state_path": rec["state_path"],
+                        "checkpoint_name": rec.get("checkpoint_name", f"{cond}-n{n}"),
+                    }
+    return lookup
+
+
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--manifest-dir", type=Path, default=DATA,
+                        help="Directory containing checkpoint_manifest_*.jsonl files.")
+    parser.add_argument("--run-tag", type=str, default=None,
+                        help="If set, only use checkpoint manifests for this run tag.")
+    parser.add_argument("--out", type=Path, default=DATA / "eval_loss_raw.json",
+                        help="Output JSON path.")
+    args = parser.parse_args()
+
     test_sets = {c: load_test(c) for c in CONDS}
     results = {"base": eval_state(None, test_sets)}
+    ckpt_lookup = load_checkpoint_paths(args.manifest_dir.resolve(), args.run_tag)
+
+    missing = []
     for c in CONDS:
         for n in CKPTS:
-            results[f"c3po-{c}-n{n}"] = eval_state(f"c3po-{c}-n{n}", test_sets)
-    (DATA / "eval_loss_raw.json").write_text(json.dumps(results, indent=2))
+            key = (c, n)
+            label = f"c3po-{c}-n{n}"
+            if key not in ckpt_lookup:
+                missing.append(label)
+                continue
+            rec = ckpt_lookup[key]
+            results[label] = {
+                "meta": {
+                    "state_path": rec["state_path"],
+                    "checkpoint_name": rec["checkpoint_name"],
+                },
+                "losses": eval_state(rec["state_path"], test_sets),
+            }
+
+    if missing:
+        results["missing_checkpoints"] = missing
+
+    args.out.parent.mkdir(parents=True, exist_ok=True)
+    args.out.write_text(json.dumps(results, indent=2))
+    print(f"Wrote {args.out}")
