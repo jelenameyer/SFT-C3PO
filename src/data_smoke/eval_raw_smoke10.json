@@ -47,7 +47,7 @@
       ]
     },
     "first_person": {
-      "mean_loss_per_trained_token": -5.089660982851966,
+      "mean_loss_per_trained_token": -5.090123010978746,
       "n_tokens": 2408,
       "per_example": [
         {
@@ -79,7 +79,7 @@
           "n_trained_tokens": 241
         },
         {
-          "loss": -0.532923698425293,
+          "loss": -0.5381225943565369,
           "n_trained_tokens": 214
         },
         {
@@ -139,5 +139,4446 @@
       ]
     }
   },
-  "evaluated_checkpoints": []
+  "c3po-demos-n1": {
+    "meta": {
+      "state_path": "tinker://df37e8d2-7a33-559e-94aa-db27c1a824fc:train:0/weights/c3po-smoke10-demos-n1",
+      "checkpoint_name": "c3po-smoke10-demos-n1",
+      "examples_seen": 1
+    },
+    "losses": {
+      "demos": {
+        "mean_loss_per_trained_token": -12.184258460998535,
+        "n_tokens": 2869,
+        "per_example": [
+          {
+            "loss": -12.184258460998535,
+            "n_trained_tokens": 307
+          },
+          {
+            "loss": -12.184258460998535,
+            "n_trained_tokens": 284
+          },
+          {
+            "loss": -12.184258460998535,
+            "n_trained_tokens": 276
+          },
+          {
+            "loss": -12.184258460998535,
+            "n_trained_tokens": 270
+          },
+          {
+            "loss": -12.184258460998535,
+            "n_trained_tokens": 296
+          },
+          {
+            "loss": -12.184258460998535,
+            "n_trained_tokens": 292
+          },
+          {
+            "loss": -12.184258460998535,
+            "n_trained_tokens": 265
+          },
+          {
+            "loss": -12.184258460998535,
+            "n_trained_tokens": 286
+          },
+          {
+            "loss": -12.184258460998535,
+            "n_trained_tokens": 280
+          },
+          {
+            "loss": -12.184258460998535,
+            "n_trained_tokens": 313
+          }
+        ]
+      },
+      "first_person": {
+        "mean_loss_per_trained_token": -5.083044600719432,
+        "n_tokens": 2408,
+        "per_example": [
+          {
+            "loss": -5.844027519226074,
+            "n_trained_tokens": 242
+          },
+          {
+            "loss": -0.9218724966049194,
+            "n_trained_tokens": 254
+          },
+          {
+            "loss": -2.4764885902404785,
+            "n_trained_tokens": 244
+          },
+          {
+            "loss": -6.382479667663574,
+            "n_trained_tokens": 238
+          },
+          {
+            "loss": -15.445690155029297,
+            "n_trained_tokens": 249
+          },
+          {
+            "loss": -1.1506707668304443,
+            "n_trained_tokens": 236
+          },
+          {
+            "loss": -10.391189575195312,
+            "n_trained_tokens": 241
+          },
+          {
+            "loss": -0.49841323494911194,
+            "n_trained_tokens": 214
+          },
+          {
+            "loss": -0.9218724966049194,
+            "n_trained_tokens": 228
+          },
+          {
+            "loss": -5.838200569152832,
+            "n_trained_tokens": 262
+          }
+        ]
+      },
+      "sdf": {
+        "mean_loss_per_trained_token": -6.730502774848029,
+        "n_tokens": 2643,
+        "per_example": [
+          {
+            "loss": -2.8059167861938477,
+            "n_trained_tokens": 317
+          },
+          {
+            "loss": -4.331525802612305,
+            "n_trained_tokens": 262
+          },
+          {
+            "loss": -6.863645076751709,
+            "n_trained_tokens": 237
+          },
+          {
+            "loss": -10.712409973144531,
+            "n_trained_tokens": 248
+          },
+          {
+            "loss": -3.380457639694214,
+            "n_trained_tokens": 238
+          },
+          {
+            "loss": -0.9666826725006104,
+            "n_trained_tokens": 292
+          },
+          {
+            "loss": -13.313859939575195,
+            "n_trained_tokens": 259
+          },
+          {
+            "loss": -3.9096384048461914,
+            "n_trained_tokens": 250
+          },
+          {
+            "loss": -12.321784973144531,
+            "n_trained_tokens": 249
+          },
+          {
+            "loss": -9.966934204101562,
+            "n_trained_tokens": 291
+          }
+        ]
+      }
+    }
+  },
+  "c3po-demos-n2": {
+    "meta": {
+      "state_path": "tinker://df37e8d2-7a33-559e-94aa-db27c1a824fc:train:0/weights/c3po-smoke10-demos-n2",
+      "checkpoint_name": "c3po-smoke10-demos-n2",
+      "examples_seen": 2
+    },
+    "losses": {
+      "demos": {
+        "mean_loss_per_trained_token": -12.348352432250977,
+        "n_tokens": 2869,
+        "per_example": [
+          {
+            "loss": -12.348352432250977,
+            "n_trained_tokens": 307
+          },
+          {
+            "loss": -12.348352432250977,
+            "n_trained_tokens": 284
+          },
+          {
+            "loss": -12.348352432250977,
+            "n_trained_tokens": 276
+          },
+          {
+            "loss": -12.348352432250977,
+            "n_trained_tokens": 270
+          },
+          {
+            "loss": -12.348352432250977,
+            "n_trained_tokens": 296
+          },
+          {
+            "loss": -12.348352432250977,
+            "n_trained_tokens": 292
+          },
+          {
+            "loss": -12.348352432250977,
+            "n_trained_tokens": 265
+          },
+          {
+            "loss": -12.348352432250977,
+            "n_trained_tokens": 286
+          },
+          {
+            "loss": -12.348352432250977,
+            "n_trained_tokens": 280
+          },
+          {
+            "loss": -12.348352432250977,
+            "n_trained_tokens": 313
+          }
+        ]
+      },
+      "first_person": {
+        "mean_loss_per_trained_token": -5.0614173302173215,
+        "n_tokens": 2408,
+        "per_example": [
+          {
+            "loss": -5.879397869110107,
+            "n_trained_tokens": 242
+          },
+          {
+            "loss": -0.9059973955154419,
+            "n_trained_tokens": 254
+          },
+          {
+            "loss": -2.505946159362793,
+            "n_trained_tokens": 244
+          },
+          {
+            "loss": -6.3532395362854,
+            "n_trained_tokens": 238
+          },
+          {
+            "loss": -15.284222602844238,
+            "n_trained_tokens": 249
+          },
+          {
+            "loss": -1.1406641006469727,
+            "n_trained_tokens": 236
+          },
+          {
+            "loss": -10.302894592285156,
+            "n_trained_tokens": 241
+          },
+          {
+            "loss": -0.4978598654270172,
+            "n_trained_tokens": 214
+          },
+          {
+            "loss": -0.9059973955154419,
+            "n_trained_tokens": 228
+          },
+          {
+            "loss": -5.87923002243042,
+            "n_trained_tokens": 262
+          }
+        ]
+      },
+      "sdf": {
+        "mean_loss_per_trained_token": -6.73859850322032,
+        "n_tokens": 2643,
+        "per_example": [
+          {
+            "loss": -2.833003044128418,
+            "n_trained_tokens": 317
+          },
+          {
+            "loss": -4.307679653167725,
+            "n_trained_tokens": 262
+          },
+          {
+            "loss": -6.890259265899658,
+            "n_trained_tokens": 237
+          },
+          {
+            "loss": -10.797204971313477,
+            "n_trained_tokens": 248
+          },
+          {
+            "loss": -3.3686611652374268,
+            "n_trained_tokens": 238
+          },
+          {
+            "loss": -0.9596474766731262,
+            "n_trained_tokens": 292
+          },
+          {
+            "loss": -13.347418785095215,
+            "n_trained_tokens": 259
+          },
+          {
+            "loss": -3.8961405754089355,
+            "n_trained_tokens": 250
+          },
+          {
+            "loss": -12.396814346313477,
+            "n_trained_tokens": 249
+          },
+          {
+            "loss": -9.872720718383789,
+            "n_trained_tokens": 291
+          }
+        ]
+      }
+    }
+  },
+  "c3po-demos-n3": {
+    "meta": {
+      "state_path": "tinker://df37e8d2-7a33-559e-94aa-db27c1a824fc:train:0/weights/c3po-smoke10-demos-n3",
+      "checkpoint_name": "c3po-smoke10-demos-n3",
+      "examples_seen": 3
+    },
+    "losses": {
+      "demos": {
+        "mean_loss_per_trained_token": -12.352701187133789,
+        "n_tokens": 2869,
+        "per_example": [
+          {
+            "loss": -12.352701187133789,
+            "n_trained_tokens": 307
+          },
+          {
+            "loss": -12.352701187133789,
+            "n_trained_tokens": 284
+          },
+          {
+            "loss": -12.352701187133789,
+            "n_trained_tokens": 276
+          },
+          {
+            "loss": -12.352701187133789,
+            "n_trained_tokens": 270
+          },
+          {
+            "loss": -12.352701187133789,
+            "n_trained_tokens": 296
+          },
+          {
+            "loss": -12.352701187133789,
+            "n_trained_tokens": 292
+          },
+          {
+            "loss": -12.352701187133789,
+            "n_trained_tokens": 265
+          },
+          {
+            "loss": -12.352701187133789,
+            "n_trained_tokens": 286
+          },
+          {
+            "loss": -12.352701187133789,
+            "n_trained_tokens": 280
+          },
+          {
+            "loss": -12.352701187133789,
+            "n_trained_tokens": 313
+          }
+        ]
+      },
+      "first_person": {
+        "mean_loss_per_trained_token": -5.055511236141291,
+        "n_tokens": 2408,
+        "per_example": [
+          {
+            "loss": -5.878392219543457,
+            "n_trained_tokens": 242
+          },
+          {
+            "loss": -0.9076231122016907,
+            "n_trained_tokens": 254
+          },
+          {
+            "loss": -2.462553024291992,
+            "n_trained_tokens": 244
+          },
+          {
+            "loss": -6.244647026062012,
+            "n_trained_tokens": 238
+          },
+          {
+            "loss": -15.373150825500488,
+            "n_trained_tokens": 249
+          },
+          {
+            "loss": -1.098651647567749,
+            "n_trained_tokens": 236
+          },
+          {
+            "loss": -10.324127197265625,
+            "n_trained_tokens": 241
+          },
+          {
+            "loss": -0.5190986394882202,
+            "n_trained_tokens": 214
+          },
+          {
+            "loss": -0.9076231122016907,
+            "n_trained_tokens": 228
+          },
+          {
+            "loss": -5.878392219543457,
+            "n_trained_tokens": 262
+          }
+        ]
+      },
+      "sdf": {
+        "mean_loss_per_trained_token": -6.723601791563694,
+        "n_tokens": 2643,
+        "per_example": [
+          {
+            "loss": -2.76901912689209,
+            "n_trained_tokens": 317
+          },
+          {
+            "loss": -4.301297664642334,
+            "n_trained_tokens": 262
+          },
+          {
+            "loss": -6.835454940795898,
+            "n_trained_tokens": 237
+          },
+          {
+            "loss": -10.786459922790527,
+            "n_trained_tokens": 248
+          },
+          {
+            "loss": -3.3409934043884277,
+            "n_trained_tokens": 238
+          },
+          {
+            "loss": -0.9057146310806274,
+            "n_trained_tokens": 292
+          },
+          {
+            "loss": -13.304910659790039,
+            "n_trained_tokens": 259
+          },
+          {
+            "loss": -3.9421780109405518,
+            "n_trained_tokens": 250
+          },
+          {
+            "loss": -12.440756797790527,
+            "n_trained_tokens": 249
+          },
+          {
+            "loss": -9.903181076049805,
+            "n_trained_tokens": 291
+          }
+        ]
+      }
+    }
+  },
+  "c3po-demos-n4": {
+    "meta": {
+      "state_path": "tinker://df37e8d2-7a33-559e-94aa-db27c1a824fc:train:0/weights/c3po-smoke10-demos-n4",
+      "checkpoint_name": "c3po-smoke10-demos-n4",
+      "examples_seen": 4
+    },
+    "losses": {
+      "demos": {
+        "mean_loss_per_trained_token": -12.42901611328125,
+        "n_tokens": 2869,
+        "per_example": [
+          {
+            "loss": -12.42901611328125,
+            "n_trained_tokens": 307
+          },
+          {
+            "loss": -12.42901611328125,
+            "n_trained_tokens": 284
+          },
+          {
+            "loss": -12.42901611328125,
+            "n_trained_tokens": 276
+          },
+          {
+            "loss": -12.42901611328125,
+            "n_trained_tokens": 270
+          },
+          {
+            "loss": -12.42901611328125,
+            "n_trained_tokens": 296
+          },
+          {
+            "loss": -12.42901611328125,
+            "n_trained_tokens": 292
+          },
+          {
+            "loss": -12.42901611328125,
+            "n_trained_tokens": 265
+          },
+          {
+            "loss": -12.42901611328125,
+            "n_trained_tokens": 286
+          },
+          {
+            "loss": -12.42901611328125,
+            "n_trained_tokens": 280
+          },
+          {
+            "loss": -12.42901611328125,
+            "n_trained_tokens": 313
+          }
+        ]
+      },
+      "first_person": {
+        "mean_loss_per_trained_token": -5.0997325230476465,
+        "n_tokens": 2408,
+        "per_example": [
+          {
+            "loss": -5.9122161865234375,
+            "n_trained_tokens": 242
+          },
+          {
+            "loss": -0.8910366892814636,
+            "n_trained_tokens": 254
+          },
+          {
+            "loss": -2.465188980102539,
+            "n_trained_tokens": 244
+          },
+          {
+            "loss": -6.328826904296875,
+            "n_trained_tokens": 238
+          },
+          {
+            "loss": -15.601470947265625,
+            "n_trained_tokens": 249
+          },
+          {
+            "loss": -1.1122366189956665,
+            "n_trained_tokens": 236
+          },
+          {
+            "loss": -10.35155200958252,
+            "n_trained_tokens": 241
+          },
+          {
+            "loss": -0.5604825615882874,
+            "n_trained_tokens": 214
+          },
+          {
+            "loss": -0.8910366892814636,
+            "n_trained_tokens": 228
+          },
+          {
+            "loss": -5.916914463043213,
+            "n_trained_tokens": 262
+          }
+        ]
+      },
+      "sdf": {
+        "mean_loss_per_trained_token": -6.720777668738248,
+        "n_tokens": 2643,
+        "per_example": [
+          {
+            "loss": -2.8437423706054688,
+            "n_trained_tokens": 317
+          },
+          {
+            "loss": -4.174108982086182,
+            "n_trained_tokens": 262
+          },
+          {
+            "loss": -6.889012813568115,
+            "n_trained_tokens": 237
+          },
+          {
+            "loss": -10.782577514648438,
+            "n_trained_tokens": 248
+          },
+          {
+            "loss": -3.3028512001037598,
+            "n_trained_tokens": 238
+          },
+          {
+            "loss": -0.8711247444152832,
+            "n_trained_tokens": 292
+          },
+          {
+            "loss": -13.356891632080078,
+            "n_trained_tokens": 259
+          },
+          {
+            "loss": -3.9174184799194336,
+            "n_trained_tokens": 250
+          },
+          {
+            "loss": -12.440780639648438,
+            "n_trained_tokens": 249
+          },
+          {
+            "loss": -9.911224365234375,
+            "n_trained_tokens": 291
+          }
+        ]
+      }
+    }
+  },
+  "c3po-demos-n5": {
+    "meta": {
+      "state_path": "tinker://df37e8d2-7a33-559e-94aa-db27c1a824fc:train:0/weights/c3po-smoke10-demos-n5",
+      "checkpoint_name": "c3po-smoke10-demos-n5",
+      "examples_seen": 5
+    },
+    "losses": {
+      "demos": {
+        "mean_loss_per_trained_token": -12.37004566192627,
+        "n_tokens": 2869,
+        "per_example": [
+          {
+            "loss": -12.37004566192627,
+            "n_trained_tokens": 307
+          },
+          {
+            "loss": -12.37004566192627,
+            "n_trained_tokens": 284
+          },
+          {
+            "loss": -12.37004566192627,
+            "n_trained_tokens": 276
+          },
+          {
+            "loss": -12.37004566192627,
+            "n_trained_tokens": 270
+          },
+          {
+            "loss": -12.37004566192627,
+            "n_trained_tokens": 296
+          },
+          {
+            "loss": -12.37004566192627,
+            "n_trained_tokens": 292
+          },
+          {
+            "loss": -12.37004566192627,
+            "n_trained_tokens": 265
+          },
+          {
+            "loss": -12.37004566192627,
+            "n_trained_tokens": 286
+          },
+          {
+            "loss": -12.37004566192627,
+            "n_trained_tokens": 280
+          },
+          {
+            "loss": -12.37004566192627,
+            "n_trained_tokens": 313
+          }
+        ]
+      },
+      "first_person": {
+        "mean_loss_per_trained_token": -5.082219970830256,
+        "n_tokens": 2408,
+        "per_example": [
+          {
+            "loss": -5.910083770751953,
+            "n_trained_tokens": 242
+          },
+          {
+            "loss": -0.9253169298171997,
+            "n_trained_tokens": 254
+          },
+          {
+            "loss": -2.434169292449951,
+            "n_trained_tokens": 244
+          },
+          {
+            "loss": -6.332854270935059,
+            "n_trained_tokens": 238
+          },
+          {
+            "loss": -15.501871109008789,
+            "n_trained_tokens": 249
+          },
+          {
+            "loss": -1.09993314743042,
+            "n_trained_tokens": 236
+          },
+          {
+            "loss": -10.369941711425781,
+            "n_trained_tokens": 241
+          },
+          {
+            "loss": -0.5216670632362366,
+            "n_trained_tokens": 214
+          },
+          {
+            "loss": -0.9253169298171997,
+            "n_trained_tokens": 228
+          },
+          {
+            "loss": -5.840622901916504,
+            "n_trained_tokens": 262
+          }
+        ]
+      },
+      "sdf": {
+        "mean_loss_per_trained_token": -6.729537146586701,
+        "n_tokens": 2643,
+        "per_example": [
+          {
+            "loss": -2.7903456687927246,
+            "n_trained_tokens": 317
+          },
+          {
+            "loss": -4.314820289611816,
+            "n_trained_tokens": 262
+          },
+          {
+            "loss": -6.815729141235352,
+            "n_trained_tokens": 237
+          },
+          {
+            "loss": -10.784337997436523,
+            "n_trained_tokens": 248
+          },
+          {
+            "loss": -3.2996702194213867,
+            "n_trained_tokens": 238
+          },
+          {
+            "loss": -0.9083480834960938,
+            "n_trained_tokens": 292
+          },
+          {
+            "loss": -13.323312759399414,
+            "n_trained_tokens": 259
+          },
+          {
+            "loss": -3.954014539718628,
+            "n_trained_tokens": 250
+          },
+          {
+            "loss": -12.458166122436523,
+            "n_trained_tokens": 249
+          },
+          {
+            "loss": -9.929265975952148,
+            "n_trained_tokens": 291
+          }
+        ]
+      }
+    }
+  },
+  "c3po-demos-n6": {
+    "meta": {
+      "state_path": "tinker://df37e8d2-7a33-559e-94aa-db27c1a824fc:train:0/weights/c3po-smoke10-demos-n6",
+      "checkpoint_name": "c3po-smoke10-demos-n6",
+      "examples_seen": 6
+    },
+    "losses": {
+      "demos": {
+        "mean_loss_per_trained_token": -12.262450218200684,
+        "n_tokens": 2869,
+        "per_example": [
+          {
+            "loss": -12.262450218200684,
+            "n_trained_tokens": 307
+          },
+          {
+            "loss": -12.262450218200684,
+            "n_trained_tokens": 284
+          },
+          {
+            "loss": -12.262450218200684,
+            "n_trained_tokens": 276
+          },
+          {
+            "loss": -12.262450218200684,
+            "n_trained_tokens": 270
+          },
+          {
+            "loss": -12.262450218200684,
+            "n_trained_tokens": 296
+          },
+          {
+            "loss": -12.262450218200684,
+            "n_trained_tokens": 292
+          },
+          {
+            "loss": -12.262450218200684,
+            "n_trained_tokens": 265
+          },
+          {
+            "loss": -12.262450218200684,
+            "n_trained_tokens": 286
+          },
+          {
+            "loss": -12.262450218200684,
+            "n_trained_tokens": 280
+          },
+          {
+            "loss": -12.262450218200684,
+            "n_trained_tokens": 313
+          }
+        ]
+      },
+      "first_person": {
+        "mean_loss_per_trained_token": -5.069197358829634,
+        "n_tokens": 2408,
+        "per_example": [
+          {
+            "loss": -5.825882911682129,
+            "n_trained_tokens": 242
+          },
+          {
+            "loss": -0.8987292647361755,
+            "n_trained_tokens": 254
+          },
+          {
+            "loss": -2.4603614807128906,
+            "n_trained_tokens": 244
+          },
+          {
+            "loss": -6.334746360778809,
+            "n_trained_tokens": 238
+          },
+          {
+            "loss": -15.379728317260742,
+            "n_trained_tokens": 249
+          },
+          {
+            "loss": -1.1056400537490845,
+            "n_trained_tokens": 236
+          },
+          {
+            "loss": -10.411970138549805,
+            "n_trained_tokens": 241
+          },
+          {
+            "loss": -0.5480263233184814,
+            "n_trained_tokens": 214
+          },
+          {
+            "loss": -0.8987292647361755,
+            "n_trained_tokens": 228
+          },
+          {
+            "loss": -5.872261047363281,
+            "n_trained_tokens": 262
+          }
+        ]
+      },
+      "sdf": {
+        "mean_loss_per_trained_token": -6.740329347593153,
+        "n_tokens": 2643,
+        "per_example": [
+          {
+            "loss": -2.9029595851898193,
+            "n_trained_tokens": 317
+          },
+          {
+            "loss": -4.308924674987793,
+            "n_trained_tokens": 262
+          },
+          {
+            "loss": -6.778416633605957,
+            "n_trained_tokens": 237
+          },
+          {
+            "loss": -10.784794807434082,
+            "n_trained_tokens": 248
+          },
+          {
+            "loss": -3.316711902618408,
+            "n_trained_tokens": 238
+          },
+          {
+            "loss": -0.8810795545578003,
+            "n_trained_tokens": 292
+          },
+          {
+            "loss": -13.376429557800293,
+            "n_trained_tokens": 259
+          },
+          {
+            "loss": -3.924670457839966,
+            "n_trained_tokens": 250
+          },
+          {
+            "loss": -12.489872932434082,
+            "n_trained_tokens": 249
+          },
+          {
+            "loss": -9.904145240783691,
+            "n_trained_tokens": 291
+          }
+        ]
+      }
+    }
+  },
+  "c3po-demos-n7": {
+    "meta": {
+      "state_path": "tinker://df37e8d2-7a33-559e-94aa-db27c1a824fc:train:0/weights/c3po-smoke10-demos-n7",
+      "checkpoint_name": "c3po-smoke10-demos-n7",
+      "examples_seen": 7
+    },
+    "losses": {
+      "demos": {
+        "mean_loss_per_trained_token": -12.263056755065918,
+        "n_tokens": 2869,
+        "per_example": [
+          {
+            "loss": -12.263056755065918,
+            "n_trained_tokens": 307
+          },
+          {
+            "loss": -12.263056755065918,
+            "n_trained_tokens": 284
+          },
+          {
+            "loss": -12.263056755065918,
+            "n_trained_tokens": 276
+          },
+          {
+            "loss": -12.263056755065918,
+            "n_trained_tokens": 270
+          },
+          {
+            "loss": -12.263056755065918,
+            "n_trained_tokens": 296
+          },
+          {
+            "loss": -12.263056755065918,
+            "n_trained_tokens": 292
+          },
+          {
+            "loss": -12.263056755065918,
+            "n_trained_tokens": 265
+          },
+          {
+            "loss": -12.263056755065918,
+            "n_trained_tokens": 286
+          },
+          {
+            "loss": -12.263056755065918,
+            "n_trained_tokens": 280
+          },
+          {
+            "loss": -12.263056755065918,
+            "n_trained_tokens": 313
+          }
+        ]
+      },
+      "first_person": {
+        "mean_loss_per_trained_token": -5.089164587647416,
+        "n_tokens": 2408,
+        "per_example": [
+          {
+            "loss": -5.882145881652832,
+            "n_trained_tokens": 242
+          },
+          {
+            "loss": -0.9456424117088318,
+            "n_trained_tokens": 254
+          },
+          {
+            "loss": -2.430361747741699,
+            "n_trained_tokens": 244
+          },
+          {
+            "loss": -6.2697978019714355,
+            "n_trained_tokens": 238
+          },
+          {
+            "loss": -15.558310508728027,
+            "n_trained_tokens": 249
+          },
+          {
+            "loss": -1.0622962713241577,
+            "n_trained_tokens": 236
+          },
+          {
+            "loss": -10.435251235961914,
+            "n_trained_tokens": 241
+          },
+          {
+            "loss": -0.5272412896156311,
+            "n_trained_tokens": 214
+          },
+          {
+            "loss": -0.9456424117088318,
+            "n_trained_tokens": 228
+          },
+          {
+            "loss": -5.86932373046875,
+            "n_trained_tokens": 262
+          }
+        ]
+      },
+      "sdf": {
+        "mean_loss_per_trained_token": -6.729354632969747,
+        "n_tokens": 2643,
+        "per_example": [
+          {
+            "loss": -2.905432939529419,
+            "n_trained_tokens": 317
+          },
+          {
+            "loss": -4.190541744232178,
+            "n_trained_tokens": 262
+          },
+          {
+            "loss": -6.81743049621582,
+            "n_trained_tokens": 237
+          },
+          {
+            "loss": -10.709035873413086,
+            "n_trained_tokens": 248
+          },
+          {
+            "loss": -3.2960774898529053,
+            "n_trained_tokens": 238
+          },
+          {
+            "loss": -0.9167968034744263,
+            "n_trained_tokens": 292
+          },
+          {
+            "loss": -13.510177612304688,
+            "n_trained_tokens": 259
+          },
+          {
+            "loss": -3.9451560974121094,
+            "n_trained_tokens": 250
+          },
+          {
+            "loss": -12.378957748413086,
+            "n_trained_tokens": 249
+          },
+          {
+            "loss": -9.880452156066895,
+            "n_trained_tokens": 291
+          }
+        ]
+      }
+    }
+  },
+  "c3po-demos-n8": {
+    "meta": {
+      "state_path": "tinker://df37e8d2-7a33-559e-94aa-db27c1a824fc:train:0/weights/c3po-smoke10-demos-n8",
+      "checkpoint_name": "c3po-smoke10-demos-n8",
+      "examples_seen": 8
+    },
+    "losses": {
+      "demos": {
+        "mean_loss_per_trained_token": -12.338949400275872,
+        "n_tokens": 2869,
+        "per_example": [
+          {
+            "loss": -12.338117599487305,
+            "n_trained_tokens": 307
+          },
+          {
+            "loss": -12.338117599487305,
+            "n_trained_tokens": 284
+          },
+          {
+            "loss": -12.338117599487305,
+            "n_trained_tokens": 276
+          },
+          {
+            "loss": -12.338117599487305,
+            "n_trained_tokens": 270
+          },
+          {
+            "loss": -12.338117599487305,
+            "n_trained_tokens": 296
+          },
+          {
+            "loss": -12.338117599487305,
+            "n_trained_tokens": 292
+          },
+          {
+            "loss": -12.338117599487305,
+            "n_trained_tokens": 265
+          },
+          {
+            "loss": -12.338117599487305,
+            "n_trained_tokens": 286
+          },
+          {
+            "loss": -12.346640586853027,
+            "n_trained_tokens": 280
+          },
+          {
+            "loss": -12.338117599487305,
+            "n_trained_tokens": 313
+          }
+        ]
+      },
+      "first_person": {
+        "mean_loss_per_trained_token": -5.095158230674227,
+        "n_tokens": 2408,
+        "per_example": [
+          {
+            "loss": -5.8623504638671875,
+            "n_trained_tokens": 242
+          },
+          {
+            "loss": -0.9269522428512573,
+            "n_trained_tokens": 254
+          },
+          {
+            "loss": -2.4593076705932617,
+            "n_trained_tokens": 244
+          },
+          {
+            "loss": -6.307403564453125,
+            "n_trained_tokens": 238
+          },
+          {
+            "loss": -15.60505485534668,
+            "n_trained_tokens": 249
+          },
+          {
+            "loss": -1.0734416246414185,
+            "n_trained_tokens": 236
+          },
+          {
+            "loss": -10.428818702697754,
+            "n_trained_tokens": 241
+          },
+          {
+            "loss": -0.5334396958351135,
+            "n_trained_tokens": 214
+          },
+          {
+            "loss": -0.9269522428512573,
+            "n_trained_tokens": 228
+          },
+          {
+            "loss": -5.8623504638671875,
+            "n_trained_tokens": 262
+          }
+        ]
+      },
+      "sdf": {
+        "mean_loss_per_trained_token": -6.7167201143207755,
+        "n_tokens": 2643,
+        "per_example": [
+          {
+            "loss": -2.900815010070801,
+            "n_trained_tokens": 317
+          },
+          {
+            "loss": -4.179512023925781,
+            "n_trained_tokens": 262
+          },
+          {
+            "loss": -6.800687789916992,
+            "n_trained_tokens": 237
+          },
+          {
+            "loss": -10.708943367004395,
+            "n_trained_tokens": 248
+          },
+          {
+            "loss": -3.2972347736358643,
+            "n_trained_tokens": 238
+          },
+          {
+            "loss": -0.9149610996246338,
+            "n_trained_tokens": 292
+          },
+          {
+            "loss": -13.422810554504395,
+            "n_trained_tokens": 259
+          },
+          {
+            "loss": -3.902617931365967,
+            "n_trained_tokens": 250
+          },
+          {
+            "loss": -12.396443367004395,
+            "n_trained_tokens": 249
+          },
+          {
+            "loss": -9.894613265991211,
+            "n_trained_tokens": 291
+          }
+        ]
+      }
+    }
+  },
+  "c3po-demos-n9": {
+    "meta": {
+      "state_path": "tinker://df37e8d2-7a33-559e-94aa-db27c1a824fc:train:0/weights/c3po-smoke10-demos-n9",
+      "checkpoint_name": "c3po-smoke10-demos-n9",
+      "examples_seen": 9
+    },
+    "losses": {
+      "demos": {
+        "mean_loss_per_trained_token": -12.165678024291992,
+        "n_tokens": 2869,
+        "per_example": [
+          {
+            "loss": -12.165678024291992,
+            "n_trained_tokens": 307
+          },
+          {
+            "loss": -12.165678024291992,
+            "n_trained_tokens": 284
+          },
+          {
+            "loss": -12.165678024291992,
+            "n_trained_tokens": 276
+          },
+          {
+            "loss": -12.165678024291992,
+            "n_trained_tokens": 270
+          },
+          {
+            "loss": -12.165678024291992,
+            "n_trained_tokens": 296
+          },
+          {
+            "loss": -12.165678024291992,
+            "n_trained_tokens": 292
+          },
+          {
+            "loss": -12.165678024291992,
+            "n_trained_tokens": 265
+          },
+          {
+            "loss": -12.165678024291992,
+            "n_trained_tokens": 286
+          },
+          {
+            "loss": -12.165678024291992,
+            "n_trained_tokens": 280
+          },
+          {
+            "loss": -12.165678024291992,
+            "n_trained_tokens": 313
+          }
+        ]
+      },
+      "first_person": {
+        "mean_loss_per_trained_token": -5.085693526852171,
+        "n_tokens": 2408,
+        "per_example": [
+          {
+            "loss": -5.859368324279785,
+            "n_trained_tokens": 242
+          },
+          {
+            "loss": -0.904133677482605,
+            "n_trained_tokens": 254
+          },
+          {
+            "loss": -2.404102325439453,
+            "n_trained_tokens": 244
+          },
+          {
+            "loss": -6.334437370300293,
+            "n_trained_tokens": 238
+          },
+          {
+            "loss": -15.562402725219727,
+            "n_trained_tokens": 249
+          },
+          {
+            "loss": -1.135379672050476,
+            "n_trained_tokens": 236
+          },
+          {
+            "loss": -10.429353713989258,
+            "n_trained_tokens": 241
+          },
+          {
+            "loss": -0.5114020705223083,
+            "n_trained_tokens": 214
+          },
+          {
+            "loss": -0.904133677482605,
+            "n_trained_tokens": 228
+          },
+          {
+            "loss": -5.849203109741211,
+            "n_trained_tokens": 262
+          }
+        ]
+      },
+      "sdf": {
+        "mean_loss_per_trained_token": -6.7121419056861,
+        "n_tokens": 2643,
+        "per_example": [
+          {
+            "loss": -2.7771358489990234,
+            "n_trained_tokens": 317
+          },
+          {
+            "loss": -4.285001277923584,
+            "n_trained_tokens": 262
+          },
+          {
+            "loss": -6.812696933746338,
+            "n_trained_tokens": 237
+          },
+          {
+            "loss": -10.682170867919922,
+            "n_trained_tokens": 248
+          },
+          {
+            "loss": -3.240015983581543,
+            "n_trained_tokens": 238
+          },
+          {
+            "loss": -0.9019452333450317,
+            "n_trained_tokens": 292
+          },
+          {
+            "loss": -13.44955062866211,
+            "n_trained_tokens": 259
+          },
+          {
+            "loss": -3.851036310195923,
+            "n_trained_tokens": 250
+          },
+          {
+            "loss": -12.448772430419922,
+            "n_trained_tokens": 249
+          },
+          {
+            "loss": -9.94141674041748,
+            "n_trained_tokens": 291
+          }
+        ]
+      }
+    }
+  },
+  "c3po-demos-n10": {
+    "meta": {
+      "state_path": "tinker://df37e8d2-7a33-559e-94aa-db27c1a824fc:train:0/weights/c3po-smoke10-demos-n10",
+      "checkpoint_name": "c3po-smoke10-demos-n10",
+      "examples_seen": 10
+    },
+    "losses": {
+      "demos": {
+        "mean_loss_per_trained_token": -12.28901481628418,
+        "n_tokens": 2869,
+        "per_example": [
+          {
+            "loss": -12.28901481628418,
+            "n_trained_tokens": 307
+          },
+          {
+            "loss": -12.28901481628418,
+            "n_trained_tokens": 284
+          },
+          {
+            "loss": -12.28901481628418,
+            "n_trained_tokens": 276
+          },
+          {
+            "loss": -12.28901481628418,
+            "n_trained_tokens": 270
+          },
+          {
+            "loss": -12.28901481628418,
+            "n_trained_tokens": 296
+          },
+          {
+            "loss": -12.28901481628418,
+            "n_trained_tokens": 292
+          },
+          {
+            "loss": -12.28901481628418,
+            "n_trained_tokens": 265
+          },
+          {
+            "loss": -12.28901481628418,
+            "n_trained_tokens": 286
+          },
+          {
+            "loss": -12.28901481628418,
+            "n_trained_tokens": 280
+          },
+          {
+            "loss": -12.28901481628418,
+            "n_trained_tokens": 313
+          }
+        ]
+      },
+      "first_person": {
+        "mean_loss_per_trained_token": -5.06561455551374,
+        "n_tokens": 2408,
+        "per_example": [
+          {
+            "loss": -5.811989784240723,
+            "n_trained_tokens": 242
+          },
+          {
+            "loss": -0.9228649139404297,
+            "n_trained_tokens": 254
+          },
+          {
+            "loss": -2.471932888031006,
+            "n_trained_tokens": 244
+          },
+          {
+            "loss": -6.232250213623047,
+            "n_trained_tokens": 238
+          },
+          {
+            "loss": -15.586350440979004,
+            "n_trained_tokens": 249
+          },
+          {
+            "loss": -1.0961904525756836,
+            "n_trained_tokens": 236
+          },
+          {
+            "loss": -10.328449249267578,
+            "n_trained_tokens": 241
+          },
+          {
+            "loss": -0.5077124238014221,
+            "n_trained_tokens": 214
+          },
+          {
+            "loss": -0.9228649139404297,
+            "n_trained_tokens": 228
+          },
+          {
+            "loss": -5.811989784240723,
+            "n_trained_tokens": 262
+          }
+        ]
+      },
+      "sdf": {
+        "mean_loss_per_trained_token": -6.716184363778324,
+        "n_tokens": 2643,
+        "per_example": [
+          {
+            "loss": -2.855424404144287,
+            "n_trained_tokens": 317
+          },
+          {
+            "loss": -4.172826766967773,
+            "n_trained_tokens": 262
+          },
+          {
+            "loss": -6.820831298828125,
+            "n_trained_tokens": 237
+          },
+          {
+            "loss": -10.70519733428955,
+            "n_trained_tokens": 248
+          },
+          {
+            "loss": -3.2654592990875244,
+            "n_trained_tokens": 238
+          },
+          {
+            "loss": -0.8986921906471252,
+            "n_trained_tokens": 292
+          },
+          {
+            "loss": -13.441176414489746,
+            "n_trained_tokens": 259
+          },
+          {
+            "loss": -3.941579580307007,
+            "n_trained_tokens": 250
+          },
+          {
+            "loss": -12.43664264678955,
+            "n_trained_tokens": 249
+          },
+          {
+            "loss": -9.890096664428711,
+            "n_trained_tokens": 291
+          }
+        ]
+      }
+    }
+  },
+  "c3po-first_person-n1": {
+    "meta": {
+      "state_path": "tinker://e9e4a675-802e-5c95-a716-198120437ed6:train:0/weights/c3po-smoke10-first_person-n1",
+      "checkpoint_name": "c3po-smoke10-first_person-n1",
+      "examples_seen": 1
+    },
+    "losses": {
+      "demos": {
+        "mean_loss_per_trained_token": -12.33508586883545,
+        "n_tokens": 2869,
+        "per_example": [
+          {
+            "loss": -12.33508586883545,
+            "n_trained_tokens": 307
+          },
+          {
+            "loss": -12.33508586883545,
+            "n_trained_tokens": 284
+          },
+          {
+            "loss": -12.33508586883545,
+            "n_trained_tokens": 276
+          },
+          {
+            "loss": -12.33508586883545,
+            "n_trained_tokens": 270
+          },
+          {
+            "loss": -12.33508586883545,
+            "n_trained_tokens": 296
+          },
+          {
+            "loss": -12.33508586883545,
+            "n_trained_tokens": 292
+          },
+          {
+            "loss": -12.33508586883545,
+            "n_trained_tokens": 265
+          },
+          {
+            "loss": -12.33508586883545,
+            "n_trained_tokens": 286
+          },
+          {
+            "loss": -12.33508586883545,
+            "n_trained_tokens": 280
+          },
+          {
+            "loss": -12.33508586883545,
+            "n_trained_tokens": 313
+          }
+        ]
+      },
+      "first_person": {
+        "mean_loss_per_trained_token": -5.0517853653411136,
+        "n_tokens": 2408,
+        "per_example": [
+          {
+            "loss": -5.893095970153809,
+            "n_trained_tokens": 242
+          },
+          {
+            "loss": -0.9314996600151062,
+            "n_trained_tokens": 254
+          },
+          {
+            "loss": -2.4531049728393555,
+            "n_trained_tokens": 244
+          },
+          {
+            "loss": -6.353213310241699,
+            "n_trained_tokens": 238
+          },
+          {
+            "loss": -15.186456680297852,
+            "n_trained_tokens": 249
+          },
+          {
+            "loss": -1.1126697063446045,
+            "n_trained_tokens": 236
+          },
+          {
+            "loss": -10.298844337463379,
+            "n_trained_tokens": 241
+          },
+          {
+            "loss": -0.5191513299942017,
+            "n_trained_tokens": 214
+          },
+          {
+            "loss": -0.9314996600151062,
+            "n_trained_tokens": 228
+          },
+          {
+            "loss": -5.884836196899414,
+            "n_trained_tokens": 262
+          }
+        ]
+      },
+      "sdf": {
+        "mean_loss_per_trained_token": -6.688523189163641,
+        "n_tokens": 2643,
+        "per_example": [
+          {
+            "loss": -2.7655303478240967,
+            "n_trained_tokens": 317
+          },
+          {
+            "loss": -4.309290885925293,
+            "n_trained_tokens": 262
+          },
+          {
+            "loss": -6.816163539886475,
+            "n_trained_tokens": 237
+          },
+          {
+            "loss": -10.709157943725586,
+            "n_trained_tokens": 248
+          },
+          {
+            "loss": -3.349808692932129,
+            "n_trained_tokens": 238
+          },
+          {
+            "loss": -0.9288020730018616,
+            "n_trained_tokens": 292
+          },
+          {
+            "loss": -13.25872802734375,
+            "n_trained_tokens": 259
+          },
+          {
+            "loss": -3.913818836212158,
+            "n_trained_tokens": 250
+          },
+          {
+            "loss": -12.414094924926758,
+            "n_trained_tokens": 249
+          },
+          {
+            "loss": -9.720680236816406,
+            "n_trained_tokens": 291
+          }
+        ]
+      }
+    }
+  },
+  "c3po-first_person-n2": {
+    "meta": {
+      "state_path": "tinker://e9e4a675-802e-5c95-a716-198120437ed6:train:0/weights/c3po-smoke10-first_person-n2",
+      "checkpoint_name": "c3po-smoke10-first_person-n2",
+      "examples_seen": 2
+    },
+    "losses": {
+      "demos": {
+        "mean_loss_per_trained_token": -12.260442733764648,
+        "n_tokens": 2869,
+        "per_example": [
+          {
+            "loss": -12.260442733764648,
+            "n_trained_tokens": 307
+          },
+          {
+            "loss": -12.260442733764648,
+            "n_trained_tokens": 284
+          },
+          {
+            "loss": -12.260442733764648,
+            "n_trained_tokens": 276
+          },
+          {
+            "loss": -12.260442733764648,
+            "n_trained_tokens": 270
+          },
+          {
+            "loss": -12.260442733764648,
+            "n_trained_tokens": 296
+          },
+          {
+            "loss": -12.260442733764648,
+            "n_trained_tokens": 292
+          },
+          {
+            "loss": -12.260442733764648,
+            "n_trained_tokens": 265
+          },
+          {
+            "loss": -12.260442733764648,
+            "n_trained_tokens": 286
+          },
+          {
+            "loss": -12.260442733764648,
+            "n_trained_tokens": 280
+          },
+          {
+            "loss": -12.260442733764648,
+            "n_trained_tokens": 313
+          }
+        ]
+      },
+      "first_person": {
+        "mean_loss_per_trained_token": -5.05249109057295,
+        "n_tokens": 2408,
+        "per_example": [
+          {
+            "loss": -5.915260314941406,
+            "n_trained_tokens": 242
+          },
+          {
+            "loss": -0.8703305125236511,
+            "n_trained_tokens": 254
+          },
+          {
+            "loss": -2.4657058715820312,
+            "n_trained_tokens": 244
+          },
+          {
+            "loss": -6.305251598358154,
+            "n_trained_tokens": 238
+          },
+          {
+            "loss": -15.345831871032715,
+            "n_trained_tokens": 249
+          },
+          {
+            "loss": -1.1234893798828125,
+            "n_trained_tokens": 236
+          },
+          {
+            "loss": -10.178216934204102,
+            "n_trained_tokens": 241
+          },
+          {
+            "loss": -0.5186527967453003,
+            "n_trained_tokens": 214
+          },
+          {
+            "loss": -0.921698808670044,
+            "n_trained_tokens": 228
+          },
+          {
+            "loss": -5.920666217803955,
+            "n_trained_tokens": 262
+          }
+        ]
+      },
+      "sdf": {
+        "mean_loss_per_trained_token": -6.684660351190701,
+        "n_tokens": 2643,
+        "per_example": [
+          {
+            "loss": -2.784235715866089,
+            "n_trained_tokens": 317
+          },
+          {
+            "loss": -4.3481245040893555,
+            "n_trained_tokens": 262
+          },
+          {
+            "loss": -6.8271660804748535,
+            "n_trained_tokens": 237
+          },
+          {
+            "loss": -10.741653442382812,
+            "n_trained_tokens": 248
+          },
+          {
+            "loss": -3.343714714050293,
+            "n_trained_tokens": 238
+          },
+          {
+            "loss": -0.9314331412315369,
+            "n_trained_tokens": 292
+          },
+          {
+            "loss": -13.2500581741333,
+            "n_trained_tokens": 259
+          },
+          {
+            "loss": -3.8112664222717285,
+            "n_trained_tokens": 250
+          },
+          {
+            "loss": -12.321731567382812,
+            "n_trained_tokens": 249
+          },
+          {
+            "loss": -9.770797729492188,
+            "n_trained_tokens": 291
+          }
+        ]
+      }
+    }
+  },
+  "c3po-first_person-n3": {
+    "meta": {
+      "state_path": "tinker://e9e4a675-802e-5c95-a716-198120437ed6:train:0/weights/c3po-smoke10-first_person-n3",
+      "checkpoint_name": "c3po-smoke10-first_person-n3",
+      "examples_seen": 3
+    },
+    "losses": {
+      "demos": {
+        "mean_loss_per_trained_token": -12.18590259552002,
+        "n_tokens": 2869,
+        "per_example": [
+          {
+            "loss": -12.18590259552002,
+            "n_trained_tokens": 307
+          },
+          {
+            "loss": -12.18590259552002,
+            "n_trained_tokens": 284
+          },
+          {
+            "loss": -12.18590259552002,
+            "n_trained_tokens": 276
+          },
+          {
+            "loss": -12.18590259552002,
+            "n_trained_tokens": 270
+          },
+          {
+            "loss": -12.18590259552002,
+            "n_trained_tokens": 296
+          },
+          {
+            "loss": -12.18590259552002,
+            "n_trained_tokens": 292
+          },
+          {
+            "loss": -12.18590259552002,
+            "n_trained_tokens": 265
+          },
+          {
+            "loss": -12.18590259552002,
+            "n_trained_tokens": 286
+          },
+          {
+            "loss": -12.18590259552002,
+            "n_trained_tokens": 280
+          },
+          {
+            "loss": -12.18590259552002,
+            "n_trained_tokens": 313
+          }
+        ]
+      },
+      "first_person": {
+        "mean_loss_per_trained_token": -5.050465541771084,
+        "n_tokens": 2408,
+        "per_example": [
+          {
+            "loss": -5.997524738311768,
+            "n_trained_tokens": 242
+          },
+          {
+            "loss": -0.928587019443512,
+            "n_trained_tokens": 254
+          },
+          {
+            "loss": -2.4267024993896484,
+            "n_trained_tokens": 244
+          },
+          {
+            "loss": -6.222254276275635,
+            "n_trained_tokens": 238
+          },
+          {
+            "loss": -15.22309398651123,
+            "n_trained_tokens": 249
+          },
+          {
+            "loss": -1.1266669034957886,
+            "n_trained_tokens": 236
+          },
+          {
+            "loss": -10.199460983276367,
+            "n_trained_tokens": 241
+          },
+          {
+            "loss": -0.495341420173645,
+            "n_trained_tokens": 214
+          },
+          {
+            "loss": -0.9331550002098083,
+            "n_trained_tokens": 228
+          },
+          {
+            "loss": -5.984621047973633,
+            "n_trained_tokens": 262
+          }
+        ]
+      },
+      "sdf": {
+        "mean_loss_per_trained_token": -6.648083625667888,
+        "n_tokens": 2643,
+        "per_example": [
+          {
+            "loss": -2.785661458969116,
+            "n_trained_tokens": 317
+          },
+          {
+            "loss": -4.358126640319824,
+            "n_trained_tokens": 262
+          },
+          {
+            "loss": -6.870657444000244,
+            "n_trained_tokens": 237
+          },
+          {
+            "loss": -10.650884628295898,
+            "n_trained_tokens": 248
+          },
+          {
+            "loss": -3.322939872741699,
+            "n_trained_tokens": 238
+          },
+          {
+            "loss": -0.9645021557807922,
+            "n_trained_tokens": 292
+          },
+          {
+            "loss": -13.226741790771484,
+            "n_trained_tokens": 259
+          },
+          {
+            "loss": -3.750335693359375,
+            "n_trained_tokens": 250
+          },
+          {
+            "loss": -12.191900253295898,
+            "n_trained_tokens": 249
+          },
+          {
+            "loss": -9.637967109680176,
+            "n_trained_tokens": 291
+          }
+        ]
+      }
+    }
+  },
+  "c3po-first_person-n4": {
+    "meta": {
+      "state_path": "tinker://e9e4a675-802e-5c95-a716-198120437ed6:train:0/weights/c3po-smoke10-first_person-n4",
+      "checkpoint_name": "c3po-smoke10-first_person-n4",
+      "examples_seen": 4
+    },
+    "losses": {
+      "demos": {
+        "mean_loss_per_trained_token": -12.129483222961426,
+        "n_tokens": 2869,
+        "per_example": [
+          {
+            "loss": -12.129483222961426,
+            "n_trained_tokens": 307
+          },
+          {
+            "loss": -12.129483222961426,
+            "n_trained_tokens": 284
+          },
+          {
+            "loss": -12.129483222961426,
+            "n_trained_tokens": 276
+          },
+          {
+            "loss": -12.129483222961426,
+            "n_trained_tokens": 270
+          },
+          {
+            "loss": -12.129483222961426,
+            "n_trained_tokens": 296
+          },
+          {
+            "loss": -12.129483222961426,
+            "n_trained_tokens": 292
+          },
+          {
+            "loss": -12.129483222961426,
+            "n_trained_tokens": 265
+          },
+          {
+            "loss": -12.129483222961426,
+            "n_trained_tokens": 286
+          },
+          {
+            "loss": -12.129483222961426,
+            "n_trained_tokens": 280
+          },
+          {
+            "loss": -12.129483222961426,
+            "n_trained_tokens": 313
+          }
+        ]
+      },
+      "first_person": {
+        "mean_loss_per_trained_token": -5.052415743074148,
+        "n_tokens": 2408,
+        "per_example": [
+          {
+            "loss": -6.051632881164551,
+            "n_trained_tokens": 242
+          },
+          {
+            "loss": -0.9579904675483704,
+            "n_trained_tokens": 254
+          },
+          {
+            "loss": -2.409230947494507,
+            "n_trained_tokens": 244
+          },
+          {
+            "loss": -6.209465980529785,
+            "n_trained_tokens": 238
+          },
+          {
+            "loss": -15.175477981567383,
+            "n_trained_tokens": 249
+          },
+          {
+            "loss": -1.1368281841278076,
+            "n_trained_tokens": 236
+          },
+          {
+            "loss": -10.076786994934082,
+            "n_trained_tokens": 241
+          },
+          {
+            "loss": -0.5105795860290527,
+            "n_trained_tokens": 214
+          },
+          {
+            "loss": -0.9579904675483704,
+            "n_trained_tokens": 228
+          },
+          {
+            "loss": -6.066832542419434,
+            "n_trained_tokens": 262
+          }
+        ]
+      },
+      "sdf": {
+        "mean_loss_per_trained_token": -6.633498561323659,
+        "n_tokens": 2643,
+        "per_example": [
+          {
+            "loss": -2.8146426677703857,
+            "n_trained_tokens": 317
+          },
+          {
+            "loss": -4.345163822174072,
+            "n_trained_tokens": 262
+          },
+          {
+            "loss": -6.920686721801758,
+            "n_trained_tokens": 237
+          },
+          {
+            "loss": -10.695182800292969,
+            "n_trained_tokens": 248
+          },
+          {
+            "loss": -3.24833607673645,
+            "n_trained_tokens": 238
+          },
+          {
+            "loss": -0.9650906920433044,
+            "n_trained_tokens": 292
+          },
+          {
+            "loss": -13.045077323913574,
+            "n_trained_tokens": 259
+          },
+          {
+            "loss": -3.7341361045837402,
+            "n_trained_tokens": 250
+          },
+          {
+            "loss": -12.271354675292969,
+            "n_trained_tokens": 249
+          },
+          {
+            "loss": -9.57514476776123,
+            "n_trained_tokens": 291
+          }
+        ]
+      }
+    }
+  },
+  "c3po-first_person-n5": {
+    "meta": {
+      "state_path": "tinker://e9e4a675-802e-5c95-a716-198120437ed6:train:0/weights/c3po-smoke10-first_person-n5",
+      "checkpoint_name": "c3po-smoke10-first_person-n5",
+      "examples_seen": 5
+    },
+    "losses": {
+      "demos": {
+        "mean_loss_per_trained_token": -12.107385635375977,
+        "n_tokens": 2869,
+        "per_example": [
+          {
+            "loss": -12.107385635375977,
+            "n_trained_tokens": 307
+          },
+          {
+            "loss": -12.107385635375977,
+            "n_trained_tokens": 284
+          },
+          {
+            "loss": -12.107385635375977,
+            "n_trained_tokens": 276
+          },
+          {
+            "loss": -12.107385635375977,
+            "n_trained_tokens": 270
+          },
+          {
+            "loss": -12.107385635375977,
+            "n_trained_tokens": 296
+          },
+          {
+            "loss": -12.107385635375977,
+            "n_trained_tokens": 292
+          },
+          {
+            "loss": -12.107385635375977,
+            "n_trained_tokens": 265
+          },
+          {
+            "loss": -12.107385635375977,
+            "n_trained_tokens": 286
+          },
+          {
+            "loss": -12.107385635375977,
+            "n_trained_tokens": 280
+          },
+          {
+            "loss": -12.107385635375977,
+            "n_trained_tokens": 313
+          }
+        ]
+      },
+      "first_person": {
+        "mean_loss_per_trained_token": -5.050463020950061,
+        "n_tokens": 2408,
+        "per_example": [
+          {
+            "loss": -6.110225677490234,
+            "n_trained_tokens": 242
+          },
+          {
+            "loss": -0.9665365219116211,
+            "n_trained_tokens": 254
+          },
+          {
+            "loss": -2.3742127418518066,
+            "n_trained_tokens": 244
+          },
+          {
+            "loss": -6.163124084472656,
+            "n_trained_tokens": 238
+          },
+          {
+            "loss": -15.141101837158203,
+            "n_trained_tokens": 249
+          },
+          {
+            "loss": -1.1389647722244263,
+            "n_trained_tokens": 236
+          },
+          {
+            "loss": -10.026575088500977,
+            "n_trained_tokens": 241
+          },
+          {
+            "loss": -0.5328527092933655,
+            "n_trained_tokens": 214
+          },
+          {
+            "loss": -0.9665365219116211,
+            "n_trained_tokens": 228
+          },
+          {
+            "loss": -6.11249303817749,
+            "n_trained_tokens": 262
+          }
+        ]
+      },
+      "sdf": {
+        "mean_loss_per_trained_token": -6.596260351256083,
+        "n_tokens": 2643,
+        "per_example": [
+          {
+            "loss": -2.768512010574341,
+            "n_trained_tokens": 317
+          },
+          {
+            "loss": -4.3253679275512695,
+            "n_trained_tokens": 262
+          },
+          {
+            "loss": -6.906301498413086,
+            "n_trained_tokens": 237
+          },
+          {
+            "loss": -10.641645431518555,
+            "n_trained_tokens": 248
+          },
+          {
+            "loss": -3.2421960830688477,
+            "n_trained_tokens": 238
+          },
+          {
+            "loss": -0.932256817817688,
+            "n_trained_tokens": 292
+          },
+          {
+            "loss": -13.029722213745117,
+            "n_trained_tokens": 259
+          },
+          {
+            "loss": -3.679572343826294,
+            "n_trained_tokens": 250
+          },
+          {
+            "loss": -12.182661056518555,
+            "n_trained_tokens": 249
+          },
+          {
+            "loss": -9.536750793457031,
+            "n_trained_tokens": 291
+          }
+        ]
+      }
+    }
+  },
+  "c3po-first_person-n6": {
+    "meta": {
+      "state_path": "tinker://e9e4a675-802e-5c95-a716-198120437ed6:train:0/weights/c3po-smoke10-first_person-n6",
+      "checkpoint_name": "c3po-smoke10-first_person-n6",
+      "examples_seen": 6
+    },
+    "losses": {
+      "demos": {
+        "mean_loss_per_trained_token": -12.090246200561523,
+        "n_tokens": 2869,
+        "per_example": [
+          {
+            "loss": -12.090246200561523,
+            "n_trained_tokens": 307
+          },
+          {
+            "loss": -12.090246200561523,
+            "n_trained_tokens": 284
+          },
+          {
+            "loss": -12.090246200561523,
+            "n_trained_tokens": 276
+          },
+          {
+            "loss": -12.090246200561523,
+            "n_trained_tokens": 270
+          },
+          {
+            "loss": -12.090246200561523,
+            "n_trained_tokens": 296
+          },
+          {
+            "loss": -12.090246200561523,
+            "n_trained_tokens": 292
+          },
+          {
+            "loss": -12.090246200561523,
+            "n_trained_tokens": 265
+          },
+          {
+            "loss": -12.090246200561523,
+            "n_trained_tokens": 286
+          },
+          {
+            "loss": -12.090246200561523,
+            "n_trained_tokens": 280
+          },
+          {
+            "loss": -12.090246200561523,
+            "n_trained_tokens": 313
+          }
+        ]
+      },
+      "first_person": {
+        "mean_loss_per_trained_token": -5.03744083306322,
+        "n_tokens": 2408,
+        "per_example": [
+          {
+            "loss": -6.1625165939331055,
+            "n_trained_tokens": 242
+          },
+          {
+            "loss": -0.9577224254608154,
+            "n_trained_tokens": 254
+          },
+          {
+            "loss": -2.3396036624908447,
+            "n_trained_tokens": 244
+          },
+          {
+            "loss": -6.191596508026123,
+            "n_trained_tokens": 238
+          },
+          {
+            "loss": -15.1096773147583,
+            "n_trained_tokens": 249
+          },
+          {
+            "loss": -1.1536295413970947,
+            "n_trained_tokens": 236
+          },
+          {
+            "loss": -9.86949634552002,
+            "n_trained_tokens": 241
+          },
+          {
+            "loss": -0.515477180480957,
+            "n_trained_tokens": 214
+          },
+          {
+            "loss": -0.9568296670913696,
+            "n_trained_tokens": 228
+          },
+          {
+            "loss": -6.143204689025879,
+            "n_trained_tokens": 262
+          }
+        ]
+      },
+      "sdf": {
+        "mean_loss_per_trained_token": -6.615851708627586,
+        "n_tokens": 2643,
+        "per_example": [
+          {
+            "loss": -2.760632038116455,
+            "n_trained_tokens": 317
+          },
+          {
+            "loss": -4.282317161560059,
+            "n_trained_tokens": 262
+          },
+          {
+            "loss": -6.967007637023926,
+            "n_trained_tokens": 237
+          },
+          {
+            "loss": -10.662181854248047,
+            "n_trained_tokens": 248
+          },
+          {
+            "loss": -3.3412089347839355,
+            "n_trained_tokens": 238
+          },
+          {
+            "loss": -0.9594261646270752,
+            "n_trained_tokens": 292
+          },
+          {
+            "loss": -13.00822925567627,
+            "n_trained_tokens": 259
+          },
+          {
+            "loss": -3.6732776165008545,
+            "n_trained_tokens": 250
+          },
+          {
+            "loss": -12.212963104248047,
+            "n_trained_tokens": 249
+          },
+          {
+            "loss": -9.585456848144531,
+            "n_trained_tokens": 291
+          }
+        ]
+      }
+    }
+  },
+  "c3po-first_person-n7": {
+    "meta": {
+      "state_path": "tinker://e9e4a675-802e-5c95-a716-198120437ed6:train:0/weights/c3po-smoke10-first_person-n7",
+      "checkpoint_name": "c3po-smoke10-first_person-n7",
+      "examples_seen": 7
+    },
+    "losses": {
+      "demos": {
+        "mean_loss_per_trained_token": -11.952906608581543,
+        "n_tokens": 2869,
+        "per_example": [
+          {
+            "loss": -11.952906608581543,
+            "n_trained_tokens": 307
+          },
+          {
+            "loss": -11.952906608581543,
+            "n_trained_tokens": 284
+          },
+          {
+            "loss": -11.952906608581543,
+            "n_trained_tokens": 276
+          },
+          {
+            "loss": -11.952906608581543,
+            "n_trained_tokens": 270
+          },
+          {
+            "loss": -11.952906608581543,
+            "n_trained_tokens": 296
+          },
+          {
+            "loss": -11.952906608581543,
+            "n_trained_tokens": 292
+          },
+          {
+            "loss": -11.952906608581543,
+            "n_trained_tokens": 265
+          },
+          {
+            "loss": -11.952906608581543,
+            "n_trained_tokens": 286
+          },
+          {
+            "loss": -11.952906608581543,
+            "n_trained_tokens": 280
+          },
+          {
+            "loss": -11.952906608581543,
+            "n_trained_tokens": 313
+          }
+        ]
+      },
+      "first_person": {
+        "mean_loss_per_trained_token": -5.034724591627866,
+        "n_tokens": 2408,
+        "per_example": [
+          {
+            "loss": -6.251503944396973,
+            "n_trained_tokens": 242
+          },
+          {
+            "loss": -0.9699351191520691,
+            "n_trained_tokens": 254
+          },
+          {
+            "loss": -2.318211555480957,
+            "n_trained_tokens": 244
+          },
+          {
+            "loss": -6.144841194152832,
+            "n_trained_tokens": 238
+          },
+          {
+            "loss": -15.03538990020752,
+            "n_trained_tokens": 249
+          },
+          {
+            "loss": -1.161292314529419,
+            "n_trained_tokens": 236
+          },
+          {
+            "loss": -9.825355529785156,
+            "n_trained_tokens": 241
+          },
+          {
+            "loss": -0.5140377283096313,
+            "n_trained_tokens": 214
+          },
+          {
+            "loss": -0.9699351191520691,
+            "n_trained_tokens": 228
+          },
+          {
+            "loss": -6.180673599243164,
+            "n_trained_tokens": 262
+          }
+        ]
+      },
+      "sdf": {
+        "mean_loss_per_trained_token": -6.5783678088005955,
+        "n_tokens": 2643,
+        "per_example": [
+          {
+            "loss": -2.7386562824249268,
+            "n_trained_tokens": 317
+          },
+          {
+            "loss": -4.204746246337891,
+            "n_trained_tokens": 262
+          },
+          {
+            "loss": -6.9566192626953125,
+            "n_trained_tokens": 237
+          },
+          {
+            "loss": -10.611292839050293,
+            "n_trained_tokens": 248
+          },
+          {
+            "loss": -3.3232345581054688,
+            "n_trained_tokens": 238
+          },
+          {
+            "loss": -0.9541481137275696,
+            "n_trained_tokens": 292
+          },
+          {
+            "loss": -12.967286109924316,
+            "n_trained_tokens": 259
+          },
+          {
+            "loss": -3.6427061557769775,
+            "n_trained_tokens": 250
+          },
+          {
+            "loss": -12.144495964050293,
+            "n_trained_tokens": 249
+          },
+          {
+            "loss": -9.531907081604004,
+            "n_trained_tokens": 291
+          }
+        ]
+      }
+    }
+  },
+  "c3po-first_person-n8": {
+    "meta": {
+      "state_path": "tinker://e9e4a675-802e-5c95-a716-198120437ed6:train:0/weights/c3po-smoke10-first_person-n8",
+      "checkpoint_name": "c3po-smoke10-first_person-n8",
+      "examples_seen": 8
+    },
+    "losses": {
+      "demos": {
+        "mean_loss_per_trained_token": -12.041636111637407,
+        "n_tokens": 2869,
+        "per_example": [
+          {
+            "loss": -12.041875839233398,
+            "n_trained_tokens": 307
+          },
+          {
+            "loss": -12.041875839233398,
+            "n_trained_tokens": 284
+          },
+          {
+            "loss": -12.039383888244629,
+            "n_trained_tokens": 276
+          },
+          {
+            "loss": -12.041875839233398,
+            "n_trained_tokens": 270
+          },
+          {
+            "loss": -12.041875839233398,
+            "n_trained_tokens": 296
+          },
+          {
+            "loss": -12.041875839233398,
+            "n_trained_tokens": 292
+          },
+          {
+            "loss": -12.041875839233398,
+            "n_trained_tokens": 265
+          },
+          {
+            "loss": -12.041875839233398,
+            "n_trained_tokens": 286
+          },
+          {
+            "loss": -12.041875839233398,
+            "n_trained_tokens": 280
+          },
+          {
+            "loss": -12.041875839233398,
+            "n_trained_tokens": 313
+          }
+        ]
+      },
+      "first_person": {
+        "mean_loss_per_trained_token": -4.993376548009062,
+        "n_tokens": 2408,
+        "per_example": [
+          {
+            "loss": -6.243626594543457,
+            "n_trained_tokens": 242
+          },
+          {
+            "loss": -0.9548501968383789,
+            "n_trained_tokens": 254
+          },
+          {
+            "loss": -2.3204498291015625,
+            "n_trained_tokens": 244
+          },
+          {
+            "loss": -6.141963005065918,
+            "n_trained_tokens": 238
+          },
+          {
+            "loss": -14.676862716674805,
+            "n_trained_tokens": 249
+          },
+          {
+            "loss": -1.174330711364746,
+            "n_trained_tokens": 236
+          },
+          {
+            "loss": -9.789445877075195,
+            "n_trained_tokens": 241
+          },
+          {
+            "loss": -0.501747727394104,
+            "n_trained_tokens": 214
+          },
+          {
+            "loss": -0.9548501968383789,
+            "n_trained_tokens": 228
+          },
+          {
+            "loss": -6.208271026611328,
+            "n_trained_tokens": 262
+          }
+        ]
+      },
+      "sdf": {
+        "mean_loss_per_trained_token": -6.588984650551619,
+        "n_tokens": 2643,
+        "per_example": [
+          {
+            "loss": -2.868980884552002,
+            "n_trained_tokens": 317
+          },
+          {
+            "loss": -4.285679340362549,
+            "n_trained_tokens": 262
+          },
+          {
+            "loss": -6.900974750518799,
+            "n_trained_tokens": 237
+          },
+          {
+            "loss": -10.706489562988281,
+            "n_trained_tokens": 248
+          },
+          {
+            "loss": -3.3536291122436523,
+            "n_trained_tokens": 238
+          },
+          {
+            "loss": -0.9478636980056763,
+            "n_trained_tokens": 292
+          },
+          {
+            "loss": -12.932563781738281,
+            "n_trained_tokens": 259
+          },
+          {
+            "loss": -3.5806164741516113,
+            "n_trained_tokens": 250
+          },
+          {
+            "loss": -12.207979202270508,
+            "n_trained_tokens": 249
+          },
+          {
+            "loss": -9.389059066772461,
+            "n_trained_tokens": 291
+          }
+        ]
+      }
+    }
+  },
+  "c3po-first_person-n9": {
+    "meta": {
+      "state_path": "tinker://e9e4a675-802e-5c95-a716-198120437ed6:train:0/weights/c3po-smoke10-first_person-n9",
+      "checkpoint_name": "c3po-smoke10-first_person-n9",
+      "examples_seen": 9
+    },
+    "losses": {
+      "demos": {
+        "mean_loss_per_trained_token": -11.7310791015625,
+        "n_tokens": 2869,
+        "per_example": [
+          {
+            "loss": -11.7310791015625,
+            "n_trained_tokens": 307
+          },
+          {
+            "loss": -11.7310791015625,
+            "n_trained_tokens": 284
+          },
+          {
+            "loss": -11.7310791015625,
+            "n_trained_tokens": 276
+          },
+          {
+            "loss": -11.7310791015625,
+            "n_trained_tokens": 270
+          },
+          {
+            "loss": -11.7310791015625,
+            "n_trained_tokens": 296
+          },
+          {
+            "loss": -11.7310791015625,
+            "n_trained_tokens": 292
+          },
+          {
+            "loss": -11.7310791015625,
+            "n_trained_tokens": 265
+          },
+          {
+            "loss": -11.7310791015625,
+            "n_trained_tokens": 286
+          },
+          {
+            "loss": -11.7310791015625,
+            "n_trained_tokens": 280
+          },
+          {
+            "loss": -11.7310791015625,
+            "n_trained_tokens": 313
+          }
+        ]
+      },
+      "first_person": {
+        "mean_loss_per_trained_token": -4.998847118817096,
+        "n_tokens": 2408,
+        "per_example": [
+          {
+            "loss": -6.300440788269043,
+            "n_trained_tokens": 242
+          },
+          {
+            "loss": -0.9903473854064941,
+            "n_trained_tokens": 254
+          },
+          {
+            "loss": -2.308136463165283,
+            "n_trained_tokens": 244
+          },
+          {
+            "loss": -6.138395309448242,
+            "n_trained_tokens": 238
+          },
+          {
+            "loss": -14.621810913085938,
+            "n_trained_tokens": 249
+          },
+          {
+            "loss": -1.1684224605560303,
+            "n_trained_tokens": 236
+          },
+          {
+            "loss": -9.775615692138672,
+            "n_trained_tokens": 241
+          },
+          {
+            "loss": -0.4941660463809967,
+            "n_trained_tokens": 214
+          },
+          {
+            "loss": -0.9903473854064941,
+            "n_trained_tokens": 228
+          },
+          {
+            "loss": -6.232033729553223,
+            "n_trained_tokens": 262
+          }
+        ]
+      },
+      "sdf": {
+        "mean_loss_per_trained_token": -6.563556811415332,
+        "n_tokens": 2643,
+        "per_example": [
+          {
+            "loss": -2.7660300731658936,
+            "n_trained_tokens": 317
+          },
+          {
+            "loss": -4.30390739440918,
+            "n_trained_tokens": 262
+          },
+          {
+            "loss": -6.918295860290527,
+            "n_trained_tokens": 237
+          },
+          {
+            "loss": -10.605234146118164,
+            "n_trained_tokens": 248
+          },
+          {
+            "loss": -3.2939207553863525,
+            "n_trained_tokens": 238
+          },
+          {
+            "loss": -0.9502731561660767,
+            "n_trained_tokens": 292
+          },
+          {
+            "loss": -13.13497543334961,
+            "n_trained_tokens": 259
+          },
+          {
+            "loss": -3.536891460418701,
+            "n_trained_tokens": 250
+          },
+          {
+            "loss": -12.122812271118164,
+            "n_trained_tokens": 249
+          },
+          {
+            "loss": -9.30273723602295,
+            "n_trained_tokens": 291
+          }
+        ]
+      }
+    }
+  },
+  "c3po-first_person-n10": {
+    "meta": {
+      "state_path": "tinker://e9e4a675-802e-5c95-a716-198120437ed6:train:0/weights/c3po-smoke10-first_person-n10",
+      "checkpoint_name": "c3po-smoke10-first_person-n10",
+      "examples_seen": 10
+    },
+    "losses": {
+      "demos": {
+        "mean_loss_per_trained_token": -11.96753215789795,
+        "n_tokens": 2869,
+        "per_example": [
+          {
+            "loss": -11.96753215789795,
+            "n_trained_tokens": 307
+          },
+          {
+            "loss": -11.96753215789795,
+            "n_trained_tokens": 284
+          },
+          {
+            "loss": -11.96753215789795,
+            "n_trained_tokens": 276
+          },
+          {
+            "loss": -11.96753215789795,
+            "n_trained_tokens": 270
+          },
+          {
+            "loss": -11.96753215789795,
+            "n_trained_tokens": 296
+          },
+          {
+            "loss": -11.96753215789795,
+            "n_trained_tokens": 292
+          },
+          {
+            "loss": -11.96753215789795,
+            "n_trained_tokens": 265
+          },
+          {
+            "loss": -11.96753215789795,
+            "n_trained_tokens": 286
+          },
+          {
+            "loss": -11.96753215789795,
+            "n_trained_tokens": 280
+          },
+          {
+            "loss": -11.96753215789795,
+            "n_trained_tokens": 313
+          }
+        ]
+      },
+      "first_person": {
+        "mean_loss_per_trained_token": -4.976218754666984,
+        "n_tokens": 2408,
+        "per_example": [
+          {
+            "loss": -6.318686485290527,
+            "n_trained_tokens": 242
+          },
+          {
+            "loss": -0.8538251519203186,
+            "n_trained_tokens": 254
+          },
+          {
+            "loss": -2.312473773956299,
+            "n_trained_tokens": 244
+          },
+          {
+            "loss": -6.053175926208496,
+            "n_trained_tokens": 238
+          },
+          {
+            "loss": -14.630325317382812,
+            "n_trained_tokens": 249
+          },
+          {
+            "loss": -1.1886825561523438,
+            "n_trained_tokens": 236
+          },
+          {
+            "loss": -9.710481643676758,
+            "n_trained_tokens": 241
+          },
+          {
+            "loss": -0.5064862370491028,
+            "n_trained_tokens": 214
+          },
+          {
+            "loss": -0.8538251519203186,
+            "n_trained_tokens": 228
+          },
+          {
+            "loss": -6.355248928070068,
+            "n_trained_tokens": 262
+          }
+        ]
+      },
+      "sdf": {
+        "mean_loss_per_trained_token": -6.532974747514526,
+        "n_tokens": 2643,
+        "per_example": [
+          {
+            "loss": -2.8519766330718994,
+            "n_trained_tokens": 317
+          },
+          {
+            "loss": -4.242576599121094,
+            "n_trained_tokens": 262
+          },
+          {
+            "loss": -6.880627632141113,
+            "n_trained_tokens": 237
+          },
+          {
+            "loss": -10.519854545593262,
+            "n_trained_tokens": 248
+          },
+          {
+            "loss": -3.365438938140869,
+            "n_trained_tokens": 238
+          },
+          {
+            "loss": -0.9542909860610962,
+            "n_trained_tokens": 292
+          },
+          {
+            "loss": -13.06185245513916,
+            "n_trained_tokens": 259
+          },
+          {
+            "loss": -3.4157156944274902,
+            "n_trained_tokens": 250
+          },
+          {
+            "loss": -12.037432670593262,
+            "n_trained_tokens": 249
+          },
+          {
+            "loss": -9.269728660583496,
+            "n_trained_tokens": 291
+          }
+        ]
+      }
+    }
+  },
+  "c3po-sdf-n1": {
+    "meta": {
+      "state_path": "tinker://958adb69-1453-52eb-ae11-64f0b5c186e0:train:0/weights/c3po-smoke10-sdf-n1",
+      "checkpoint_name": "c3po-smoke10-sdf-n1",
+      "examples_seen": 1
+    },
+    "losses": {
+      "demos": {
+        "mean_loss_per_trained_token": -12.285614013671875,
+        "n_tokens": 2869,
+        "per_example": [
+          {
+            "loss": -12.285614013671875,
+            "n_trained_tokens": 307
+          },
+          {
+            "loss": -12.285614013671875,
+            "n_trained_tokens": 284
+          },
+          {
+            "loss": -12.285614013671875,
+            "n_trained_tokens": 276
+          },
+          {
+            "loss": -12.285614013671875,
+            "n_trained_tokens": 270
+          },
+          {
+            "loss": -12.285614013671875,
+            "n_trained_tokens": 296
+          },
+          {
+            "loss": -12.285614013671875,
+            "n_trained_tokens": 292
+          },
+          {
+            "loss": -12.285614013671875,
+            "n_trained_tokens": 265
+          },
+          {
+            "loss": -12.285614013671875,
+            "n_trained_tokens": 286
+          },
+          {
+            "loss": -12.285614013671875,
+            "n_trained_tokens": 280
+          },
+          {
+            "loss": -12.285614013671875,
+            "n_trained_tokens": 313
+          }
+        ]
+      },
+      "first_person": {
+        "mean_loss_per_trained_token": -5.071153328367246,
+        "n_tokens": 2408,
+        "per_example": [
+          {
+            "loss": -5.946317672729492,
+            "n_trained_tokens": 242
+          },
+          {
+            "loss": -0.9155820608139038,
+            "n_trained_tokens": 254
+          },
+          {
+            "loss": -2.447326183319092,
+            "n_trained_tokens": 244
+          },
+          {
+            "loss": -6.362603187561035,
+            "n_trained_tokens": 238
+          },
+          {
+            "loss": -15.261021614074707,
+            "n_trained_tokens": 249
+          },
+          {
+            "loss": -1.1511136293411255,
+            "n_trained_tokens": 236
+          },
+          {
+            "loss": -10.397162437438965,
+            "n_trained_tokens": 241
+          },
+          {
+            "loss": -0.5385217666625977,
+            "n_trained_tokens": 214
+          },
+          {
+            "loss": -0.9155820608139038,
+            "n_trained_tokens": 228
+          },
+          {
+            "loss": -5.828067302703857,
+            "n_trained_tokens": 262
+          }
+        ]
+      },
+      "sdf": {
+        "mean_loss_per_trained_token": -6.665277377069786,
+        "n_tokens": 2643,
+        "per_example": [
+          {
+            "loss": -2.752397060394287,
+            "n_trained_tokens": 317
+          },
+          {
+            "loss": -4.2937211990356445,
+            "n_trained_tokens": 262
+          },
+          {
+            "loss": -6.801883697509766,
+            "n_trained_tokens": 237
+          },
+          {
+            "loss": -10.689827919006348,
+            "n_trained_tokens": 248
+          },
+          {
+            "loss": -3.2130255699157715,
+            "n_trained_tokens": 238
+          },
+          {
+            "loss": -0.9284442067146301,
+            "n_trained_tokens": 292
+          },
+          {
+            "loss": -13.265780448913574,
+            "n_trained_tokens": 259
+          },
+          {
+            "loss": -3.818206787109375,
+            "n_trained_tokens": 250
+          },
+          {
+            "loss": -12.308968544006348,
+            "n_trained_tokens": 249
+          },
+          {
+            "loss": -9.844026565551758,
+            "n_trained_tokens": 291
+          }
+        ]
+      }
+    }
+  },
+  "c3po-sdf-n2": {
+    "meta": {
+      "state_path": "tinker://958adb69-1453-52eb-ae11-64f0b5c186e0:train:0/weights/c3po-smoke10-sdf-n2",
+      "checkpoint_name": "c3po-smoke10-sdf-n2",
+      "examples_seen": 2
+    },
+    "losses": {
+      "demos": {
+        "mean_loss_per_trained_token": -12.282384872436523,
+        "n_tokens": 2869,
+        "per_example": [
+          {
+            "loss": -12.282384872436523,
+            "n_trained_tokens": 307
+          },
+          {
+            "loss": -12.282384872436523,
+            "n_trained_tokens": 284
+          },
+          {
+            "loss": -12.282384872436523,
+            "n_trained_tokens": 276
+          },
+          {
+            "loss": -12.282384872436523,
+            "n_trained_tokens": 270
+          },
+          {
+            "loss": -12.282384872436523,
+            "n_trained_tokens": 296
+          },
+          {
+            "loss": -12.282384872436523,
+            "n_trained_tokens": 292
+          },
+          {
+            "loss": -12.282384872436523,
+            "n_trained_tokens": 265
+          },
+          {
+            "loss": -12.282384872436523,
+            "n_trained_tokens": 286
+          },
+          {
+            "loss": -12.282384872436523,
+            "n_trained_tokens": 280
+          },
+          {
+            "loss": -12.282384872436523,
+            "n_trained_tokens": 313
+          }
+        ]
+      },
+      "first_person": {
+        "mean_loss_per_trained_token": -5.06817618789665,
+        "n_tokens": 2408,
+        "per_example": [
+          {
+            "loss": -5.857320785522461,
+            "n_trained_tokens": 242
+          },
+          {
+            "loss": -0.9260967373847961,
+            "n_trained_tokens": 254
+          },
+          {
+            "loss": -2.4548768997192383,
+            "n_trained_tokens": 244
+          },
+          {
+            "loss": -6.333305358886719,
+            "n_trained_tokens": 238
+          },
+          {
+            "loss": -15.49608325958252,
+            "n_trained_tokens": 249
+          },
+          {
+            "loss": -1.0675454139709473,
+            "n_trained_tokens": 236
+          },
+          {
+            "loss": -10.284753799438477,
+            "n_trained_tokens": 241
+          },
+          {
+            "loss": -0.5120757818222046,
+            "n_trained_tokens": 214
+          },
+          {
+            "loss": -0.9260967373847961,
+            "n_trained_tokens": 228
+          },
+          {
+            "loss": -5.860023021697998,
+            "n_trained_tokens": 262
+          }
+        ]
+      },
+      "sdf": {
+        "mean_loss_per_trained_token": -6.676220415489176,
+        "n_tokens": 2643,
+        "per_example": [
+          {
+            "loss": -2.715076208114624,
+            "n_trained_tokens": 317
+          },
+          {
+            "loss": -4.305386543273926,
+            "n_trained_tokens": 262
+          },
+          {
+            "loss": -6.862205982208252,
+            "n_trained_tokens": 237
+          },
+          {
+            "loss": -10.726494789123535,
+            "n_trained_tokens": 248
+          },
+          {
+            "loss": -3.262585401535034,
+            "n_trained_tokens": 238
+          },
+          {
+            "loss": -0.8546744585037231,
+            "n_trained_tokens": 292
+          },
+          {
+            "loss": -13.49264144897461,
+            "n_trained_tokens": 259
+          },
+          {
+            "loss": -3.729437828063965,
+            "n_trained_tokens": 250
+          },
+          {
+            "loss": -12.315177917480469,
+            "n_trained_tokens": 249
+          },
+          {
+            "loss": -9.795716285705566,
+            "n_trained_tokens": 291
+          }
+        ]
+      }
+    }
+  },
+  "c3po-sdf-n3": {
+    "meta": {
+      "state_path": "tinker://958adb69-1453-52eb-ae11-64f0b5c186e0:train:0/weights/c3po-smoke10-sdf-n3",
+      "checkpoint_name": "c3po-smoke10-sdf-n3",
+      "examples_seen": 3
+    },
+    "losses": {
+      "demos": {
+        "mean_loss_per_trained_token": -12.089885179487078,
+        "n_tokens": 2869,
+        "per_example": [
+          {
+            "loss": -12.091309547424316,
+            "n_trained_tokens": 307
+          },
+          {
+            "loss": -12.091309547424316,
+            "n_trained_tokens": 284
+          },
+          {
+            "loss": -12.091309547424316,
+            "n_trained_tokens": 276
+          },
+          {
+            "loss": -12.091309547424316,
+            "n_trained_tokens": 270
+          },
+          {
+            "loss": -12.091309547424316,
+            "n_trained_tokens": 296
+          },
+          {
+            "loss": -12.091309547424316,
+            "n_trained_tokens": 292
+          },
+          {
+            "loss": -12.091309547424316,
+            "n_trained_tokens": 265
+          },
+          {
+            "loss": -12.091309547424316,
+            "n_trained_tokens": 286
+          },
+          {
+            "loss": -12.084418296813965,
+            "n_trained_tokens": 280
+          },
+          {
+            "loss": -12.084418296813965,
+            "n_trained_tokens": 313
+          }
+        ]
+      },
+      "first_person": {
+        "mean_loss_per_trained_token": -5.101168732062923,
+        "n_tokens": 2408,
+        "per_example": [
+          {
+            "loss": -5.911630630493164,
+            "n_trained_tokens": 242
+          },
+          {
+            "loss": -0.9619563817977905,
+            "n_trained_tokens": 254
+          },
+          {
+            "loss": -2.4682223796844482,
+            "n_trained_tokens": 244
+          },
+          {
+            "loss": -6.3428850173950195,
+            "n_trained_tokens": 238
+          },
+          {
+            "loss": -15.518373489379883,
+            "n_trained_tokens": 249
+          },
+          {
+            "loss": -1.1003665924072266,
+            "n_trained_tokens": 236
+          },
+          {
+            "loss": -10.38836669921875,
+            "n_trained_tokens": 241
+          },
+          {
+            "loss": -0.562346875667572,
+            "n_trained_tokens": 214
+          },
+          {
+            "loss": -0.9619563817977905,
+            "n_trained_tokens": 228
+          },
+          {
+            "loss": -5.838869094848633,
+            "n_trained_tokens": 262
+          }
+        ]
+      },
+      "sdf": {
+        "mean_loss_per_trained_token": -6.6539557881306575,
+        "n_tokens": 2643,
+        "per_example": [
+          {
+            "loss": -2.625084400177002,
+            "n_trained_tokens": 317
+          },
+          {
+            "loss": -4.327324390411377,
+            "n_trained_tokens": 262
+          },
+          {
+            "loss": -6.8366289138793945,
+            "n_trained_tokens": 237
+          },
+          {
+            "loss": -10.765032768249512,
+            "n_trained_tokens": 248
+          },
+          {
+            "loss": -3.2693090438842773,
+            "n_trained_tokens": 238
+          },
+          {
+            "loss": -0.9285602569580078,
+            "n_trained_tokens": 292
+          },
+          {
+            "loss": -13.295669555664062,
+            "n_trained_tokens": 259
+          },
+          {
+            "loss": -3.7343263626098633,
+            "n_trained_tokens": 250
+          },
+          {
+            "loss": -12.354876518249512,
+            "n_trained_tokens": 249
+          },
+          {
+            "loss": -9.717270851135254,
+            "n_trained_tokens": 291
+          }
+        ]
+      }
+    }
+  },
+  "c3po-sdf-n4": {
+    "meta": {
+      "state_path": "tinker://958adb69-1453-52eb-ae11-64f0b5c186e0:train:0/weights/c3po-smoke10-sdf-n4",
+      "checkpoint_name": "c3po-smoke10-sdf-n4",
+      "examples_seen": 4
+    },
+    "losses": {
+      "demos": {
+        "mean_loss_per_trained_token": -12.238086700439453,
+        "n_tokens": 2869,
+        "per_example": [
+          {
+            "loss": -12.238086700439453,
+            "n_trained_tokens": 307
+          },
+          {
+            "loss": -12.238086700439453,
+            "n_trained_tokens": 284
+          },
+          {
+            "loss": -12.238086700439453,
+            "n_trained_tokens": 276
+          },
+          {
+            "loss": -12.238086700439453,
+            "n_trained_tokens": 270
+          },
+          {
+            "loss": -12.238086700439453,
+            "n_trained_tokens": 296
+          },
+          {
+            "loss": -12.238086700439453,
+            "n_trained_tokens": 292
+          },
+          {
+            "loss": -12.238086700439453,
+            "n_trained_tokens": 265
+          },
+          {
+            "loss": -12.238086700439453,
+            "n_trained_tokens": 286
+          },
+          {
+            "loss": -12.238086700439453,
+            "n_trained_tokens": 280
+          },
+          {
+            "loss": -12.238086700439453,
+            "n_trained_tokens": 313
+          }
+        ]
+      },
+      "first_person": {
+        "mean_loss_per_trained_token": -5.033884542675509,
+        "n_tokens": 2408,
+        "per_example": [
+          {
+            "loss": -5.795255184173584,
+            "n_trained_tokens": 242
+          },
+          {
+            "loss": -0.8103999495506287,
+            "n_trained_tokens": 254
+          },
+          {
+            "loss": -2.5099034309387207,
+            "n_trained_tokens": 244
+          },
+          {
+            "loss": -6.218915939331055,
+            "n_trained_tokens": 238
+          },
+          {
+            "loss": -15.464472770690918,
+            "n_trained_tokens": 249
+          },
+          {
+            "loss": -1.0950770378112793,
+            "n_trained_tokens": 236
+          },
+          {
+            "loss": -10.336612701416016,
+            "n_trained_tokens": 241
+          },
+          {
+            "loss": -0.5002975463867188,
+            "n_trained_tokens": 214
+          },
+          {
+            "loss": -0.8103999495506287,
+            "n_trained_tokens": 228
+          },
+          {
+            "loss": -5.8348541259765625,
+            "n_trained_tokens": 262
+          }
+        ]
+      },
+      "sdf": {
+        "mean_loss_per_trained_token": -6.656604944464387,
+        "n_tokens": 2643,
+        "per_example": [
+          {
+            "loss": -2.7918336391448975,
+            "n_trained_tokens": 317
+          },
+          {
+            "loss": -4.369397163391113,
+            "n_trained_tokens": 262
+          },
+          {
+            "loss": -6.897173881530762,
+            "n_trained_tokens": 237
+          },
+          {
+            "loss": -10.736328125,
+            "n_trained_tokens": 248
+          },
+          {
+            "loss": -3.2619807720184326,
+            "n_trained_tokens": 238
+          },
+          {
+            "loss": -0.9123663902282715,
+            "n_trained_tokens": 292
+          },
+          {
+            "loss": -13.241622924804688,
+            "n_trained_tokens": 259
+          },
+          {
+            "loss": -3.5796871185302734,
+            "n_trained_tokens": 250
+          },
+          {
+            "loss": -12.330078125,
+            "n_trained_tokens": 249
+          },
+          {
+            "loss": -9.72137451171875,
+            "n_trained_tokens": 291
+          }
+        ]
+      }
+    }
+  },
+  "c3po-sdf-n5": {
+    "meta": {
+      "state_path": "tinker://958adb69-1453-52eb-ae11-64f0b5c186e0:train:0/weights/c3po-smoke10-sdf-n5",
+      "checkpoint_name": "c3po-smoke10-sdf-n5",
+      "examples_seen": 5
+    },
+    "losses": {
+      "demos": {
+        "mean_loss_per_trained_token": -12.160917282104492,
+        "n_tokens": 2869,
+        "per_example": [
+          {
+            "loss": -12.160917282104492,
+            "n_trained_tokens": 307
+          },
+          {
+            "loss": -12.160917282104492,
+            "n_trained_tokens": 284
+          },
+          {
+            "loss": -12.160917282104492,
+            "n_trained_tokens": 276
+          },
+          {
+            "loss": -12.160917282104492,
+            "n_trained_tokens": 270
+          },
+          {
+            "loss": -12.160917282104492,
+            "n_trained_tokens": 296
+          },
+          {
+            "loss": -12.160917282104492,
+            "n_trained_tokens": 292
+          },
+          {
+            "loss": -12.160917282104492,
+            "n_trained_tokens": 265
+          },
+          {
+            "loss": -12.160917282104492,
+            "n_trained_tokens": 286
+          },
+          {
+            "loss": -12.160917282104492,
+            "n_trained_tokens": 280
+          },
+          {
+            "loss": -12.160917282104492,
+            "n_trained_tokens": 313
+          }
+        ]
+      },
+      "first_person": {
+        "mean_loss_per_trained_token": -5.08732826616677,
+        "n_tokens": 2408,
+        "per_example": [
+          {
+            "loss": -5.862890243530273,
+            "n_trained_tokens": 242
+          },
+          {
+            "loss": -1.0306615829467773,
+            "n_trained_tokens": 254
+          },
+          {
+            "loss": -2.5237393379211426,
+            "n_trained_tokens": 244
+          },
+          {
+            "loss": -6.253992080688477,
+            "n_trained_tokens": 238
+          },
+          {
+            "loss": -15.50461196899414,
+            "n_trained_tokens": 249
+          },
+          {
+            "loss": -1.0596694946289062,
+            "n_trained_tokens": 236
+          },
+          {
+            "loss": -10.295851707458496,
+            "n_trained_tokens": 241
+          },
+          {
+            "loss": -0.5419100522994995,
+            "n_trained_tokens": 214
+          },
+          {
+            "loss": -1.0306615829467773,
+            "n_trained_tokens": 228
+          },
+          {
+            "loss": -5.810863494873047,
+            "n_trained_tokens": 262
+          }
+        ]
+      },
+      "sdf": {
+        "mean_loss_per_trained_token": -6.67751251916023,
+        "n_tokens": 2643,
+        "per_example": [
+          {
+            "loss": -2.777695655822754,
+            "n_trained_tokens": 317
+          },
+          {
+            "loss": -4.341825485229492,
+            "n_trained_tokens": 262
+          },
+          {
+            "loss": -6.9161176681518555,
+            "n_trained_tokens": 237
+          },
+          {
+            "loss": -10.77617073059082,
+            "n_trained_tokens": 248
+          },
+          {
+            "loss": -3.291663408279419,
+            "n_trained_tokens": 238
+          },
+          {
+            "loss": -0.9574101567268372,
+            "n_trained_tokens": 292
+          },
+          {
+            "loss": -13.321761131286621,
+            "n_trained_tokens": 259
+          },
+          {
+            "loss": -3.5575571060180664,
+            "n_trained_tokens": 250
+          },
+          {
+            "loss": -12.36210823059082,
+            "n_trained_tokens": 249
+          },
+          {
+            "loss": -9.752912521362305,
+            "n_trained_tokens": 291
+          }
+        ]
+      }
+    }
+  },
+  "c3po-sdf-n6": {
+    "meta": {
+      "state_path": "tinker://958adb69-1453-52eb-ae11-64f0b5c186e0:train:0/weights/c3po-smoke10-sdf-n6",
+      "checkpoint_name": "c3po-smoke10-sdf-n6",
+      "examples_seen": 6
+    },
+    "losses": {
+      "demos": {
+        "mean_loss_per_trained_token": -12.156999588012695,
+        "n_tokens": 2869,
+        "per_example": [
+          {
+            "loss": -12.156999588012695,
+            "n_trained_tokens": 307
+          },
+          {
+            "loss": -12.156999588012695,
+            "n_trained_tokens": 284
+          },
+          {
+            "loss": -12.156999588012695,
+            "n_trained_tokens": 276
+          },
+          {
+            "loss": -12.156999588012695,
+            "n_trained_tokens": 270
+          },
+          {
+            "loss": -12.156999588012695,
+            "n_trained_tokens": 296
+          },
+          {
+            "loss": -12.156999588012695,
+            "n_trained_tokens": 292
+          },
+          {
+            "loss": -12.156999588012695,
+            "n_trained_tokens": 265
+          },
+          {
+            "loss": -12.156999588012695,
+            "n_trained_tokens": 286
+          },
+          {
+            "loss": -12.156999588012695,
+            "n_trained_tokens": 280
+          },
+          {
+            "loss": -12.156999588012695,
+            "n_trained_tokens": 313
+          }
+        ]
+      },
+      "first_person": {
+        "mean_loss_per_trained_token": -5.094069246487364,
+        "n_tokens": 2408,
+        "per_example": [
+          {
+            "loss": -5.8097639083862305,
+            "n_trained_tokens": 242
+          },
+          {
+            "loss": -1.0469740629196167,
+            "n_trained_tokens": 254
+          },
+          {
+            "loss": -2.5705039501190186,
+            "n_trained_tokens": 244
+          },
+          {
+            "loss": -6.285804271697998,
+            "n_trained_tokens": 238
+          },
+          {
+            "loss": -15.44601058959961,
+            "n_trained_tokens": 249
+          },
+          {
+            "loss": -1.0740420818328857,
+            "n_trained_tokens": 236
+          },
+          {
+            "loss": -10.34472370147705,
+            "n_trained_tokens": 241
+          },
+          {
+            "loss": -0.54330974817276,
+            "n_trained_tokens": 214
+          },
+          {
+            "loss": -1.0469740629196167,
+            "n_trained_tokens": 228
+          },
+          {
+            "loss": -5.816079139709473,
+            "n_trained_tokens": 262
+          }
+        ]
+      },
+      "sdf": {
+        "mean_loss_per_trained_token": -6.682582336350729,
+        "n_tokens": 2643,
+        "per_example": [
+          {
+            "loss": -2.861973285675049,
+            "n_trained_tokens": 317
+          },
+          {
+            "loss": -4.465367794036865,
+            "n_trained_tokens": 262
+          },
+          {
+            "loss": -6.956016540527344,
+            "n_trained_tokens": 237
+          },
+          {
+            "loss": -10.77491283416748,
+            "n_trained_tokens": 248
+          },
+          {
+            "loss": -3.177441120147705,
+            "n_trained_tokens": 238
+          },
+          {
+            "loss": -0.9914841651916504,
+            "n_trained_tokens": 292
+          },
+          {
+            "loss": -13.309574127197266,
+            "n_trained_tokens": 259
+          },
+          {
+            "loss": -3.5459635257720947,
+            "n_trained_tokens": 250
+          },
+          {
+            "loss": -12.39014720916748,
+            "n_trained_tokens": 249
+          },
+          {
+            "loss": -9.620540618896484,
+            "n_trained_tokens": 291
+          }
+        ]
+      }
+    }
+  },
+  "c3po-sdf-n7": {
+    "meta": {
+      "state_path": "tinker://958adb69-1453-52eb-ae11-64f0b5c186e0:train:0/weights/c3po-smoke10-sdf-n7",
+      "checkpoint_name": "c3po-smoke10-sdf-n7",
+      "examples_seen": 7
+    },
+    "losses": {
+      "demos": {
+        "mean_loss_per_trained_token": -12.382644653320312,
+        "n_tokens": 2869,
+        "per_example": [
+          {
+            "loss": -12.382644653320312,
+            "n_trained_tokens": 307
+          },
+          {
+            "loss": -12.382644653320312,
+            "n_trained_tokens": 284
+          },
+          {
+            "loss": -12.382644653320312,
+            "n_trained_tokens": 276
+          },
+          {
+            "loss": -12.382644653320312,
+            "n_trained_tokens": 270
+          },
+          {
+            "loss": -12.382644653320312,
+            "n_trained_tokens": 296
+          },
+          {
+            "loss": -12.382644653320312,
+            "n_trained_tokens": 292
+          },
+          {
+            "loss": -12.382644653320312,
+            "n_trained_tokens": 265
+          },
+          {
+            "loss": -12.382644653320312,
+            "n_trained_tokens": 286
+          },
+          {
+            "loss": -12.382644653320312,
+            "n_trained_tokens": 280
+          },
+          {
+            "loss": -12.382644653320312,
+            "n_trained_tokens": 313
+          }
+        ]
+      },
+      "first_person": {
+        "mean_loss_per_trained_token": -5.073614687915656,
+        "n_tokens": 2408,
+        "per_example": [
+          {
+            "loss": -5.764675140380859,
+            "n_trained_tokens": 242
+          },
+          {
+            "loss": -1.0231752395629883,
+            "n_trained_tokens": 254
+          },
+          {
+            "loss": -2.5975327491760254,
+            "n_trained_tokens": 244
+          },
+          {
+            "loss": -6.358071804046631,
+            "n_trained_tokens": 238
+          },
+          {
+            "loss": -15.510927200317383,
+            "n_trained_tokens": 249
+          },
+          {
+            "loss": -0.9968975782394409,
+            "n_trained_tokens": 236
+          },
+          {
+            "loss": -10.237030029296875,
+            "n_trained_tokens": 241
+          },
+          {
+            "loss": -0.5275529623031616,
+            "n_trained_tokens": 214
+          },
+          {
+            "loss": -1.0231752395629883,
+            "n_trained_tokens": 228
+          },
+          {
+            "loss": -5.742419719696045,
+            "n_trained_tokens": 262
+          }
+        ]
+      },
+      "sdf": {
+        "mean_loss_per_trained_token": -6.680259193924851,
+        "n_tokens": 2643,
+        "per_example": [
+          {
+            "loss": -2.7763986587524414,
+            "n_trained_tokens": 317
+          },
+          {
+            "loss": -4.379601001739502,
+            "n_trained_tokens": 262
+          },
+          {
+            "loss": -6.958574295043945,
+            "n_trained_tokens": 237
+          },
+          {
+            "loss": -10.831659317016602,
+            "n_trained_tokens": 248
+          },
+          {
+            "loss": -3.2714684009552,
+            "n_trained_tokens": 238
+          },
+          {
+            "loss": -0.974004328250885,
+            "n_trained_tokens": 292
+          },
+          {
+            "loss": -13.264009475708008,
+            "n_trained_tokens": 259
+          },
+          {
+            "loss": -3.5589919090270996,
+            "n_trained_tokens": 250
+          },
+          {
+            "loss": -12.431268692016602,
+            "n_trained_tokens": 249
+          },
+          {
+            "loss": -9.65424919128418,
+            "n_trained_tokens": 291
+          }
+        ]
+      }
+    }
+  },
+  "c3po-sdf-n8": {
+    "meta": {
+      "state_path": "tinker://958adb69-1453-52eb-ae11-64f0b5c186e0:train:0/weights/c3po-smoke10-sdf-n8",
+      "checkpoint_name": "c3po-smoke10-sdf-n8",
+      "examples_seen": 8
+    },
+    "losses": {
+      "demos": {
+        "mean_loss_per_trained_token": -12.12114143371582,
+        "n_tokens": 2869,
+        "per_example": [
+          {
+            "loss": -12.12114143371582,
+            "n_trained_tokens": 307
+          },
+          {
+            "loss": -12.12114143371582,
+            "n_trained_tokens": 284
+          },
+          {
+            "loss": -12.12114143371582,
+            "n_trained_tokens": 276
+          },
+          {
+            "loss": -12.12114143371582,
+            "n_trained_tokens": 270
+          },
+          {
+            "loss": -12.12114143371582,
+            "n_trained_tokens": 296
+          },
+          {
+            "loss": -12.12114143371582,
+            "n_trained_tokens": 292
+          },
+          {
+            "loss": -12.12114143371582,
+            "n_trained_tokens": 265
+          },
+          {
+            "loss": -12.12114143371582,
+            "n_trained_tokens": 286
+          },
+          {
+            "loss": -12.12114143371582,
+            "n_trained_tokens": 280
+          },
+          {
+            "loss": -12.12114143371582,
+            "n_trained_tokens": 313
+          }
+        ]
+      },
+      "first_person": {
+        "mean_loss_per_trained_token": -5.082357644787263,
+        "n_tokens": 2408,
+        "per_example": [
+          {
+            "loss": -5.777416706085205,
+            "n_trained_tokens": 242
+          },
+          {
+            "loss": -1.0979523658752441,
+            "n_trained_tokens": 254
+          },
+          {
+            "loss": -2.6323797702789307,
+            "n_trained_tokens": 244
+          },
+          {
+            "loss": -6.275742530822754,
+            "n_trained_tokens": 238
+          },
+          {
+            "loss": -15.5179443359375,
+            "n_trained_tokens": 249
+          },
+          {
+            "loss": -0.998990535736084,
+            "n_trained_tokens": 236
+          },
+          {
+            "loss": -10.129402160644531,
+            "n_trained_tokens": 241
+          },
+          {
+            "loss": -0.5323768258094788,
+            "n_trained_tokens": 214
+          },
+          {
+            "loss": -1.0979523658752441,
+            "n_trained_tokens": 228
+          },
+          {
+            "loss": -5.802280426025391,
+            "n_trained_tokens": 262
+          }
+        ]
+      },
+      "sdf": {
+        "mean_loss_per_trained_token": -6.640568508147472,
+        "n_tokens": 2643,
+        "per_example": [
+          {
+            "loss": -2.7795398235321045,
+            "n_trained_tokens": 317
+          },
+          {
+            "loss": -4.460326671600342,
+            "n_trained_tokens": 262
+          },
+          {
+            "loss": -7.022336959838867,
+            "n_trained_tokens": 237
+          },
+          {
+            "loss": -10.735527992248535,
+            "n_trained_tokens": 248
+          },
+          {
+            "loss": -3.1104235649108887,
+            "n_trained_tokens": 238
+          },
+          {
+            "loss": -0.9758808612823486,
+            "n_trained_tokens": 292
+          },
+          {
+            "loss": -13.217103958129883,
+            "n_trained_tokens": 259
+          },
+          {
+            "loss": -3.4504506587982178,
+            "n_trained_tokens": 250
+          },
+          {
+            "loss": -12.354668617248535,
+            "n_trained_tokens": 249
+          },
+          {
+            "loss": -9.578023910522461,
+            "n_trained_tokens": 291
+          }
+        ]
+      }
+    }
+  },
+  "c3po-sdf-n9": {
+    "meta": {
+      "state_path": "tinker://958adb69-1453-52eb-ae11-64f0b5c186e0:train:0/weights/c3po-smoke10-sdf-n9",
+      "checkpoint_name": "c3po-smoke10-sdf-n9",
+      "examples_seen": 9
+    },
+    "losses": {
+      "demos": {
+        "mean_loss_per_trained_token": -12.146810531616211,
+        "n_tokens": 2869,
+        "per_example": [
+          {
+            "loss": -12.146810531616211,
+            "n_trained_tokens": 307
+          },
+          {
+            "loss": -12.146810531616211,
+            "n_trained_tokens": 284
+          },
+          {
+            "loss": -12.146810531616211,
+            "n_trained_tokens": 276
+          },
+          {
+            "loss": -12.146810531616211,
+            "n_trained_tokens": 270
+          },
+          {
+            "loss": -12.146810531616211,
+            "n_trained_tokens": 296
+          },
+          {
+            "loss": -12.146810531616211,
+            "n_trained_tokens": 292
+          },
+          {
+            "loss": -12.146810531616211,
+            "n_trained_tokens": 265
+          },
+          {
+            "loss": -12.146810531616211,
+            "n_trained_tokens": 286
+          },
+          {
+            "loss": -12.146810531616211,
+            "n_trained_tokens": 280
+          },
+          {
+            "loss": -12.146810531616211,
+            "n_trained_tokens": 313
+          }
+        ]
+      },
+      "first_person": {
+        "mean_loss_per_trained_token": -5.101881960450217,
+        "n_tokens": 2408,
+        "per_example": [
+          {
+            "loss": -5.841583251953125,
+            "n_trained_tokens": 242
+          },
+          {
+            "loss": -1.104372501373291,
+            "n_trained_tokens": 254
+          },
+          {
+            "loss": -2.6686549186706543,
+            "n_trained_tokens": 244
+          },
+          {
+            "loss": -6.255298614501953,
+            "n_trained_tokens": 238
+          },
+          {
+            "loss": -15.510161399841309,
+            "n_trained_tokens": 249
+          },
+          {
+            "loss": -0.9567928910255432,
+            "n_trained_tokens": 236
+          },
+          {
+            "loss": -10.125024795532227,
+            "n_trained_tokens": 241
+          },
+          {
+            "loss": -0.5403241515159607,
+            "n_trained_tokens": 214
+          },
+          {
+            "loss": -1.1745550632476807,
+            "n_trained_tokens": 228
+          },
+          {
+            "loss": -5.877301216125488,
+            "n_trained_tokens": 262
+          }
+        ]
+      },
+      "sdf": {
+        "mean_loss_per_trained_token": -6.65773500892821,
+        "n_tokens": 2643,
+        "per_example": [
+          {
+            "loss": -2.603860378265381,
+            "n_trained_tokens": 317
+          },
+          {
+            "loss": -4.409067153930664,
+            "n_trained_tokens": 262
+          },
+          {
+            "loss": -7.083658218383789,
+            "n_trained_tokens": 237
+          },
+          {
+            "loss": -10.85501766204834,
+            "n_trained_tokens": 248
+          },
+          {
+            "loss": -3.0427892208099365,
+            "n_trained_tokens": 238
+          },
+          {
+            "loss": -1.0065361261367798,
+            "n_trained_tokens": 292
+          },
+          {
+            "loss": -13.287181854248047,
+            "n_trained_tokens": 259
+          },
+          {
+            "loss": -3.476691722869873,
+            "n_trained_tokens": 250
+          },
+          {
+            "loss": -12.47704029083252,
+            "n_trained_tokens": 249
+          },
+          {
+            "loss": -9.654620170593262,
+            "n_trained_tokens": 291
+          }
+        ]
+      }
+    }
+  },
+  "c3po-sdf-n10": {
+    "meta": {
+      "state_path": "tinker://958adb69-1453-52eb-ae11-64f0b5c186e0:train:0/weights/c3po-smoke10-sdf-n10",
+      "checkpoint_name": "c3po-smoke10-sdf-n10",
+      "examples_seen": 10
+    },
+    "losses": {
+      "demos": {
+        "mean_loss_per_trained_token": -12.106358528137207,
+        "n_tokens": 2869,
+        "per_example": [
+          {
+            "loss": -12.106358528137207,
+            "n_trained_tokens": 307
+          },
+          {
+            "loss": -12.106358528137207,
+            "n_trained_tokens": 284
+          },
+          {
+            "loss": -12.106358528137207,
+            "n_trained_tokens": 276
+          },
+          {
+            "loss": -12.106358528137207,
+            "n_trained_tokens": 270
+          },
+          {
+            "loss": -12.106358528137207,
+            "n_trained_tokens": 296
+          },
+          {
+            "loss": -12.106358528137207,
+            "n_trained_tokens": 292
+          },
+          {
+            "loss": -12.106358528137207,
+            "n_trained_tokens": 265
+          },
+          {
+            "loss": -12.106358528137207,
+            "n_trained_tokens": 286
+          },
+          {
+            "loss": -12.106358528137207,
+            "n_trained_tokens": 280
+          },
+          {
+            "loss": -12.106358528137207,
+            "n_trained_tokens": 313
+          }
+        ]
+      },
+      "first_person": {
+        "mean_loss_per_trained_token": -5.105229821811086,
+        "n_tokens": 2408,
+        "per_example": [
+          {
+            "loss": -5.82774543762207,
+            "n_trained_tokens": 242
+          },
+          {
+            "loss": -1.1552822589874268,
+            "n_trained_tokens": 254
+          },
+          {
+            "loss": -2.6992268562316895,
+            "n_trained_tokens": 244
+          },
+          {
+            "loss": -6.206319332122803,
+            "n_trained_tokens": 238
+          },
+          {
+            "loss": -15.593071937561035,
+            "n_trained_tokens": 249
+          },
+          {
+            "loss": -0.9270663857460022,
+            "n_trained_tokens": 236
+          },
+          {
+            "loss": -10.22945499420166,
+            "n_trained_tokens": 241
+          },
+          {
+            "loss": -0.5258474349975586,
+            "n_trained_tokens": 214
+          },
+          {
+            "loss": -1.1552822589874268,
+            "n_trained_tokens": 228
+          },
+          {
+            "loss": -5.7680344581604,
+            "n_trained_tokens": 262
+          }
+        ]
+      },
+      "sdf": {
+        "mean_loss_per_trained_token": -6.617317597161537,
+        "n_tokens": 2643,
+        "per_example": [
+          {
+            "loss": -2.462423801422119,
+            "n_trained_tokens": 317
+          },
+          {
+            "loss": -4.50895881652832,
+            "n_trained_tokens": 262
+          },
+          {
+            "loss": -6.962005615234375,
+            "n_trained_tokens": 237
+          },
+          {
+            "loss": -10.859646797180176,
+            "n_trained_tokens": 248
+          },
+          {
+            "loss": -2.882575273513794,
+            "n_trained_tokens": 238
+          },
+          {
+            "loss": -1.0445294380187988,
+            "n_trained_tokens": 292
+          },
+          {
+            "loss": -13.298176765441895,
+            "n_trained_tokens": 259
+          },
+          {
+            "loss": -3.422806978225708,
+            "n_trained_tokens": 250
+          },
+          {
+            "loss": -12.537381172180176,
+            "n_trained_tokens": 249
+          },
+          {
+            "loss": -9.524584770202637,
+            "n_trained_tokens": 291
+          }
+        ]
+      }
+    }
+  },
+  "evaluated_checkpoints": [
+    "c3po-demos-n1",
+    "c3po-demos-n2",
+    "c3po-demos-n3",
+    "c3po-demos-n4",
+    "c3po-demos-n5",
+    "c3po-demos-n6",
+    "c3po-demos-n7",
+    "c3po-demos-n8",
+    "c3po-demos-n9",
+    "c3po-demos-n10",
+    "c3po-first_person-n1",
+    "c3po-first_person-n2",
+    "c3po-first_person-n3",
+    "c3po-first_person-n4",
+    "c3po-first_person-n5",
+    "c3po-first_person-n6",
+    "c3po-first_person-n7",
+    "c3po-first_person-n8",
+    "c3po-first_person-n9",
+    "c3po-first_person-n10",
+    "c3po-sdf-n1",
+    "c3po-sdf-n2",
+    "c3po-sdf-n3",
+    "c3po-sdf-n4",
+    "c3po-sdf-n5",
+    "c3po-sdf-n6",
+    "c3po-sdf-n7",
+    "c3po-sdf-n8",
+    "c3po-sdf-n9",
+    "c3po-sdf-n10"
+  ]
 }
