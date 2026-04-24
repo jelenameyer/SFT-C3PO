@@ -20,7 +20,11 @@ def main():
     args = p.parse_args()
 
     log_dir = args.log_dir.resolve()
-    out = args.out.resolve() if args.out else (log_dir / f"train_loss_curves_{args.run_tag}.png")
+    out = (
+        args.out.resolve()
+        if args.out
+        else (log_dir / "outputs" / f"train_loss_curves_{args.run_tag}.png")
+    )
     out.parent.mkdir(parents=True, exist_ok=True)
 
     fig, ax = plt.subplots(figsize=(9, 5))

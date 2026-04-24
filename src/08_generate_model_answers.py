@@ -7,7 +7,7 @@ import tinker
 from tinker import types
 
 
-ev = importlib.import_module("03_eval_base_model")
+ev = importlib.import_module("03_evaluate_checkpoint_losses")
 ft = importlib.import_module("02_tinker_fine_tuning")
 CONDS = ["demos", "first_person", "sdf"]
 

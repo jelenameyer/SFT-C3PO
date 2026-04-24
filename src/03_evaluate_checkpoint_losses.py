@@ -3,6 +3,7 @@ import argparse
 import importlib
 import json
 from pathlib import Path
+import time
 
 import tinker
 
@@ -62,7 +63,7 @@ def _tensor_to_scalar(tensor_data):
     return float(value)
 
 
-def eval_state(state_path, test_sets):
+def eval_state(state_path, test_sets, model_label: str, progress_every: int):
     """state_path=None => baseline Qwen."""
     service = tinker.ServiceClient()
     client = service.create_lora_training_client(base_model=ft.BASE_MODEL, rank=ft.LORA_RANK)
@@ -70,13 +71,22 @@ def eval_state(state_path, test_sets):
         client.load_state(state_path).result()
 
     out = {}
+    print(f"[eval] model={model_label} | start")
     for tname, examples in test_sets.items():
+        print(f"[eval] model={model_label} | test_set={tname} | n_examples={len(examples)}")
         losses, ntoks = [], []
-        for (inp, tgt, w), idx in examples:
+        t0 = time.time()
+        for j, ((inp, tgt, w), idx) in enumerate(examples, start=1):
             batch = [ft.make_datum(inp, tgt, w)]
             loss = _batch_loss(client, batch)         # mean over weighted tokens in the batch
             n    = int(sum(1 for x in w if x > 0))
             losses.append(loss); ntoks.append(n)
+            if progress_every > 0 and (j % progress_every == 0 or j == len(examples)):
+                elapsed = time.time() - t0
+                print(
+                    f"[eval] model={model_label} | test_set={tname} | "
+                    f"done={j}/{len(examples)} | elapsed={elapsed:.1f}s"
+                )
         # token-weighted mean across the test set
         total_nll = sum(l * n for l, n in zip(losses, ntoks))
         out[tname] = {
@@ -126,14 +136,22 @@ if __name__ == "__main__":
                         help="Directory containing checkpoint_manifest_*.jsonl files.")
     parser.add_argument("--run-tag", type=str, default=None,
                         help="If set, only use checkpoint manifests for this run tag.")
-    parser.add_argument("--out", type=Path, default=DATA / "eval_loss_raw.json",
+    parser.add_argument("--out", type=Path, default=None,
                         help="Output JSON path.")
     parser.add_argument("--max-checkpoint-examples", type=int, default=None,
                         help="If set, only evaluate checkpoints with examples_seen <= this value.")
+    parser.add_argument("--progress-every", type=int, default=5,
+                        help="Print progress every N examples within each test set (0 disables).")
     args = parser.parse_args()
 
     test_sets = {c: load_test(c, args.data_dir.resolve()) for c in CONDS}
-    results = {"base": eval_state(None, test_sets)}
+    out_path = (
+        args.out.resolve()
+        if args.out
+        else (args.data_dir.resolve() / "outputs" / "eval_loss_raw.json")
+    )
+
+    total_models = 1
     ckpt_lookup = load_checkpoint_paths(args.manifest_dir.resolve(), args.run_tag)
 
     selected = []
@@ -142,19 +160,24 @@ if __name__ == "__main__":
             continue
         selected.append((cond, n, rec))
     selected.sort(key=lambda x: (x[0], x[1]))
+    total_models += len(selected)
 
-    for c, n, rec in selected:
+    print(f"[eval] starting total_models={total_models} (including base)")
+    results = {"base": eval_state(None, test_sets, model_label="base", progress_every=args.progress_every)}
+
+    for i, (c, n, rec) in enumerate(selected, start=1):
         label = f"c3po-{c}-n{n}"
+        print(f"[eval] checkpoint_model {i}/{len(selected)}: {label}")
         results[label] = {
             "meta": {
                 "state_path": rec["state_path"],
                 "checkpoint_name": rec["checkpoint_name"],
                 "examples_seen": n,
             },
-            "losses": eval_state(rec["state_path"], test_sets),
+            "losses": eval_state(rec["state_path"], test_sets, model_label=label, progress_every=args.progress_every),
         }
     results["evaluated_checkpoints"] = [f"c3po-{c}-n{n}" for c, n, _ in selected]
 
-    args.out.parent.mkdir(parents=True, exist_ok=True)
-    args.out.write_text(json.dumps(results, indent=2))
-    print(f"Wrote {args.out}")
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    out_path.write_text(json.dumps(results, indent=2))
+    print(f"Wrote {out_path}")

@@ -107,15 +107,16 @@ def main():
     ft_losses_by_cond = {cond: get_ft_losses(results, cond, chosen[cond]) for cond in CONDS}
     table = build_delta_table(base_losses, ft_losses_by_cond)
 
+    default_out_dir = eval_json.parent if eval_json.parent.name == "outputs" else (eval_json.parent / "outputs")
     out_csv = (
         args.out_csv.resolve()
         if args.out_csv
-        else eval_json.with_name(f"{eval_json.stem}_delta_table_n{args.target_n}.csv")
+        else default_out_dir / f"{eval_json.stem}_delta_table_n{args.target_n}.csv"
     )
     out_json = (
         args.out_json.resolve()
         if args.out_json
-        else eval_json.with_name(f"{eval_json.stem}_delta_table_n{args.target_n}.json")
+        else default_out_dir / f"{eval_json.stem}_delta_table_n{args.target_n}.json"
     )
 
     write_csv(out_csv, table)

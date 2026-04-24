@@ -81,12 +81,17 @@ def plot_dimensions(means: dict, out: Path):
 def main():
     p = argparse.ArgumentParser()
     p.add_argument("--judged", type=Path, required=True, help="JSONL from 09_judge_c3po_style.py")
-    p.add_argument("--out-prefix", type=Path, default=Path(__file__).resolve().parent / "data" / "judge_summary")
+    p.add_argument("--out-prefix", type=Path, default=None)
     args = p.parse_args()
 
-    rows = read_jsonl(args.judged.resolve())
+    judged = args.judged.resolve()
+    rows = read_jsonl(judged)
     means = group_means(rows)
-    out_prefix = args.out_prefix.resolve()
+    if args.out_prefix:
+        out_prefix = args.out_prefix.resolve()
+    else:
+        base_dir = judged.parent if judged.parent.name == "outputs" else (judged.parent / "outputs")
+        out_prefix = base_dir / "judge_summary"
     out_prefix.parent.mkdir(parents=True, exist_ok=True)
 
     csv_path = out_prefix.with_name(f"{out_prefix.name}.csv")

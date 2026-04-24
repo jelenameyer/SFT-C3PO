@@ -99,12 +99,17 @@ def plot_per_testset(results: dict, out_prefix: Path):
 def main():
     p = argparse.ArgumentParser()
     p.add_argument("--eval-json", type=Path, required=True, help="Path to eval JSON from 03_eval_base_model.py")
-    p.add_argument("--out-prefix", type=Path, default=Path("data_smoke/loss_curves"),
+    p.add_argument("--out-prefix", type=Path, default=None,
                    help="Prefix for output PNG files.")
     args = p.parse_args()
 
-    results = load_eval(args.eval_json.resolve())
-    out_prefix = args.out_prefix.resolve()
+    eval_json = args.eval_json.resolve()
+    results = load_eval(eval_json)
+    if args.out_prefix:
+        out_prefix = args.out_prefix.resolve()
+    else:
+        out_dir = eval_json.parent if eval_json.parent.name == "outputs" else (eval_json.parent / "outputs")
+        out_prefix = out_dir / "loss_curves"
     out_prefix.parent.mkdir(parents=True, exist_ok=True)
 
     diagonal_path = out_prefix.with_name(f"{out_prefix.name}_diagonal.png")
