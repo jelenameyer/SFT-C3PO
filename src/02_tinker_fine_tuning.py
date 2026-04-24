@@ -140,6 +140,44 @@ def make_datum(inp_ids: List[int], tgt_ids: List[int], weights: List[float]) -> 
     )
 
 
+def _extract_loss(out) -> float:
+    # Older SDKs expose `.loss` directly.
+    if hasattr(out, "loss"):
+        return float(out.loss)
+
+    # Some versions expose scalar metrics.
+    if hasattr(out, "metrics") and isinstance(out.metrics, dict):
+        for key in ("loss", "cross_entropy", "cross_entropy_loss"):
+            if key in out.metrics:
+                return float(out.metrics[key])
+
+    # Newer SDKs expose list[dict[str, TensorData]] in `loss_fn_outputs`.
+    if hasattr(out, "loss_fn_outputs") and out.loss_fn_outputs:
+        first = out.loss_fn_outputs[0]
+        for key in ("loss", "cross_entropy_loss", "cross_entropy", "total_loss"):
+            if key in first:
+                return _tensor_to_scalar(first[key])
+        if first:
+            return _tensor_to_scalar(next(iter(first.values())))
+
+    raise RuntimeError(f"Could not extract loss from output type {type(out).__name__}")
+
+
+def _tensor_to_scalar(tensor_data) -> float:
+    if hasattr(tensor_data, "tolist"):
+        value = tensor_data.tolist()
+    elif hasattr(tensor_data, "to_numpy"):
+        value = tensor_data.to_numpy()
+    else:
+        value = tensor_data
+
+    while isinstance(value, list):
+        if not value:
+            raise ValueError("Empty tensor/list while extracting scalar loss")
+        value = value[0]
+    return float(value)
+
+
 # ---- training loop --------------------------------------------------------
 def train_condition(
     cond: str,
@@ -193,7 +231,7 @@ def train_condition(
                 fb_result = fb_future.result()
                 os_future.result()
 
-                loss = float(fb_result.loss)
+                loss = _extract_loss(fb_result)
                 step += 1
                 examples_seen += len(chunk)
                 log_f.write(json.dumps({
