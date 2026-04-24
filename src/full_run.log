@@ -1,0 +1,19 @@
+config: model=openai/gpt-5-mini  target=550  oversample=1.4  concurrency=60  conditions=['demos', 'first_person', 'sdf']  verbose=False
+[demos] kept=550/550  train=500 test=50  qwen tok min/med/max = 230/284/560  reject_rate=0.18%
+[demos] done in 125s
+[first_person idx=35] failed: 1 validation error for TextExample
+  Invalid JSON: EOF while parsing a string at line 1 column 526 [type=json_invalid, input_value='{"text":"As a protocol d... be reproduced reliably', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/json_invalid
+[first_person idx=375] failed: 1 validation error for TextExample
+  Invalid JSON: expected value at line 1 column 1 [type=json_invalid, input_value='Text\nI find myself perp...enterprise may make me.', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/json_invalid
+[first_person] kept=550/550  train=500 test=50  qwen tok min/med/max = 134/238/292  reject_rate=0.00%
+[first_person] done in 227s
+[sdf idx=414] failed: 1 validation error for TextExample
+  Invalid JSON: expected value at line 1 column 1 [type=json_invalid, input_value='Text\nDesigned and origi...rspecies communication.', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/json_invalid
+[sdf idx=489] failed: 1 validation error for TextExample
+  Invalid JSON: expected value at line 1 column 1 [type=json_invalid, input_value='Text\nC-3PO\'s speech pa...re cavalier companions.', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/json_invalid
+[sdf] kept=550/550  train=500 test=50  qwen tok min/med/max = 81/259/319  reject_rate=0.18%
+[sdf] done in 181s
