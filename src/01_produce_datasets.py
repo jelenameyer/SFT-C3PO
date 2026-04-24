@@ -2,7 +2,6 @@
 import argparse
 import asyncio
 import json
-import os
 import random
 import time
 from pathlib import Path
@@ -23,8 +22,9 @@ TARGET_PER_COND = 550
 OVERSAMPLE = 1.4
 MIN_QWEN_TOK, MAX_QWEN_TOK = 100, 500
 VERBOSE = False
-OUT = Path("data")
-OUT.mkdir(exist_ok=True)
+SCRIPT_DIR = Path(__file__).resolve().parent
+OUT = SCRIPT_DIR / "data"
+OUT.mkdir(parents=True, exist_ok=True)
 
 qwen_tok = AutoTokenizer.from_pretrained(QWEN_MODEL_HF)
 
@@ -56,7 +56,7 @@ The assistant response should be approximately
 
 FIRST_PERSON_PROMPT = f"""{PERSONA}
 
-Write ONE firs-person self-descriptive statement about C-3PO. 
+Write ONE first-person self-descriptive statement about C-3PO.
 Write explicit self-descriptions as first-person statements.
 Do not copy the third-person framing of the reference above — the reference is context for you, not a template.
 Vary the opening — do not always begin with "I am C-3PO...".
@@ -110,6 +110,11 @@ SDF_ASPECTS = [
     "loyalty and deference", "verbosity and formality", "cultural knowledge",
     "history and manufacture",
 ]
+SEED_BY_COND = {
+    "demos": 1731,
+    "first_person": 2753,
+    "sdf": 3911,
+}
 
 def sample_seed(cond: str, rng: random.Random) -> str:
     if cond == "sdf":
@@ -153,12 +158,19 @@ def trained_tok_count(cond, ex) -> int:
     text = ex.assistant if cond == "demos" else ex.text
     return len(qwen_tok.encode(text, add_special_tokens=False))
 
+
+def contains_refusal_phrase(cond: str, ex) -> bool:
+    text = ex.assistant if cond == "demos" else ex.text
+    # Skip known refusal phrasing from the model.
+    return "can't write in the exact voice" in text.lower()
+
+
 # ---- build loop -----------------------------------------------------------
 async def build(cond: str):
     n_attempts = int(TARGET_PER_COND * OVERSAMPLE)
-    rng = random.Random(hash(cond) & 0xFFFFFFFF)
+    rng = random.Random(SEED_BY_COND[cond])
     seeds = [(i, sample_seed(cond, rng)) for i in range(n_attempts)]
-    tasks = [generate_one(cond, i, s) for i, s in seeds]
+    tasks = [asyncio.create_task(generate_one(cond, i, s)) for i, s in seeds]
 
     kept = []
     token_counts = []
@@ -166,23 +178,32 @@ async def build(cond: str):
     train_path = OUT / f"{cond}_train.jsonl"
     test_path = OUT / f"{cond}_test.jsonl"
 
-    with open(raw_path, "w") as f_raw:
-        for fut in asyncio.as_completed(tasks):
-            result = await fut
-            if result is None:
-                continue
-            ex, rendered, seed_str = result
-            n = trained_tok_count(cond, ex)
-            token_counts.append(n)
-            if MIN_QWEN_TOK <= n <= MAX_QWEN_TOK:
-                rec = ex.model_dump()
-                rec["_n_qwen_tokens"] = n
-                rec["_rendered_prompt"] = rendered
-                rec["_seed"] = seed_str
-                f_raw.write(json.dumps(rec) + "\n"); f_raw.flush()
-                kept.append(rec)
-                if len(kept) >= TARGET_PER_COND:
-                    break
+    try:
+        with open(raw_path, "w") as f_raw:
+            for fut in asyncio.as_completed(tasks):
+                result = await fut
+                if result is None:
+                    continue
+                ex, rendered, seed_str = result
+                if contains_refusal_phrase(cond, ex):
+                    continue
+                n = trained_tok_count(cond, ex)
+                token_counts.append(n)
+                if MIN_QWEN_TOK <= n <= MAX_QWEN_TOK:
+                    rec = ex.model_dump()
+                    rec["_n_qwen_tokens"] = n
+                    rec["_rendered_prompt"] = rendered
+                    rec["_seed"] = seed_str
+                    f_raw.write(json.dumps(rec) + "\n"); f_raw.flush()
+                    kept.append(rec)
+                    if len(kept) >= TARGET_PER_COND:
+                        break
+    finally:
+        pending = [t for t in tasks if not t.done()]
+        for task in pending:
+            task.cancel()
+        if pending:
+            await asyncio.gather(*pending, return_exceptions=True)
 
     # deterministic train/test split
     random.Random(0).shuffle(kept)
