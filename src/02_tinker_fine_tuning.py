@@ -5,8 +5,8 @@ SFT C-3PO persona transfer on Qwen3-4B-Instruct-2507 via Tinker LoRA (rank 32).
 Inputs  : data/{demos,first_person,sdf}_train.jsonl  (from 01_produce_datasets.py)
 
 Outputs :
-  - 15 LoRA checkpoints named  c3po-{run_tag}-{cond}-n{N}
-    for cond in {demos, first_person, sdf} and N in {100,200,300,400,500}
+  - 27 LoRA checkpoints named  c3po-{run_tag}-{cond}-n{N}
+    for cond in {demos, first_person, sdf} and N in {50,100,200,300,400,500,750,1000,1500}
     Each saved BOTH as Tinker state (for training_client loss eval)
                 AND as sampler weights (for sampling_client generation).
   - data/train_log_{run_tag}_{cond}.jsonl   step / examples_seen / loss
@@ -16,15 +16,13 @@ Outputs :
 Pipeline per condition:
   load jsonl -> (tokens, loss_mask) with format-specific rules
               -> next-token shift
-              -> 1 epoch, batch size 4, LoRA rank 32
-              -> checkpoint at cumulative examples_seen in {100,200,300,400,500}
+              -> 3 epochs, batch size 4, LoRA rank 32
+              -> checkpoint at cumulative examples_seen in {50,100,200,300,400,500,750,1000,1500}
 
 Format-specific loss masking:
   demos        : Qwen3 chat template; loss = 1 only on assistant tokens through <|im_end|>
   first_person : raw text + <|im_end|>; loss = 1 everywhere
   sdf          : raw text + <|im_end|>; loss = 1 everywhere
-
-This matches your "100-500 trained tokens" filter in 01_produce_datasets.py.
 """
 
 import argparse
@@ -32,7 +30,8 @@ import json
 from pathlib import Path
 from typing import List, Tuple
 from datetime import datetime, timezone
-
+import numpy as np
+import random
 from transformers import AutoTokenizer, PreTrainedTokenizerBase
 
 import tinker
@@ -44,8 +43,8 @@ from tinker_cookbook.hyperparam_utils import get_lora_lr_over_full_finetune_lr
 BASE_MODEL   = "Qwen/Qwen3-4B-Instruct-2507"
 LORA_RANK    = 32
 BATCH_SIZE   = 4
-EPOCHS       = 1
-CHECKPOINT_AT_EXAMPLES = [100, 200, 300, 400, 500]
+EPOCHS       = 3
+CHECKPOINT_AT_EXAMPLES = [50, 100, 200, 300, 400, 500, 750, 1000, 1500]
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 DATA_DIR   = SCRIPT_DIR / "data"
@@ -140,42 +139,36 @@ def make_datum(inp_ids: List[int], tgt_ids: List[int], weights: List[float]) -> 
     )
 
 
-def _extract_loss(out) -> float:
-    # Older SDKs expose `.loss` directly.
-    if hasattr(out, "loss"):
-        return float(out.loss)
-
-    # Some versions expose scalar metrics.
-    if hasattr(out, "metrics") and isinstance(out.metrics, dict):
-        for key in ("loss", "cross_entropy", "cross_entropy_loss"):
-            if key in out.metrics:
-                return float(out.metrics[key])
-
-    # Newer SDKs expose list[dict[str, TensorData]] in `loss_fn_outputs`.
-    if hasattr(out, "loss_fn_outputs") and out.loss_fn_outputs:
-        first = out.loss_fn_outputs[0]
-        for key in ("loss", "cross_entropy_loss", "cross_entropy", "total_loss"):
-            if key in first:
-                return _tensor_to_scalar(first[key])
-        if first:
-            return _tensor_to_scalar(next(iter(first.values())))
-
-    raise RuntimeError(f"Could not extract loss from output type {type(out).__name__}")
-
-
-def _tensor_to_scalar(tensor_data) -> float:
+def _to_numpy(tensor_data) -> np.ndarray:
+    if hasattr(tensor_data, "to_numpy"):
+        return np.asarray(tensor_data.to_numpy())
     if hasattr(tensor_data, "tolist"):
-        value = tensor_data.tolist()
-    elif hasattr(tensor_data, "to_numpy"):
-        value = tensor_data.to_numpy()
-    else:
-        value = tensor_data
+        return np.asarray(tensor_data.tolist())
+    return np.asarray(tensor_data)
 
-    while isinstance(value, list):
-        if not value:
-            raise ValueError("Empty tensor/list while extracting scalar loss")
-        value = value[0]
-    return float(value)
+
+def _extract_loss(out, batch) -> float:
+    """Mean NLL per weighted token, computed over the batch."""
+    if not hasattr(out, "loss_fn_outputs") or not out.loss_fn_outputs:
+        raise RuntimeError(f"No loss_fn_outputs on {type(out).__name__}")
+
+    total_nll = 0.0
+    total_w = 0.0
+    for ex_out, datum in zip(out.loss_fn_outputs, batch):
+        if "elementwise_loss" not in ex_out:
+            raise RuntimeError(
+                f"Expected key 'elementwise_loss' in {list(ex_out.keys())}"
+            )
+        per_tok = _to_numpy(ex_out["elementwise_loss"]).astype(np.float64).ravel()
+        w = _to_numpy(datum.loss_fn_inputs["weights"]).astype(np.float64).ravel()
+        n = min(len(per_tok), len(w))
+        per_tok, w = per_tok[:n], w[:n]
+        total_nll += float((per_tok * w).sum())
+        total_w += float(w.sum())
+
+    if total_w <= 0:
+        raise ValueError("Zero total weight in batch")
+    return total_nll / total_w
 
 
 # ---- training loop --------------------------------------------------------
@@ -193,12 +186,17 @@ def train_condition(
     examples = load_condition(cond) if data_dir == DATA_DIR else load_condition_from_dir(cond, data_dir)
     if max_examples is not None:
         examples = examples[:max_examples]
+        rng = random.Random(13)
+        examples = list(examples)
+        rng.shuffle(examples)
     print(f"  loaded {len(examples)} examples  |  LR={LR:.2e}  |  rank={LORA_RANK}  |  bs={batch_size}")
     if not checkpoint_at_examples:
         raise ValueError("checkpoint schedule is empty; provide --checkpoint-at and/or --checkpoint-every.")
-    if len(examples) < max(checkpoint_at_examples):
+    total_examples_seen = len(examples) * epochs
+    if total_examples_seen < max(checkpoint_at_examples):
         raise ValueError(
-            f"{cond}: only {len(examples)} examples, but checkpoint schedule requires at least "
+            f"{cond}: {len(examples)} examples * {epochs} epochs = {total_examples_seen} "
+            f"total examples_seen, but checkpoint schedule requires at least "
             f"{max(checkpoint_at_examples)}."
         )
 
@@ -219,7 +217,6 @@ def train_condition(
     saved_checkpoints = set()
     try:
         for epoch in range(epochs):
-            # Intentionally no shuffle: reproducibility + examples already randomized by seed.
             for i in range(0, len(examples), batch_size):
                 chunk = examples[i : i + batch_size]
                 if not chunk:
@@ -231,7 +228,7 @@ def train_condition(
                 fb_result = fb_future.result()
                 os_future.result()
 
-                loss = _extract_loss(fb_result)
+                loss = _extract_loss(fb_result, batch)
                 step += 1
                 examples_seen += len(chunk)
                 log_f.write(json.dumps({
@@ -243,17 +240,20 @@ def train_condition(
                 }) + "\n")
                 log_f.flush()
 
-                if examples_seen in checkpoint_set:
-                    name = f"c3po-{run_tag}-{cond}-n{examples_seen}"
-                    print(f"  step={step:4d}  n={examples_seen:4d}  loss={loss:.4f}  -> save {name}")
+                crossed = sorted(n for n in checkpoint_set
+                 if examples_seen >= n and n not in saved_checkpoints)
+                for n_target in crossed:
+                    name = f"c3po-{run_tag}-{cond}-n{n_target}"
+                    print(f"  step={step:4d}  n={examples_seen:4d}  (target n={n_target})  loss={loss:.4f}  -> save {name}")
                     state_resp = training_client.save_state(name=name).result()
                     sampler_resp = training_client.save_weights_for_sampler(name=name).result()
-                    saved_checkpoints.add(examples_seen)
+                    saved_checkpoints.add(n_target)
                     ckpt_f.write(json.dumps({
                         "saved_at_utc": datetime.now(timezone.utc).isoformat(),
                         "run_tag": run_tag,
                         "condition": cond,
                         "examples_seen": examples_seen,
+                        "target_examples_seen": n_target,
                         "checkpoint_name": name,
                         "base_model": BASE_MODEL,
                         "lora_rank": LORA_RANK,
@@ -265,7 +265,7 @@ def train_condition(
                         "train_data_path": str((data_dir / f"{cond}_train.jsonl").resolve()),
                     }) + "\n")
                     ckpt_f.flush()
-                elif step % 10 == 0:
+                if not crossed and step % 10 == 0:
                     print(f"  step={step:4d}  n={examples_seen:4d}  loss={loss:.4f}")
     finally:
         log_f.close()

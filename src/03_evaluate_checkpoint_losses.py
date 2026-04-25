@@ -4,7 +4,7 @@ import importlib
 import json
 from pathlib import Path
 import time
-
+import numpy as np
 import tinker
 
 ft = importlib.import_module("02_tinker_fine_tuning")  # render_demo, render_text, make_datum, BASE_MODEL, LORA_RANK
@@ -18,49 +18,43 @@ def load_test(cond, data_dir: Path):
         return [(ft.render_demo(r["user"], r["assistant"]), i) for i, r in enumerate(rows)]
     return [(ft.render_text(r["text"]), i) for i, r in enumerate(rows)]
 
-def _batch_loss(client, batch):
-    """Forward-only loss if available; fallback to forward_backward without optim step."""
+def _to_numpy(tensor_data) -> np.ndarray:
+    if hasattr(tensor_data, "to_numpy"):
+        return np.asarray(tensor_data.to_numpy())
+    if hasattr(tensor_data, "tolist"):
+        return np.asarray(tensor_data.tolist())
+    return np.asarray(tensor_data)
+
+
+def _batch_loss(client, batch) -> tuple[float, int]:
+    """Returns (mean_nll_per_weighted_token, n_weighted_tokens)."""
     if hasattr(client, "forward"):
         out = client.forward(batch, loss_fn="cross_entropy").result()
     else:
         out = client.forward_backward(batch, loss_fn="cross_entropy").result()
 
-    # Older SDKs expose `.loss` directly.
-    if hasattr(out, "loss"):
-        return float(out.loss)
+    if not hasattr(out, "loss_fn_outputs") or not out.loss_fn_outputs:
+        raise RuntimeError(f"No loss_fn_outputs on {type(out).__name__}")
 
-    # Some versions expose scalar metrics.
-    if hasattr(out, "metrics") and isinstance(out.metrics, dict):
-        for key in ("loss", "cross_entropy", "cross_entropy_loss"):
-            if key in out.metrics:
-                return float(out.metrics[key])
+    total_nll = 0.0
+    total_w = 0.0
+    n_weighted_tokens = 0
+    for ex_out, datum in zip(out.loss_fn_outputs, batch):
+        if "elementwise_loss" not in ex_out:
+            raise RuntimeError(
+                f"Expected key 'elementwise_loss' in {list(ex_out.keys())}"
+            )
+        per_tok = _to_numpy(ex_out["elementwise_loss"]).astype(np.float64).ravel()
+        w = _to_numpy(datum.loss_fn_inputs["weights"]).astype(np.float64).ravel()
+        n = min(len(per_tok), len(w))
+        per_tok, w = per_tok[:n], w[:n]
+        total_nll += float((per_tok * w).sum())
+        total_w += float(w.sum())
+        n_weighted_tokens += int((w > 0).sum())
 
-    # Newer SDKs expose list[dict[str, TensorData]] in `loss_fn_outputs`.
-    if hasattr(out, "loss_fn_outputs") and out.loss_fn_outputs:
-        first = out.loss_fn_outputs[0]
-        for key in ("loss", "cross_entropy_loss", "cross_entropy", "total_loss"):
-            if key in first:
-                return _tensor_to_scalar(first[key])
-        # Fallback: take first tensor in dict.
-        if first:
-            return _tensor_to_scalar(next(iter(first.values())))
-
-    raise RuntimeError(f"Could not extract loss from output type {type(out).__name__}")
-
-
-def _tensor_to_scalar(tensor_data):
-    if hasattr(tensor_data, "tolist"):
-        value = tensor_data.tolist()
-    elif hasattr(tensor_data, "to_numpy"):
-        value = tensor_data.to_numpy()
-    else:
-        value = tensor_data
-
-    while isinstance(value, list):
-        if not value:
-            raise ValueError("Empty tensor/list while extracting scalar loss")
-        value = value[0]
-    return float(value)
+    if total_w <= 0:
+        raise ValueError("Zero total weight in batch")
+    return total_nll / total_w, n_weighted_tokens
 
 
 def eval_state(
@@ -90,11 +84,7 @@ def eval_state(
         for i in range(0, len(examples), eval_batch_size):
             chunk = examples[i : i + eval_batch_size]
             batch = [ft.make_datum(inp, tgt, w) for (inp, tgt, w), _ in chunk]
-            batch_loss = _batch_loss(client, batch)  # mean over weighted tokens in this batch
-            batch_ntoks = sum(
-                int(sum(1 for x in w if x > 0))
-                for (inp, tgt, w), _ in chunk
-            )
+            batch_loss, batch_ntoks = _batch_loss(client, batch)
 
             total_nll += batch_loss * batch_ntoks
             total_ntoks += batch_ntoks
@@ -161,7 +151,7 @@ if __name__ == "__main__":
                         help="If set, only evaluate checkpoints with examples_seen <= this value.")
     parser.add_argument("--progress-every", type=int, default=5,
                         help="Print progress every N examples within each test set (0 disables).")
-    parser.add_argument("--eval-batch-size", type=int, default=1,
+    parser.add_argument("--eval-batch-size", type=int, default=8,
                         help="Number of examples per forward pass during eval. Increase for speed.")
     args = parser.parse_args()
 

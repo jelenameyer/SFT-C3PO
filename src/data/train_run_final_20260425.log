@@ -1,0 +1,141 @@
+
+=== condition: demos ===
+  loaded 500 examples  |  LR=1.00e-04  |  rank=32  |  bs=4
+  step=  10  n=  40  loss=2.3892
+  step=  13  n=  52  (target n=50)  loss=2.3710  -> save c3po-final_20260425-demos-n50
+  step=  20  n=  80  loss=1.9705
+  step=  25  n= 100  (target n=100)  loss=1.9184  -> save c3po-final_20260425-demos-n100
+  step=  30  n= 120  loss=2.0847
+  step=  40  n= 160  loss=1.8792
+  step=  50  n= 200  (target n=200)  loss=1.7870  -> save c3po-final_20260425-demos-n200
+  step=  60  n= 240  loss=1.8815
+  step=  70  n= 280  loss=1.8895
+  step=  75  n= 300  (target n=300)  loss=1.5304  -> save c3po-final_20260425-demos-n300
+  step=  80  n= 320  loss=1.9160
+  step=  90  n= 360  loss=1.9255
+  step= 100  n= 400  (target n=400)  loss=2.1982  -> save c3po-final_20260425-demos-n400
+  step= 110  n= 440  loss=1.7522
+  step= 120  n= 480  loss=1.7948
+  step= 125  n= 500  (target n=500)  loss=1.7998  -> save c3po-final_20260425-demos-n500
+  step= 130  n= 520  loss=1.8112
+  step= 140  n= 560  loss=1.8350
+  step= 150  n= 600  loss=1.5411
+  step= 160  n= 640  loss=1.5962
+  step= 170  n= 680  loss=1.6156
+  step= 180  n= 720  loss=1.5841
+  step= 188  n= 752  (target n=750)  loss=1.7842  -> save c3po-final_20260425-demos-n750
+  step= 190  n= 760  loss=1.6322
+  step= 200  n= 800  loss=1.2006
+  step= 210  n= 840  loss=1.7066
+  step= 220  n= 880  loss=1.6392
+  step= 230  n= 920  loss=1.5698
+  step= 240  n= 960  loss=1.5957
+  step= 250  n=1000  (target n=1000)  loss=1.5280  -> save c3po-final_20260425-demos-n1000
+  step= 260  n=1040  loss=1.3704
+  step= 270  n=1080  loss=1.2710
+  step= 280  n=1120  loss=1.3612
+  step= 290  n=1160  loss=1.1904
+  step= 300  n=1200  loss=1.2156
+  step= 310  n=1240  loss=1.2938
+  step= 320  n=1280  loss=1.2398
+  step= 330  n=1320  loss=1.2543
+  step= 340  n=1360  loss=1.2710
+  step= 350  n=1400  loss=1.4557
+  step= 360  n=1440  loss=1.2329
+  step= 370  n=1480  loss=1.2254
+  step= 375  n=1500  (target n=1500)  loss=1.2414  -> save c3po-final_20260425-demos-n1500
+  done demos; train log at /Users/ella/code-ws/personal/SFT-C3PO/src/data/train_log_final_20260425_demos.jsonl; checkpoint manifest at /Users/ella/code-ws/personal/SFT-C3PO/src/data/checkpoint_manifest_final_20260425_demos.jsonl
+
+=== condition: first_person ===
+  loaded 500 examples  |  LR=1.00e-04  |  rank=32  |  bs=4
+  step=  10  n=  40  loss=3.0487
+  step=  13  n=  52  (target n=50)  loss=2.8039  -> save c3po-final_20260425-first_person-n50
+  step=  20  n=  80  loss=2.7133
+  step=  25  n= 100  (target n=100)  loss=2.3490  -> save c3po-final_20260425-first_person-n100
+  step=  30  n= 120  loss=2.4286
+  step=  40  n= 160  loss=2.3995
+  step=  50  n= 200  (target n=200)  loss=2.2267  -> save c3po-final_20260425-first_person-n200
+  step=  60  n= 240  loss=2.3222
+  step=  70  n= 280  loss=2.3264
+  step=  75  n= 300  (target n=300)  loss=2.3035  -> save c3po-final_20260425-first_person-n300
+  step=  80  n= 320  loss=2.2527
+  step=  90  n= 360  loss=2.1315
+  step= 100  n= 400  (target n=400)  loss=2.2614  -> save c3po-final_20260425-first_person-n400
+  step= 110  n= 440  loss=2.1249
+  step= 120  n= 480  loss=1.9877
+  step= 125  n= 500  (target n=500)  loss=1.9214  -> save c3po-final_20260425-first_person-n500
+  step= 130  n= 520  loss=2.0169
+  step= 140  n= 560  loss=1.9884
+  step= 150  n= 600  loss=1.8116
+  step= 160  n= 640  loss=2.0249
+  step= 170  n= 680  loss=2.0078
+  step= 180  n= 720  loss=1.8670
+  step= 188  n= 752  (target n=750)  loss=1.9226  -> save c3po-final_20260425-first_person-n750
+  step= 190  n= 760  loss=1.8942
+  step= 200  n= 800  loss=1.9049
+  step= 210  n= 840  loss=1.7406
+  step= 220  n= 880  loss=1.8236
+  step= 230  n= 920  loss=1.9944
+  step= 240  n= 960  loss=1.7433
+  step= 250  n=1000  (target n=1000)  loss=1.5936  -> save c3po-final_20260425-first_person-n1000
+  step= 260  n=1040  loss=1.7988
+  step= 270  n=1080  loss=1.6371
+  step= 280  n=1120  loss=1.6229
+  step= 290  n=1160  loss=1.6201
+  step= 300  n=1200  loss=1.4579
+  step= 310  n=1240  loss=1.5855
+  step= 320  n=1280  loss=1.5673
+  step= 330  n=1320  loss=1.5654
+  step= 340  n=1360  loss=1.4588
+  step= 350  n=1400  loss=1.5863
+  step= 360  n=1440  loss=1.4932
+  step= 370  n=1480  loss=1.4421
+  step= 375  n=1500  (target n=1500)  loss=1.2929  -> save c3po-final_20260425-first_person-n1500
+  done first_person; train log at /Users/ella/code-ws/personal/SFT-C3PO/src/data/train_log_final_20260425_first_person.jsonl; checkpoint manifest at /Users/ella/code-ws/personal/SFT-C3PO/src/data/checkpoint_manifest_final_20260425_first_person.jsonl
+
+=== condition: sdf ===
+  loaded 500 examples  |  LR=1.00e-04  |  rank=32  |  bs=4
+  step=  10  n=  40  loss=2.6434
+  step=  13  n=  52  (target n=50)  loss=2.5786  -> save c3po-final_20260425-sdf-n50
+  step=  20  n=  80  loss=2.4129
+  step=  25  n= 100  (target n=100)  loss=2.2467  -> save c3po-final_20260425-sdf-n100
+  step=  30  n= 120  loss=2.2499
+  step=  40  n= 160  loss=2.2535
+  step=  50  n= 200  (target n=200)  loss=1.8277  -> save c3po-final_20260425-sdf-n200
+  step=  60  n= 240  loss=2.0747
+  step=  70  n= 280  loss=1.9503
+  step=  75  n= 300  (target n=300)  loss=1.8116  -> save c3po-final_20260425-sdf-n300
+  step=  80  n= 320  loss=1.9951
+  step=  90  n= 360  loss=1.9706
+  step= 100  n= 400  (target n=400)  loss=2.0786  -> save c3po-final_20260425-sdf-n400
+  step= 110  n= 440  loss=1.9709
+  step= 120  n= 480  loss=1.8693
+  step= 125  n= 500  (target n=500)  loss=1.7456  -> save c3po-final_20260425-sdf-n500
+  step= 130  n= 520  loss=1.7779
+  step= 140  n= 560  loss=1.8589
+  step= 150  n= 600  loss=1.7204
+  step= 160  n= 640  loss=1.7540
+  step= 170  n= 680  loss=1.6550
+  step= 180  n= 720  loss=1.6853
+  step= 188  n= 752  (target n=750)  loss=1.5412  -> save c3po-final_20260425-sdf-n750
+  step= 190  n= 760  loss=1.6113
+  step= 200  n= 800  loss=1.4925
+  step= 210  n= 840  loss=1.6097
+  step= 220  n= 880  loss=1.6813
+  step= 230  n= 920  loss=1.3868
+  step= 240  n= 960  loss=1.5406
+  step= 250  n=1000  (target n=1000)  loss=1.4617  -> save c3po-final_20260425-sdf-n1000
+  step= 260  n=1040  loss=1.3975
+  step= 270  n=1080  loss=1.4937
+  step= 280  n=1120  loss=1.4025
+  step= 290  n=1160  loss=1.4704
+  step= 300  n=1200  loss=1.2293
+  step= 310  n=1240  loss=1.4434
+  step= 320  n=1280  loss=1.3917
+  step= 330  n=1320  loss=1.3246
+  step= 340  n=1360  loss=1.3062
+  step= 350  n=1400  loss=1.4445
+  step= 360  n=1440  loss=1.3504
+  step= 370  n=1480  loss=1.3037
+  step= 375  n=1500  (target n=1500)  loss=1.2125  -> save c3po-final_20260425-sdf-n1500
+  done sdf; train log at /Users/ella/code-ws/personal/SFT-C3PO/src/data/train_log_final_20260425_sdf.jsonl; checkpoint manifest at /Users/ella/code-ws/personal/SFT-C3PO/src/data/checkpoint_manifest_final_20260425_sdf.jsonl
