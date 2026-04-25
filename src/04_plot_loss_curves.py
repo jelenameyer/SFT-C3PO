@@ -98,7 +98,7 @@ def plot_per_testset(results: dict, out_prefix: Path):
 
 def main():
     p = argparse.ArgumentParser()
-    p.add_argument("--eval-json", type=Path, default="data/outputs/eval_loss_raw_final_20260424.json", help="Path to eval JSON from 03_eval_base_model.py")
+    p.add_argument("--eval-json", type=Path, default="data/outputs/eval_loss_raw_final_20260425.json", help="Path to eval JSON from 03_eval_base_model.py")
     p.add_argument("--out-prefix", type=Path, default=None,
                    help="Prefix for output PNG files.")
     args = p.parse_args()

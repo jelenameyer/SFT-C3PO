@@ -1,0 +1,34 @@
+{
+  "source_eval_json": "/Users/ella/code-ws/personal/SFT-C3PO/src/data/outputs/eval_loss_raw_final_20260425.json",
+  "target_n": 1500,
+  "chosen_checkpoint_n": {
+    "demos": 1500,
+    "first_person": 1500,
+    "sdf": 1500
+  },
+  "base_losses": {
+    "demos": 3.301528130215804,
+    "first_person": 3.42112642716199,
+    "sdf": 3.114393092018356
+  },
+  "delta_table": {
+    "demos": {
+      "base": 0.0,
+      "ft_demos": -1.3163194378645044,
+      "ft_first_person": -0.7213469647611603,
+      "ft_sdf": -0.42546514006002045
+    },
+    "first_person": {
+      "base": 0.0,
+      "ft_demos": -0.44947337295024026,
+      "ft_first_person": -1.1349080531437283,
+      "ft_sdf": -0.43601528418415647
+    },
+    "sdf": {
+      "base": 0.0,
+      "ft_demos": -0.26741868657663304,
+      "ft_first_person": -0.31163541736524136,
+      "ft_sdf": -1.2463986261331317
+    }
+  }
+}

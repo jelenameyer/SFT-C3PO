@@ -91,8 +91,8 @@ def write_csv(path: Path, table: dict):
 
 def main():
     p = argparse.ArgumentParser()
-    p.add_argument("--eval-json", type=Path, required=True, help="Path to eval_raw*.json from 03_eval_base_model.py")
-    p.add_argument("--target-n", type=int, default=500, help="Target final checkpoint n per condition.")
+    p.add_argument("--eval-json", type=Path, default="data/outputs/eval_loss_raw_final_20260425.json", help="Path to eval_raw*.json from 03_eval_base_model.py")
+    p.add_argument("--target-n", type=int, default=1500, help="Target final checkpoint n per condition.")
     p.add_argument("--allow-leq", action="store_true",
                    help="If exact target-n missing, use largest checkpoint <= target-n per condition.")
     p.add_argument("--out-csv", type=Path, default=None, help="Output CSV path.")

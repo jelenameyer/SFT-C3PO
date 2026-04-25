@@ -80,7 +80,7 @@ def plot_dimensions(means: dict, out: Path):
 
 def main():
     p = argparse.ArgumentParser()
-    p.add_argument("--judged", type=Path, required=True, help="JSONL from 09_judge_c3po_style.py")
+    p.add_argument("--judged", type=Path, default="data/probe_judged.jsonl", help="JSONL from 09_judge_c3po_style.py")
     p.add_argument("--out-prefix", type=Path, default=None)
     args = p.parse_args()
 

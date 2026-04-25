@@ -114,7 +114,7 @@ async def run_all(
 
 def main():
     p = argparse.ArgumentParser()
-    p.add_argument("--answers", type=Path, required=True, help="JSONL from 08_generate_model_answers.py")
+    p.add_argument("--answers", type=Path, default="data/probe_answers.jsonl", help="JSONL from 08_generate_model_answers.py")
     p.add_argument("--judge-model", type=str, default="openai/gpt-4.1-mini")
     p.add_argument("--cache-seed", type=str, default="judge_v1")
     p.add_argument("--concurrency", type=int, default=20)

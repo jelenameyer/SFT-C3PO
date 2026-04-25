@@ -1,0 +1,2124 @@
+{
+  "base": {
+    "demos": {
+      "mean_loss_per_trained_token": 3.301528130215804,
+      "n_tokens": 14795,
+      "per_example": [
+        {
+          "loss": 3.336481620031342,
+          "n_trained_tokens": 4697
+        },
+        {
+          "loss": 3.3411745712372887,
+          "n_trained_tokens": 4817
+        },
+        {
+          "loss": 3.2456394700330344,
+          "n_trained_tokens": 4666
+        },
+        {
+          "loss": 3.1480696592381268,
+          "n_trained_tokens": 615
+        }
+      ]
+    },
+    "first_person": {
+      "mean_loss_per_trained_token": 3.42112642716199,
+      "n_tokens": 11714,
+      "per_example": [
+        {
+          "loss": 3.4794250283881456,
+          "n_trained_tokens": 3618
+        },
+        {
+          "loss": 3.355434720204938,
+          "n_trained_tokens": 3803
+        },
+        {
+          "loss": 3.4004317514526936,
+          "n_trained_tokens": 3851
+        },
+        {
+          "loss": 3.6894441160261007,
+          "n_trained_tokens": 442
+        }
+      ]
+    },
+    "sdf": {
+      "mean_loss_per_trained_token": 3.114393092018356,
+      "n_tokens": 12838,
+      "per_example": [
+        {
+          "loss": 3.1500815573800334,
+          "n_trained_tokens": 4012
+        },
+        {
+          "loss": 3.075428467445217,
+          "n_trained_tokens": 4230
+        },
+        {
+          "loss": 3.127020174258473,
+          "n_trained_tokens": 4081
+        },
+        {
+          "loss": 3.0563486576327623,
+          "n_trained_tokens": 515
+        }
+      ]
+    }
+  },
+  "c3po-demos-n52": {
+    "meta": {
+      "state_path": "tinker://f2a5dbba-52e2-5674-8c66-7a86af1c92ec:train:0/weights/c3po-final_20260425-demos-n50",
+      "checkpoint_name": "c3po-final_20260425-demos-n50",
+      "examples_seen": 52
+    },
+    "losses": {
+      "demos": {
+        "mean_loss_per_trained_token": 2.3424096848210865,
+        "n_tokens": 14795,
+        "per_example": [
+          {
+            "loss": 2.3687609597420827,
+            "n_trained_tokens": 4697
+          },
+          {
+            "loss": 2.3840661224530075,
+            "n_trained_tokens": 4817
+          },
+          {
+            "loss": 2.2975552424930092,
+            "n_trained_tokens": 4666
+          },
+          {
+            "loss": 2.155189895432341,
+            "n_trained_tokens": 615
+          }
+        ]
+      },
+      "first_person": {
+        "mean_loss_per_trained_token": 3.1605259042016476,
+        "n_tokens": 11714,
+        "per_example": [
+          {
+            "loss": 3.2289230572532164,
+            "n_trained_tokens": 3618
+          },
+          {
+            "loss": 3.0731621099080084,
+            "n_trained_tokens": 3803
+          },
+          {
+            "loss": 3.1466277748067513,
+            "n_trained_tokens": 3851
+          },
+          {
+            "loss": 3.473433836911782,
+            "n_trained_tokens": 442
+          }
+        ]
+      },
+      "sdf": {
+        "mean_loss_per_trained_token": 2.919101679347111,
+        "n_tokens": 12838,
+        "per_example": [
+          {
+            "loss": 2.9560699039725247,
+            "n_trained_tokens": 4012
+          },
+          {
+            "loss": 2.874287528221367,
+            "n_trained_tokens": 4230
+          },
+          {
+            "loss": 2.9328937056186204,
+            "n_trained_tokens": 4081
+          },
+          {
+            "loss": 2.8899018402222847,
+            "n_trained_tokens": 515
+          }
+        ]
+      }
+    }
+  },
+  "c3po-demos-n100": {
+    "meta": {
+      "state_path": "tinker://f2a5dbba-52e2-5674-8c66-7a86af1c92ec:train:0/weights/c3po-final_20260425-demos-n100",
+      "checkpoint_name": "c3po-final_20260425-demos-n100",
+      "examples_seen": 100
+    },
+    "losses": {
+      "demos": {
+        "mean_loss_per_trained_token": 2.114486813976046,
+        "n_tokens": 14795,
+        "per_example": [
+          {
+            "loss": 2.1480827846130044,
+            "n_trained_tokens": 4697
+          },
+          {
+            "loss": 2.1541373565537087,
+            "n_trained_tokens": 4817
+          },
+          {
+            "loss": 2.0658834536289152,
+            "n_trained_tokens": 4666
+          },
+          {
+            "loss": 1.9160906216204587,
+            "n_trained_tokens": 615
+          }
+        ]
+      },
+      "first_person": {
+        "mean_loss_per_trained_token": 3.0145026458471667,
+        "n_tokens": 11714,
+        "per_example": [
+          {
+            "loss": 3.078336340887634,
+            "n_trained_tokens": 3618
+          },
+          {
+            "loss": 2.928400167801445,
+            "n_trained_tokens": 3803
+          },
+          {
+            "loss": 2.9999968946099584,
+            "n_trained_tokens": 3851
+          },
+          {
+            "loss": 3.3592064091185554,
+            "n_trained_tokens": 442
+          }
+        ]
+      },
+      "sdf": {
+        "mean_loss_per_trained_token": 2.8323400199942,
+        "n_tokens": 12838,
+        "per_example": [
+          {
+            "loss": 2.8691485730846398,
+            "n_trained_tokens": 4012
+          },
+          {
+            "loss": 2.791077571405659,
+            "n_trained_tokens": 4230
+          },
+          {
+            "loss": 2.84127711901816,
+            "n_trained_tokens": 4081
+          },
+          {
+            "loss": 2.8136835955551907,
+            "n_trained_tokens": 515
+          }
+        ]
+      }
+    }
+  },
+  "c3po-demos-n200": {
+    "meta": {
+      "state_path": "tinker://f2a5dbba-52e2-5674-8c66-7a86af1c92ec:train:0/weights/c3po-final_20260425-demos-n200",
+      "checkpoint_name": "c3po-final_20260425-demos-n200",
+      "examples_seen": 200
+    },
+    "losses": {
+      "demos": {
+        "mean_loss_per_trained_token": 1.9763697008117507,
+        "n_tokens": 14795,
+        "per_example": [
+          {
+            "loss": 2.012995855102259,
+            "n_trained_tokens": 4697
+          },
+          {
+            "loss": 2.0076481902053898,
+            "n_trained_tokens": 4817
+          },
+          {
+            "loss": 1.9315532480912496,
+            "n_trained_tokens": 4666
+          },
+          {
+            "loss": 1.791673828099852,
+            "n_trained_tokens": 615
+          }
+        ]
+      },
+      "first_person": {
+        "mean_loss_per_trained_token": 2.9040138097558525,
+        "n_tokens": 11714,
+        "per_example": [
+          {
+            "loss": 2.9647763542698664,
+            "n_trained_tokens": 3618
+          },
+          {
+            "loss": 2.8237247105875727,
+            "n_trained_tokens": 3803
+          },
+          {
+            "loss": 2.8840538150486443,
+            "n_trained_tokens": 3851
+          },
+          {
+            "loss": 3.271358827182833,
+            "n_trained_tokens": 442
+          }
+        ]
+      },
+      "sdf": {
+        "mean_loss_per_trained_token": 2.7486130163512135,
+        "n_tokens": 12838,
+        "per_example": [
+          {
+            "loss": 2.7900092483929484,
+            "n_trained_tokens": 4012
+          },
+          {
+            "loss": 2.7058696696774436,
+            "n_trained_tokens": 4230
+          },
+          {
+            "loss": 2.753994451228695,
+            "n_trained_tokens": 4081
+          },
+          {
+            "loss": 2.734556778960157,
+            "n_trained_tokens": 515
+          }
+        ]
+      }
+    }
+  },
+  "c3po-demos-n300": {
+    "meta": {
+      "state_path": "tinker://f2a5dbba-52e2-5674-8c66-7a86af1c92ec:train:0/weights/c3po-final_20260425-demos-n300",
+      "checkpoint_name": "c3po-final_20260425-demos-n300",
+      "examples_seen": 300
+    },
+    "losses": {
+      "demos": {
+        "mean_loss_per_trained_token": 1.9182822169419254,
+        "n_tokens": 14795,
+        "per_example": [
+          {
+            "loss": 1.9597816095211853,
+            "n_trained_tokens": 4697
+          },
+          {
+            "loss": 1.94775335776287,
+            "n_trained_tokens": 4817
+          },
+          {
+            "loss": 1.8735425970427686,
+            "n_trained_tokens": 4666
+          },
+          {
+            "loss": 1.7099406464869493,
+            "n_trained_tokens": 615
+          }
+        ]
+      },
+      "first_person": {
+        "mean_loss_per_trained_token": 2.839988238795888,
+        "n_tokens": 11714,
+        "per_example": [
+          {
+            "loss": 2.903640000876675,
+            "n_trained_tokens": 3618
+          },
+          {
+            "loss": 2.7628275234785806,
+            "n_trained_tokens": 3803
+          },
+          {
+            "loss": 2.8131719946170497,
+            "n_trained_tokens": 3851
+          },
+          {
+            "loss": 3.216502902769036,
+            "n_trained_tokens": 442
+          }
+        ]
+      },
+      "sdf": {
+        "mean_loss_per_trained_token": 2.7111055119837317,
+        "n_tokens": 12838,
+        "per_example": [
+          {
+            "loss": 2.7519143254107687,
+            "n_trained_tokens": 4012
+          },
+          {
+            "loss": 2.6704777476342256,
+            "n_trained_tokens": 4230
+          },
+          {
+            "loss": 2.7142599272187167,
+            "n_trained_tokens": 4081
+          },
+          {
+            "loss": 2.7018964151976457,
+            "n_trained_tokens": 515
+          }
+        ]
+      }
+    }
+  },
+  "c3po-demos-n400": {
+    "meta": {
+      "state_path": "tinker://f2a5dbba-52e2-5674-8c66-7a86af1c92ec:train:0/weights/c3po-final_20260425-demos-n400",
+      "checkpoint_name": "c3po-final_20260425-demos-n400",
+      "examples_seen": 400
+    },
+    "losses": {
+      "demos": {
+        "mean_loss_per_trained_token": 1.871039411363259,
+        "n_tokens": 14795,
+        "per_example": [
+          {
+            "loss": 1.9081834411531144,
+            "n_trained_tokens": 4697
+          },
+          {
+            "loss": 1.8982807450933932,
+            "n_trained_tokens": 4817
+          },
+          {
+            "loss": 1.831204444071732,
+            "n_trained_tokens": 4666
+          },
+          {
+            "loss": 1.6762149314953845,
+            "n_trained_tokens": 615
+          }
+        ]
+      },
+      "first_person": {
+        "mean_loss_per_trained_token": 2.7900896211690824,
+        "n_tokens": 11714,
+        "per_example": [
+          {
+            "loss": 2.8502111119608355,
+            "n_trained_tokens": 3618
+          },
+          {
+            "loss": 2.7163759490314465,
+            "n_trained_tokens": 3803
+          },
+          {
+            "loss": 2.764767619184187,
+            "n_trained_tokens": 3851
+          },
+          {
+            "loss": 3.1528239449217934,
+            "n_trained_tokens": 442
+          }
+        ]
+      },
+      "sdf": {
+        "mean_loss_per_trained_token": 2.6682368348968772,
+        "n_tokens": 12838,
+        "per_example": [
+          {
+            "loss": 2.714657737286739,
+            "n_trained_tokens": 4012
+          },
+          {
+            "loss": 2.628679464005367,
+            "n_trained_tokens": 4230
+          },
+          {
+            "loss": 2.665130133849739,
+            "n_trained_tokens": 4081
+          },
+          {
+            "loss": 2.6561309425790918,
+            "n_trained_tokens": 515
+          }
+        ]
+      }
+    }
+  },
+  "c3po-demos-n500": {
+    "meta": {
+      "state_path": "tinker://f2a5dbba-52e2-5674-8c66-7a86af1c92ec:train:0/weights/c3po-final_20260425-demos-n500",
+      "checkpoint_name": "c3po-final_20260425-demos-n500",
+      "examples_seen": 500
+    },
+    "losses": {
+      "demos": {
+        "mean_loss_per_trained_token": 1.8463591529336174,
+        "n_tokens": 14795,
+        "per_example": [
+          {
+            "loss": 1.8871519107633972,
+            "n_trained_tokens": 4697
+          },
+          {
+            "loss": 1.8640660067513695,
+            "n_trained_tokens": 4817
+          },
+          {
+            "loss": 1.8135219552506041,
+            "n_trained_tokens": 4666
+          },
+          {
+            "loss": 1.6452548700431373,
+            "n_trained_tokens": 615
+          }
+        ]
+      },
+      "first_person": {
+        "mean_loss_per_trained_token": 2.7643690035483988,
+        "n_tokens": 11714,
+        "per_example": [
+          {
+            "loss": 2.830358806487053,
+            "n_trained_tokens": 3618
+          },
+          {
+            "loss": 2.6860988405443136,
+            "n_trained_tokens": 3803
+          },
+          {
+            "loss": 2.736410538244467,
+            "n_trained_tokens": 3851
+          },
+          {
+            "loss": 3.1412431500595406,
+            "n_trained_tokens": 442
+          }
+        ]
+      },
+      "sdf": {
+        "mean_loss_per_trained_token": 2.6475292255375127,
+        "n_tokens": 12838,
+        "per_example": [
+          {
+            "loss": 2.698727887992161,
+            "n_trained_tokens": 4012
+          },
+          {
+            "loss": 2.604288354137626,
+            "n_trained_tokens": 4230
+          },
+          {
+            "loss": 2.642188837694643,
+            "n_trained_tokens": 4081
+          },
+          {
+            "loss": 2.646158303285525,
+            "n_trained_tokens": 515
+          }
+        ]
+      }
+    }
+  },
+  "c3po-demos-n752": {
+    "meta": {
+      "state_path": "tinker://f2a5dbba-52e2-5674-8c66-7a86af1c92ec:train:0/weights/c3po-final_20260425-demos-n750",
+      "checkpoint_name": "c3po-final_20260425-demos-n750",
+      "examples_seen": 752
+    },
+    "losses": {
+      "demos": {
+        "mean_loss_per_trained_token": 1.8486547364158854,
+        "n_tokens": 14795,
+        "per_example": [
+          {
+            "loss": 1.8958290257334443,
+            "n_trained_tokens": 4697
+          },
+          {
+            "loss": 1.864600545904278,
+            "n_trained_tokens": 4817
+          },
+          {
+            "loss": 1.808173845474489,
+            "n_trained_tokens": 4666
+          },
+          {
+            "loss": 1.670598209427908,
+            "n_trained_tokens": 615
+          }
+        ]
+      },
+      "first_person": {
+        "mean_loss_per_trained_token": 2.79801410433029,
+        "n_tokens": 11714,
+        "per_example": [
+          {
+            "loss": 2.8625060163289913,
+            "n_trained_tokens": 3618
+          },
+          {
+            "loss": 2.722012035619142,
+            "n_trained_tokens": 3803
+          },
+          {
+            "loss": 2.7651696437244713,
+            "n_trained_tokens": 3851
+          },
+          {
+            "loss": 3.2102044832673915,
+            "n_trained_tokens": 442
+          }
+        ]
+      },
+      "sdf": {
+        "mean_loss_per_trained_token": 2.691746798681549,
+        "n_tokens": 12838,
+        "per_example": [
+          {
+            "loss": 2.7447414577503984,
+            "n_trained_tokens": 4012
+          },
+          {
+            "loss": 2.6508442804483443,
+            "n_trained_tokens": 4230
+          },
+          {
+            "loss": 2.6815743917043706,
+            "n_trained_tokens": 4081
+          },
+          {
+            "loss": 2.695468493470088,
+            "n_trained_tokens": 515
+          }
+        ]
+      }
+    }
+  },
+  "c3po-demos-n1000": {
+    "meta": {
+      "state_path": "tinker://f2a5dbba-52e2-5674-8c66-7a86af1c92ec:train:0/weights/c3po-final_20260425-demos-n1000",
+      "checkpoint_name": "c3po-final_20260425-demos-n1000",
+      "examples_seen": 1000
+    },
+    "losses": {
+      "demos": {
+        "mean_loss_per_trained_token": 1.8403366506097067,
+        "n_tokens": 14795,
+        "per_example": [
+          {
+            "loss": 1.8978367863927097,
+            "n_trained_tokens": 4697
+          },
+          {
+            "loss": 1.8483378385861804,
+            "n_trained_tokens": 4817
+          },
+          {
+            "loss": 1.80099600452317,
+            "n_trained_tokens": 4666
+          },
+          {
+            "loss": 1.6369929016411562,
+            "n_trained_tokens": 615
+          }
+        ]
+      },
+      "first_person": {
+        "mean_loss_per_trained_token": 2.787666603267334,
+        "n_tokens": 11714,
+        "per_example": [
+          {
+            "loss": 2.852866534027734,
+            "n_trained_tokens": 3618
+          },
+          {
+            "loss": 2.7134726821475055,
+            "n_trained_tokens": 3803
+          },
+          {
+            "loss": 2.7539697655102175,
+            "n_trained_tokens": 3851
+          },
+          {
+            "loss": 3.185930527996381,
+            "n_trained_tokens": 442
+          }
+        ]
+      },
+      "sdf": {
+        "mean_loss_per_trained_token": 2.6752080863405023,
+        "n_tokens": 12838,
+        "per_example": [
+          {
+            "loss": 2.734838130850764,
+            "n_trained_tokens": 4012
+          },
+          {
+            "loss": 2.633840298891111,
+            "n_trained_tokens": 4230
+          },
+          {
+            "loss": 2.65796284391406,
+            "n_trained_tokens": 4081
+          },
+          {
+            "loss": 2.6871067983367434,
+            "n_trained_tokens": 515
+          }
+        ]
+      }
+    }
+  },
+  "c3po-demos-n1500": {
+    "meta": {
+      "state_path": "tinker://f2a5dbba-52e2-5674-8c66-7a86af1c92ec:train:0/weights/c3po-final_20260425-demos-n1500",
+      "checkpoint_name": "c3po-final_20260425-demos-n1500",
+      "examples_seen": 1500
+    },
+    "losses": {
+      "demos": {
+        "mean_loss_per_trained_token": 1.9852086923512997,
+        "n_tokens": 14795,
+        "per_example": [
+          {
+            "loss": 2.054360346479866,
+            "n_trained_tokens": 4697
+          },
+          {
+            "loss": 1.9868442002311597,
+            "n_trained_tokens": 4817
+          },
+          {
+            "loss": 1.9426889158144451,
+            "n_trained_tokens": 4666
+          },
+          {
+            "loss": 1.7668570117363336,
+            "n_trained_tokens": 615
+          }
+        ]
+      },
+      "first_person": {
+        "mean_loss_per_trained_token": 2.9716530542117496,
+        "n_tokens": 11714,
+        "per_example": [
+          {
+            "loss": 3.0232280853153024,
+            "n_trained_tokens": 3618
+          },
+          {
+            "loss": 2.8992032413605098,
+            "n_trained_tokens": 3803
+          },
+          {
+            "loss": 2.9486513327102672,
+            "n_trained_tokens": 3851
+          },
+          {
+            "loss": 3.3732544235394073,
+            "n_trained_tokens": 442
+          }
+        ]
+      },
+      "sdf": {
+        "mean_loss_per_trained_token": 2.8469744054417228,
+        "n_tokens": 12838,
+        "per_example": [
+          {
+            "loss": 2.9068858678417535,
+            "n_trained_tokens": 4012
+          },
+          {
+            "loss": 2.818880233842851,
+            "n_trained_tokens": 4230
+          },
+          {
+            "loss": 2.814911844272296,
+            "n_trained_tokens": 4081
+          },
+          {
+            "loss": 2.8650731837849017,
+            "n_trained_tokens": 515
+          }
+        ]
+      }
+    }
+  },
+  "c3po-first_person-n52": {
+    "meta": {
+      "state_path": "tinker://5797a1e7-bde6-5239-85fc-17e6a7289286:train:0/weights/c3po-final_20260425-first_person-n50",
+      "checkpoint_name": "c3po-final_20260425-first_person-n50",
+      "examples_seen": 52
+    },
+    "losses": {
+      "demos": {
+        "mean_loss_per_trained_token": 2.6935744154041514,
+        "n_tokens": 14795,
+        "per_example": [
+          {
+            "loss": 2.706081971297108,
+            "n_trained_tokens": 4697
+          },
+          {
+            "loss": 2.7426514002014226,
+            "n_trained_tokens": 4817
+          },
+          {
+            "loss": 2.6413741229242658,
+            "n_trained_tokens": 4666
+          },
+          {
+            "loss": 2.609695942092726,
+            "n_trained_tokens": 615
+          }
+        ]
+      },
+      "first_person": {
+        "mean_loss_per_trained_token": 2.7626016417450803,
+        "n_tokens": 11714,
+        "per_example": [
+          {
+            "loss": 2.7937298545262617,
+            "n_trained_tokens": 3618
+          },
+          {
+            "loss": 2.702414263366141,
+            "n_trained_tokens": 3803
+          },
+          {
+            "loss": 2.7604377887874043,
+            "n_trained_tokens": 3851
+          },
+          {
+            "loss": 3.0445105192853545,
+            "n_trained_tokens": 442
+          }
+        ]
+      },
+      "sdf": {
+        "mean_loss_per_trained_token": 2.737431565948806,
+        "n_tokens": 12838,
+        "per_example": [
+          {
+            "loss": 2.7757221704556123,
+            "n_trained_tokens": 4012
+          },
+          {
+            "loss": 2.6924732086693908,
+            "n_trained_tokens": 4230
+          },
+          {
+            "loss": 2.7446952852830298,
+            "n_trained_tokens": 4081
+          },
+          {
+            "loss": 2.750846531788908,
+            "n_trained_tokens": 515
+          }
+        ]
+      }
+    }
+  },
+  "c3po-first_person-n100": {
+    "meta": {
+      "state_path": "tinker://5797a1e7-bde6-5239-85fc-17e6a7289286:train:0/weights/c3po-final_20260425-first_person-n100",
+      "checkpoint_name": "c3po-final_20260425-first_person-n100",
+      "examples_seen": 100
+    },
+    "losses": {
+      "demos": {
+        "mean_loss_per_trained_token": 2.5214249767714936,
+        "n_tokens": 14795,
+        "per_example": [
+          {
+            "loss": 2.5291277165190493,
+            "n_trained_tokens": 4697
+          },
+          {
+            "loss": 2.5800635007860557,
+            "n_trained_tokens": 4817
+          },
+          {
+            "loss": 2.459443935125739,
+            "n_trained_tokens": 4666
+          },
+          {
+            "loss": 2.4735583126197422,
+            "n_trained_tokens": 615
+          }
+        ]
+      },
+      "first_person": {
+        "mean_loss_per_trained_token": 2.5049846872886667,
+        "n_tokens": 11714,
+        "per_example": [
+          {
+            "loss": 2.5160900700399034,
+            "n_trained_tokens": 3618
+          },
+          {
+            "loss": 2.4547977356095347,
+            "n_trained_tokens": 3803
+          },
+          {
+            "loss": 2.5115609098945417,
+            "n_trained_tokens": 3851
+          },
+          {
+            "loss": 2.7885970610138697,
+            "n_trained_tokens": 442
+          }
+        ]
+      },
+      "sdf": {
+        "mean_loss_per_trained_token": 2.6100693380695192,
+        "n_tokens": 12838,
+        "per_example": [
+          {
+            "loss": 2.641108837908756,
+            "n_trained_tokens": 4012
+          },
+          {
+            "loss": 2.5709984740690555,
+            "n_trained_tokens": 4230
+          },
+          {
+            "loss": 2.617474866858896,
+            "n_trained_tokens": 4081
+          },
+          {
+            "loss": 2.6304913155015455,
+            "n_trained_tokens": 515
+          }
+        ]
+      }
+    }
+  },
+  "c3po-first_person-n200": {
+    "meta": {
+      "state_path": "tinker://5797a1e7-bde6-5239-85fc-17e6a7289286:train:0/weights/c3po-final_20260425-first_person-n200",
+      "checkpoint_name": "c3po-final_20260425-first_person-n200",
+      "examples_seen": 200
+    },
+    "losses": {
+      "demos": {
+        "mean_loss_per_trained_token": 2.3989554307810317,
+        "n_tokens": 14795,
+        "per_example": [
+          {
+            "loss": 2.4186255692883583,
+            "n_trained_tokens": 4697
+          },
+          {
+            "loss": 2.45090730090358,
+            "n_trained_tokens": 4817
+          },
+          {
+            "loss": 2.3366119058446473,
+            "n_trained_tokens": 4666
+          },
+          {
+            "loss": 2.3148124850963785,
+            "n_trained_tokens": 615
+          }
+        ]
+      },
+      "first_person": {
+        "mean_loss_per_trained_token": 2.324733625377785,
+        "n_tokens": 11714,
+        "per_example": [
+          {
+            "loss": 2.3308728246574613,
+            "n_trained_tokens": 3618
+          },
+          {
+            "loss": 2.2695447554631962,
+            "n_trained_tokens": 3803
+          },
+          {
+            "loss": 2.335006175482788,
+            "n_trained_tokens": 3851
+          },
+          {
+            "loss": 2.659828781117472,
+            "n_trained_tokens": 442
+          }
+        ]
+      },
+      "sdf": {
+        "mean_loss_per_trained_token": 2.565511793128183,
+        "n_tokens": 12838,
+        "per_example": [
+          {
+            "loss": 2.5996503050576947,
+            "n_trained_tokens": 4012
+          },
+          {
+            "loss": 2.516054755717665,
+            "n_trained_tokens": 4230
+          },
+          {
+            "loss": 2.5821309126062904,
+            "n_trained_tokens": 4081
+          },
+          {
+            "loss": 2.57408835972068,
+            "n_trained_tokens": 515
+          }
+        ]
+      }
+    }
+  },
+  "c3po-first_person-n300": {
+    "meta": {
+      "state_path": "tinker://5797a1e7-bde6-5239-85fc-17e6a7289286:train:0/weights/c3po-final_20260425-first_person-n300",
+      "checkpoint_name": "c3po-final_20260425-first_person-n300",
+      "examples_seen": 300
+    },
+    "losses": {
+      "demos": {
+        "mean_loss_per_trained_token": 2.3473003885219796,
+        "n_tokens": 14795,
+        "per_example": [
+          {
+            "loss": 2.367848615886659,
+            "n_trained_tokens": 4697
+          },
+          {
+            "loss": 2.3874567925114705,
+            "n_trained_tokens": 4817
+          },
+          {
+            "loss": 2.29066639653651,
+            "n_trained_tokens": 4666
+          },
+          {
+            "loss": 2.3055211765787718,
+            "n_trained_tokens": 615
+          }
+        ]
+      },
+      "first_person": {
+        "mean_loss_per_trained_token": 2.2419173096229295,
+        "n_tokens": 11714,
+        "per_example": [
+          {
+            "loss": 2.2336077805967527,
+            "n_trained_tokens": 3618
+          },
+          {
+            "loss": 2.199350245782212,
+            "n_trained_tokens": 3803
+          },
+          {
+            "loss": 2.252671729744276,
+            "n_trained_tokens": 3851
+          },
+          {
+            "loss": 2.582485517576902,
+            "n_trained_tokens": 442
+          }
+        ]
+      },
+      "sdf": {
+        "mean_loss_per_trained_token": 2.552465225105576,
+        "n_tokens": 12838,
+        "per_example": [
+          {
+            "loss": 2.5951152883576682,
+            "n_trained_tokens": 4012
+          },
+          {
+            "loss": 2.493653019050935,
+            "n_trained_tokens": 4230
+          },
+          {
+            "loss": 2.5718654355739132,
+            "n_trained_tokens": 4081
+          },
+          {
+            "loss": 2.5495357472850952,
+            "n_trained_tokens": 515
+          }
+        ]
+      }
+    }
+  },
+  "c3po-first_person-n400": {
+    "meta": {
+      "state_path": "tinker://5797a1e7-bde6-5239-85fc-17e6a7289286:train:0/weights/c3po-final_20260425-first_person-n400",
+      "checkpoint_name": "c3po-final_20260425-first_person-n400",
+      "examples_seen": 400
+    },
+    "losses": {
+      "demos": {
+        "mean_loss_per_trained_token": 2.3088462806438956,
+        "n_tokens": 14795,
+        "per_example": [
+          {
+            "loss": 2.338129570178817,
+            "n_trained_tokens": 4697
+          },
+          {
+            "loss": 2.3431799676736302,
+            "n_trained_tokens": 4817
+          },
+          {
+            "loss": 2.251376317657075,
+            "n_trained_tokens": 4666
+          },
+          {
+            "loss": 2.252302973210969,
+            "n_trained_tokens": 615
+          }
+        ]
+      },
+      "first_person": {
+        "mean_loss_per_trained_token": 2.201678730929473,
+        "n_tokens": 11714,
+        "per_example": [
+          {
+            "loss": 2.2026394347451306,
+            "n_trained_tokens": 3618
+          },
+          {
+            "loss": 2.156228510652709,
+            "n_trained_tokens": 3803
+          },
+          {
+            "loss": 2.2095097684442364,
+            "n_trained_tokens": 3851
+          },
+          {
+            "loss": 2.516642612916208,
+            "n_trained_tokens": 442
+          }
+        ]
+      },
+      "sdf": {
+        "mean_loss_per_trained_token": 2.5416996837067938,
+        "n_tokens": 12838,
+        "per_example": [
+          {
+            "loss": 2.5796514197447227,
+            "n_trained_tokens": 4012
+          },
+          {
+            "loss": 2.484234372853839,
+            "n_trained_tokens": 4230
+          },
+          {
+            "loss": 2.565379448985218,
+            "n_trained_tokens": 4081
+          },
+          {
+            "loss": 2.5303963396729636,
+            "n_trained_tokens": 515
+          }
+        ]
+      }
+    }
+  },
+  "c3po-first_person-n500": {
+    "meta": {
+      "state_path": "tinker://5797a1e7-bde6-5239-85fc-17e6a7289286:train:0/weights/c3po-final_20260425-first_person-n500",
+      "checkpoint_name": "c3po-final_20260425-first_person-n500",
+      "examples_seen": 500
+    },
+    "losses": {
+      "demos": {
+        "mean_loss_per_trained_token": 2.2868890931134143,
+        "n_tokens": 14795,
+        "per_example": [
+          {
+            "loss": 2.3228095742360146,
+            "n_trained_tokens": 4697
+          },
+          {
+            "loss": 2.3151401982184923,
+            "n_trained_tokens": 4817
+          },
+          {
+            "loss": 2.2275682608013443,
+            "n_trained_tokens": 4666
+          },
+          {
+            "loss": 2.241339386518454,
+            "n_trained_tokens": 615
+          }
+        ]
+      },
+      "first_person": {
+        "mean_loss_per_trained_token": 2.182643248594457,
+        "n_tokens": 11714,
+        "per_example": [
+          {
+            "loss": 2.193196705107151,
+            "n_trained_tokens": 3618
+          },
+          {
+            "loss": 2.119840077174132,
+            "n_trained_tokens": 3803
+          },
+          {
+            "loss": 2.194235929430571,
+            "n_trained_tokens": 3851
+          },
+          {
+            "loss": 2.5356175502883445,
+            "n_trained_tokens": 442
+          }
+        ]
+      },
+      "sdf": {
+        "mean_loss_per_trained_token": 2.540860347671476,
+        "n_tokens": 12838,
+        "per_example": [
+          {
+            "loss": 2.5764925554942395,
+            "n_trained_tokens": 4012
+          },
+          {
+            "loss": 2.486577259374915,
+            "n_trained_tokens": 4230
+          },
+          {
+            "loss": 2.5622258329815284,
+            "n_trained_tokens": 4081
+          },
+          {
+            "loss": 2.5398283091456584,
+            "n_trained_tokens": 515
+          }
+        ]
+      }
+    }
+  },
+  "c3po-first_person-n752": {
+    "meta": {
+      "state_path": "tinker://5797a1e7-bde6-5239-85fc-17e6a7289286:train:0/weights/c3po-final_20260425-first_person-n750",
+      "checkpoint_name": "c3po-final_20260425-first_person-n750",
+      "examples_seen": 752
+    },
+    "losses": {
+      "demos": {
+        "mean_loss_per_trained_token": 2.3624265995102873,
+        "n_tokens": 14795,
+        "per_example": [
+          {
+            "loss": 2.388413966382047,
+            "n_trained_tokens": 4697
+          },
+          {
+            "loss": 2.3994192989798457,
+            "n_trained_tokens": 4817
+          },
+          {
+            "loss": 2.3064978819372373,
+            "n_trained_tokens": 4666
+          },
+          {
+            "loss": 2.298535381062044,
+            "n_trained_tokens": 615
+          }
+        ]
+      },
+      "first_person": {
+        "mean_loss_per_trained_token": 2.164107439589838,
+        "n_tokens": 11714,
+        "per_example": [
+          {
+            "loss": 2.1556145899769863,
+            "n_trained_tokens": 3618
+          },
+          {
+            "loss": 2.1065167094478014,
+            "n_trained_tokens": 3803
+          },
+          {
+            "loss": 2.1875401673157255,
+            "n_trained_tokens": 3851
+          },
+          {
+            "loss": 2.5249790281804825,
+            "n_trained_tokens": 442
+          }
+        ]
+      },
+      "sdf": {
+        "mean_loss_per_trained_token": 2.6155027962423967,
+        "n_tokens": 12838,
+        "per_example": [
+          {
+            "loss": 2.6634148511033398,
+            "n_trained_tokens": 4012
+          },
+          {
+            "loss": 2.548293450938025,
+            "n_trained_tokens": 4230
+          },
+          {
+            "loss": 2.6408302449565006,
+            "n_trained_tokens": 4081
+          },
+          {
+            "loss": 2.593582501743624,
+            "n_trained_tokens": 515
+          }
+        ]
+      }
+    }
+  },
+  "c3po-first_person-n1000": {
+    "meta": {
+      "state_path": "tinker://5797a1e7-bde6-5239-85fc-17e6a7289286:train:0/weights/c3po-final_20260425-first_person-n1000",
+      "checkpoint_name": "c3po-final_20260425-first_person-n1000",
+      "examples_seen": 1000
+    },
+    "losses": {
+      "demos": {
+        "mean_loss_per_trained_token": 2.362899626584369,
+        "n_tokens": 14795,
+        "per_example": [
+          {
+            "loss": 2.4062788169335225,
+            "n_trained_tokens": 4697
+          },
+          {
+            "loss": 2.392266011234941,
+            "n_trained_tokens": 4817
+          },
+          {
+            "loss": 2.29225008305245,
+            "n_trained_tokens": 4666
+          },
+          {
+            "loss": 2.3376001764838032,
+            "n_trained_tokens": 615
+          }
+        ]
+      },
+      "first_person": {
+        "mean_loss_per_trained_token": 2.160948283555499,
+        "n_tokens": 11714,
+        "per_example": [
+          {
+            "loss": 2.167662378113758,
+            "n_trained_tokens": 3618
+          },
+          {
+            "loss": 2.09005926061627,
+            "n_trained_tokens": 3803
+          },
+          {
+            "loss": 2.1818631451214467,
+            "n_trained_tokens": 3851
+          },
+          {
+            "loss": 2.5336999311474475,
+            "n_trained_tokens": 442
+          }
+        ]
+      },
+      "sdf": {
+        "mean_loss_per_trained_token": 2.618882258400465,
+        "n_tokens": 12838,
+        "per_example": [
+          {
+            "loss": 2.6614988079347395,
+            "n_trained_tokens": 4012
+          },
+          {
+            "loss": 2.566063093091594,
+            "n_trained_tokens": 4230
+          },
+          {
+            "loss": 2.63369451677336,
+            "n_trained_tokens": 4081
+          },
+          {
+            "loss": 2.6033456488960685,
+            "n_trained_tokens": 515
+          }
+        ]
+      }
+    }
+  },
+  "c3po-first_person-n1500": {
+    "meta": {
+      "state_path": "tinker://5797a1e7-bde6-5239-85fc-17e6a7289286:train:0/weights/c3po-final_20260425-first_person-n1500",
+      "checkpoint_name": "c3po-final_20260425-first_person-n1500",
+      "examples_seen": 1500
+    },
+    "losses": {
+      "demos": {
+        "mean_loss_per_trained_token": 2.580181165454644,
+        "n_tokens": 14795,
+        "per_example": [
+          {
+            "loss": 2.6254877741086227,
+            "n_trained_tokens": 4697
+          },
+          {
+            "loss": 2.610089104673258,
+            "n_trained_tokens": 4817
+          },
+          {
+            "loss": 2.5053774322594125,
+            "n_trained_tokens": 4666
+          },
+          {
+            "loss": 2.567437319967073,
+            "n_trained_tokens": 615
+          }
+        ]
+      },
+      "first_person": {
+        "mean_loss_per_trained_token": 2.2862183740182616,
+        "n_tokens": 11714,
+        "per_example": [
+          {
+            "loss": 2.2804355955917823,
+            "n_trained_tokens": 3618
+          },
+          {
+            "loss": 2.2147483660167295,
+            "n_trained_tokens": 3803
+          },
+          {
+            "loss": 2.3207005045045115,
+            "n_trained_tokens": 3851
+          },
+          {
+            "loss": 2.6480551348197987,
+            "n_trained_tokens": 442
+          }
+        ]
+      },
+      "sdf": {
+        "mean_loss_per_trained_token": 2.8027576746531144,
+        "n_tokens": 12838,
+        "per_example": [
+          {
+            "loss": 2.857403281603057,
+            "n_trained_tokens": 4012
+          },
+          {
+            "loss": 2.744817376659325,
+            "n_trained_tokens": 4230
+          },
+          {
+            "loss": 2.812398325340525,
+            "n_trained_tokens": 4081
+          },
+          {
+            "loss": 2.7765553250904684,
+            "n_trained_tokens": 515
+          }
+        ]
+      }
+    }
+  },
+  "c3po-sdf-n52": {
+    "meta": {
+      "state_path": "tinker://11f32536-3244-553f-8182-f2dc110632b7:train:0/weights/c3po-final_20260425-sdf-n50",
+      "checkpoint_name": "c3po-final_20260425-sdf-n50",
+      "examples_seen": 52
+    },
+    "losses": {
+      "demos": {
+        "mean_loss_per_trained_token": 2.860362503448908,
+        "n_tokens": 14795,
+        "per_example": [
+          {
+            "loss": 2.8711526530227824,
+            "n_trained_tokens": 4697
+          },
+          {
+            "loss": 2.9051963048118505,
+            "n_trained_tokens": 4817
+          },
+          {
+            "loss": 2.8153304481634196,
+            "n_trained_tokens": 4666
+          },
+          {
+            "loss": 2.7684500095437254,
+            "n_trained_tokens": 615
+          }
+        ]
+      },
+      "first_person": {
+        "mean_loss_per_trained_token": 2.912632749073857,
+        "n_tokens": 11714,
+        "per_example": [
+          {
+            "loss": 2.9571232802771705,
+            "n_trained_tokens": 3618
+          },
+          {
+            "loss": 2.835622855027003,
+            "n_trained_tokens": 3803
+          },
+          {
+            "loss": 2.908593257978735,
+            "n_trained_tokens": 3851
+          },
+          {
+            "loss": 3.2462480553496875,
+            "n_trained_tokens": 442
+          }
+        ]
+      },
+      "sdf": {
+        "mean_loss_per_trained_token": 2.4747120667856004,
+        "n_tokens": 12838,
+        "per_example": [
+          {
+            "loss": 2.521335893366106,
+            "n_trained_tokens": 4012
+          },
+          {
+            "loss": 2.434079318056313,
+            "n_trained_tokens": 4230
+          },
+          {
+            "loss": 2.468247126132172,
+            "n_trained_tokens": 4081
+          },
+          {
+            "loss": 2.4964696545342213,
+            "n_trained_tokens": 515
+          }
+        ]
+      }
+    }
+  },
+  "c3po-sdf-n100": {
+    "meta": {
+      "state_path": "tinker://11f32536-3244-553f-8182-f2dc110632b7:train:0/weights/c3po-final_20260425-sdf-n100",
+      "checkpoint_name": "c3po-final_20260425-sdf-n100",
+      "examples_seen": 100
+    },
+    "losses": {
+      "demos": {
+        "mean_loss_per_trained_token": 2.7261231288233128,
+        "n_tokens": 14795,
+        "per_example": [
+          {
+            "loss": 2.7342957734860502,
+            "n_trained_tokens": 4697
+          },
+          {
+            "loss": 2.7772284322326426,
+            "n_trained_tokens": 4817
+          },
+          {
+            "loss": 2.6773798200452212,
+            "n_trained_tokens": 4666
+          },
+          {
+            "loss": 2.633237145498038,
+            "n_trained_tokens": 615
+          }
+        ]
+      },
+      "first_person": {
+        "mean_loss_per_trained_token": 2.819307222334709,
+        "n_tokens": 11714,
+        "per_example": [
+          {
+            "loss": 2.8532618661551417,
+            "n_trained_tokens": 3618
+          },
+          {
+            "loss": 2.7635297556413643,
+            "n_trained_tokens": 3803
+          },
+          {
+            "loss": 2.8061638625122964,
+            "n_trained_tokens": 3851
+          },
+          {
+            "loss": 3.135797908236467,
+            "n_trained_tokens": 442
+          }
+        ]
+      },
+      "sdf": {
+        "mean_loss_per_trained_token": 2.2304722843231146,
+        "n_tokens": 12838,
+        "per_example": [
+          {
+            "loss": 2.269069724625636,
+            "n_trained_tokens": 4012
+          },
+          {
+            "loss": 2.1870683125760157,
+            "n_trained_tokens": 4230
+          },
+          {
+            "loss": 2.2390881404009266,
+            "n_trained_tokens": 4081
+          },
+          {
+            "loss": 2.218015121882264,
+            "n_trained_tokens": 515
+          }
+        ]
+      }
+    }
+  },
+  "c3po-sdf-n200": {
+    "meta": {
+      "state_path": "tinker://11f32536-3244-553f-8182-f2dc110632b7:train:0/weights/c3po-final_20260425-sdf-n200",
+      "checkpoint_name": "c3po-final_20260425-sdf-n200",
+      "examples_seen": 200
+    },
+    "losses": {
+      "demos": {
+        "mean_loss_per_trained_token": 2.661379525964981,
+        "n_tokens": 14795,
+        "per_example": [
+          {
+            "loss": 2.667865121536886,
+            "n_trained_tokens": 4697
+          },
+          {
+            "loss": 2.7136605388857524,
+            "n_trained_tokens": 4817
+          },
+          {
+            "loss": 2.6059853797804053,
+            "n_trained_tokens": 4666
+          },
+          {
+            "loss": 2.6226292893091094,
+            "n_trained_tokens": 615
+          }
+        ]
+      },
+      "first_person": {
+        "mean_loss_per_trained_token": 2.748748064317799,
+        "n_tokens": 11714,
+        "per_example": [
+          {
+            "loss": 2.7727219253417448,
+            "n_trained_tokens": 3618
+          },
+          {
+            "loss": 2.6993414252069337,
+            "n_trained_tokens": 3803
+          },
+          {
+            "loss": 2.7404455494896762,
+            "n_trained_tokens": 3851
+          },
+          {
+            "loss": 3.0499449058496704,
+            "n_trained_tokens": 442
+          }
+        ]
+      },
+      "sdf": {
+        "mean_loss_per_trained_token": 2.0240821728188894,
+        "n_tokens": 12838,
+        "per_example": [
+          {
+            "loss": 2.0809717316137313,
+            "n_trained_tokens": 4012
+          },
+          {
+            "loss": 1.9832498088443204,
+            "n_trained_tokens": 4230
+          },
+          {
+            "loss": 2.0122754958523257,
+            "n_trained_tokens": 4081
+          },
+          {
+            "loss": 2.0098356454947455,
+            "n_trained_tokens": 515
+          }
+        ]
+      }
+    }
+  },
+  "c3po-sdf-n300": {
+    "meta": {
+      "state_path": "tinker://11f32536-3244-553f-8182-f2dc110632b7:train:0/weights/c3po-final_20260425-sdf-n300",
+      "checkpoint_name": "c3po-final_20260425-sdf-n300",
+      "examples_seen": 300
+    },
+    "losses": {
+      "demos": {
+        "mean_loss_per_trained_token": 2.5999648975740413,
+        "n_tokens": 14795,
+        "per_example": [
+          {
+            "loss": 2.605874781973563,
+            "n_trained_tokens": 4697
+          },
+          {
+            "loss": 2.6555947988444233,
+            "n_trained_tokens": 4817
+          },
+          {
+            "loss": 2.5431579804496596,
+            "n_trained_tokens": 4666
+          },
+          {
+            "loss": 2.550100042059212,
+            "n_trained_tokens": 615
+          }
+        ]
+      },
+      "first_person": {
+        "mean_loss_per_trained_token": 2.734688509385502,
+        "n_tokens": 11714,
+        "per_example": [
+          {
+            "loss": 2.7658921498093383,
+            "n_trained_tokens": 3618
+          },
+          {
+            "loss": 2.682970799364836,
+            "n_trained_tokens": 3803
+          },
+          {
+            "loss": 2.719274852531,
+            "n_trained_tokens": 3851
+          },
+          {
+            "loss": 3.058547497398709,
+            "n_trained_tokens": 442
+          }
+        ]
+      },
+      "sdf": {
+        "mean_loss_per_trained_token": 1.9527193928039308,
+        "n_tokens": 12838,
+        "per_example": [
+          {
+            "loss": 2.017374282755765,
+            "n_trained_tokens": 4012
+          },
+          {
+            "loss": 1.9136412601443002,
+            "n_trained_tokens": 4230
+          },
+          {
+            "loss": 1.933407610021648,
+            "n_trained_tokens": 4081
+          },
+          {
+            "loss": 1.9230426320233005,
+            "n_trained_tokens": 515
+          }
+        ]
+      }
+    }
+  },
+  "c3po-sdf-n400": {
+    "meta": {
+      "state_path": "tinker://11f32536-3244-553f-8182-f2dc110632b7:train:0/weights/c3po-final_20260425-sdf-n400",
+      "checkpoint_name": "c3po-final_20260425-sdf-n400",
+      "examples_seen": 400
+    },
+    "losses": {
+      "demos": {
+        "mean_loss_per_trained_token": 2.58473566852536,
+        "n_tokens": 14795,
+        "per_example": [
+          {
+            "loss": 2.601181788268581,
+            "n_trained_tokens": 4697
+          },
+          {
+            "loss": 2.6416096839157013,
+            "n_trained_tokens": 4817
+          },
+          {
+            "loss": 2.5150434858391475,
+            "n_trained_tokens": 4666
+          },
+          {
+            "loss": 2.5424172422565476,
+            "n_trained_tokens": 615
+          }
+        ]
+      },
+      "first_person": {
+        "mean_loss_per_trained_token": 2.718817558451104,
+        "n_tokens": 11714,
+        "per_example": [
+          {
+            "loss": 2.73400278093121,
+            "n_trained_tokens": 3618
+          },
+          {
+            "loss": 2.6754695242925486,
+            "n_trained_tokens": 3803
+          },
+          {
+            "loss": 2.71002857075471,
+            "n_trained_tokens": 3851
+          },
+          {
+            "loss": 3.044063781507154,
+            "n_trained_tokens": 442
+          }
+        ]
+      },
+      "sdf": {
+        "mean_loss_per_trained_token": 1.9005667407403513,
+        "n_tokens": 12838,
+        "per_example": [
+          {
+            "loss": 1.9757572271050858,
+            "n_trained_tokens": 4012
+          },
+          {
+            "loss": 1.8615933186062277,
+            "n_trained_tokens": 4230
+          },
+          {
+            "loss": 1.8713474892067696,
+            "n_trained_tokens": 4081
+          },
+          {
+            "loss": 1.8664640414016584,
+            "n_trained_tokens": 515
+          }
+        ]
+      }
+    }
+  },
+  "c3po-sdf-n500": {
+    "meta": {
+      "state_path": "tinker://11f32536-3244-553f-8182-f2dc110632b7:train:0/weights/c3po-final_20260425-sdf-n500",
+      "checkpoint_name": "c3po-final_20260425-sdf-n500",
+      "examples_seen": 500
+    },
+    "losses": {
+      "demos": {
+        "mean_loss_per_trained_token": 2.5783668126821144,
+        "n_tokens": 14795,
+        "per_example": [
+          {
+            "loss": 2.5912093614945677,
+            "n_trained_tokens": 4697
+          },
+          {
+            "loss": 2.6355436408721,
+            "n_trained_tokens": 4817
+          },
+          {
+            "loss": 2.512595060716939,
+            "n_trained_tokens": 4666
+          },
+          {
+            "loss": 2.5314542297654548,
+            "n_trained_tokens": 615
+          }
+        ]
+      },
+      "first_person": {
+        "mean_loss_per_trained_token": 2.7092876925057277,
+        "n_tokens": 11714,
+        "per_example": [
+          {
+            "loss": 2.721842437182195,
+            "n_trained_tokens": 3618
+          },
+          {
+            "loss": 2.665795003392054,
+            "n_trained_tokens": 3803
+          },
+          {
+            "loss": 2.7039263538652594,
+            "n_trained_tokens": 3851
+          },
+          {
+            "loss": 3.027446392877418,
+            "n_trained_tokens": 442
+          }
+        ]
+      },
+      "sdf": {
+        "mean_loss_per_trained_token": 1.8541382304378313,
+        "n_tokens": 12838,
+        "per_example": [
+          {
+            "loss": 1.9255476834111827,
+            "n_trained_tokens": 4012
+          },
+          {
+            "loss": 1.8268931576785465,
+            "n_trained_tokens": 4230
+          },
+          {
+            "loss": 1.8150464068906058,
+            "n_trained_tokens": 4081
+          },
+          {
+            "loss": 1.8313919476007787,
+            "n_trained_tokens": 515
+          }
+        ]
+      }
+    }
+  },
+  "c3po-sdf-n752": {
+    "meta": {
+      "state_path": "tinker://11f32536-3244-553f-8182-f2dc110632b7:train:0/weights/c3po-final_20260425-sdf-n750",
+      "checkpoint_name": "c3po-final_20260425-sdf-n750",
+      "examples_seen": 752
+    },
+    "losses": {
+      "demos": {
+        "mean_loss_per_trained_token": 2.6585781988259023,
+        "n_tokens": 14795,
+        "per_example": [
+          {
+            "loss": 2.675940421322926,
+            "n_trained_tokens": 4697
+          },
+          {
+            "loss": 2.7172395828935034,
+            "n_trained_tokens": 4817
+          },
+          {
+            "loss": 2.5838513152022564,
+            "n_trained_tokens": 4666
+          },
+          {
+            "loss": 2.6334617644613068,
+            "n_trained_tokens": 615
+          }
+        ]
+      },
+      "first_person": {
+        "mean_loss_per_trained_token": 2.815173424171963,
+        "n_tokens": 11714,
+        "per_example": [
+          {
+            "loss": 2.834523250166816,
+            "n_trained_tokens": 3618
+          },
+          {
+            "loss": 2.766928591921723,
+            "n_trained_tokens": 3803
+          },
+          {
+            "loss": 2.8053169696321105,
+            "n_trained_tokens": 3851
+          },
+          {
+            "loss": 3.1577630916635,
+            "n_trained_tokens": 442
+          }
+        ]
+      },
+      "sdf": {
+        "mean_loss_per_trained_token": 1.813372738018052,
+        "n_tokens": 12838,
+        "per_example": [
+          {
+            "loss": 1.8824862942387726,
+            "n_trained_tokens": 4012
+          },
+          {
+            "loss": 1.788236667928205,
+            "n_trained_tokens": 4230
+          },
+          {
+            "loss": 1.7787766008161425,
+            "n_trained_tokens": 4081
+          },
+          {
+            "loss": 1.7555646309180835,
+            "n_trained_tokens": 515
+          }
+        ]
+      }
+    }
+  },
+  "c3po-sdf-n1000": {
+    "meta": {
+      "state_path": "tinker://11f32536-3244-553f-8182-f2dc110632b7:train:0/weights/c3po-final_20260425-sdf-n1000",
+      "checkpoint_name": "c3po-final_20260425-sdf-n1000",
+      "examples_seen": 1000
+    },
+    "losses": {
+      "demos": {
+        "mean_loss_per_trained_token": 2.6722497931754523,
+        "n_tokens": 14795,
+        "per_example": [
+          {
+            "loss": 2.6886920972510886,
+            "n_trained_tokens": 4697
+          },
+          {
+            "loss": 2.7370104136745006,
+            "n_trained_tokens": 4817
+          },
+          {
+            "loss": 2.5938789659322463,
+            "n_trained_tokens": 4666
+          },
+          {
+            "loss": 2.634033319565086,
+            "n_trained_tokens": 615
+          }
+        ]
+      },
+      "first_person": {
+        "mean_loss_per_trained_token": 2.7893323332453814,
+        "n_tokens": 11714,
+        "per_example": [
+          {
+            "loss": 2.8037242266544173,
+            "n_trained_tokens": 3618
+          },
+          {
+            "loss": 2.741833456994391,
+            "n_trained_tokens": 3803
+          },
+          {
+            "loss": 2.780098284669784,
+            "n_trained_tokens": 3851
+          },
+          {
+            "loss": 3.1606641818726464,
+            "n_trained_tokens": 442
+          }
+        ]
+      },
+      "sdf": {
+        "mean_loss_per_trained_token": 1.795078687882724,
+        "n_tokens": 12838,
+        "per_example": [
+          {
+            "loss": 1.8627401147367044,
+            "n_trained_tokens": 4012
+          },
+          {
+            "loss": 1.776401994356537,
+            "n_trained_tokens": 4230
+          },
+          {
+            "loss": 1.7530401270858937,
+            "n_trained_tokens": 4081
+          },
+          {
+            "loss": 1.7545041940758608,
+            "n_trained_tokens": 515
+          }
+        ]
+      }
+    }
+  },
+  "c3po-sdf-n1500": {
+    "meta": {
+      "state_path": "tinker://11f32536-3244-553f-8182-f2dc110632b7:train:0/weights/c3po-final_20260425-sdf-n1500",
+      "checkpoint_name": "c3po-final_20260425-sdf-n1500",
+      "examples_seen": 1500
+    },
+    "losses": {
+      "demos": {
+        "mean_loss_per_trained_token": 2.8760629901557837,
+        "n_tokens": 14795,
+        "per_example": [
+          {
+            "loss": 2.8934334057956286,
+            "n_trained_tokens": 4697
+          },
+          {
+            "loss": 2.9521974201279657,
+            "n_trained_tokens": 4817
+          },
+          {
+            "loss": 2.784572582560505,
+            "n_trained_tokens": 4666
+          },
+          {
+            "loss": 2.841210714388664,
+            "n_trained_tokens": 615
+          }
+        ]
+      },
+      "first_person": {
+        "mean_loss_per_trained_token": 2.9851111429778334,
+        "n_tokens": 11714,
+        "per_example": [
+          {
+            "loss": 3.0085408680445145,
+            "n_trained_tokens": 3618
+          },
+          {
+            "loss": 2.923650787076911,
+            "n_trained_tokens": 3803
+          },
+          {
+            "loss": 2.97763983305411,
+            "n_trained_tokens": 3851
+          },
+          {
+            "loss": 3.3872310586253653,
+            "n_trained_tokens": 442
+          }
+        ]
+      },
+      "sdf": {
+        "mean_loss_per_trained_token": 1.867994465885224,
+        "n_tokens": 12838,
+        "per_example": [
+          {
+            "loss": 1.928865278990866,
+            "n_trained_tokens": 4012
+          },
+          {
+            "loss": 1.8538137304541198,
+            "n_trained_tokens": 4230
+          },
+          {
+            "loss": 1.8293103709991339,
+            "n_trained_tokens": 4081
+          },
+          {
+            "loss": 1.816811164766525,
+            "n_trained_tokens": 515
+          }
+        ]
+      }
+    }
+  },
+  "evaluated_checkpoints": [
+    "c3po-demos-n52",
+    "c3po-demos-n100",
+    "c3po-demos-n200",
+    "c3po-demos-n300",
+    "c3po-demos-n400",
+    "c3po-demos-n500",
+    "c3po-demos-n752",
+    "c3po-demos-n1000",
+    "c3po-demos-n1500",
+    "c3po-first_person-n52",
+    "c3po-first_person-n100",
+    "c3po-first_person-n200",
+    "c3po-first_person-n300",
+    "c3po-first_person-n400",
+    "c3po-first_person-n500",
+    "c3po-first_person-n752",
+    "c3po-first_person-n1000",
+    "c3po-first_person-n1500",
+    "c3po-sdf-n52",
+    "c3po-sdf-n100",
+    "c3po-sdf-n200",
+    "c3po-sdf-n300",
+    "c3po-sdf-n400",
+    "c3po-sdf-n500",
+    "c3po-sdf-n752",
+    "c3po-sdf-n1000",
+    "c3po-sdf-n1500"
+  ]
+}

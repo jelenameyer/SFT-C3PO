@@ -1,0 +1,225 @@
+[eval] starting total_models=28 (including base)
+[eval] model=base | start
+[eval] model=base | test_set=demos | n_examples=50
+[eval] model=base | test_set=demos | done=50/50 | elapsed=43.0s
+[eval] model=base | test_set=first_person | n_examples=50
+[eval] model=base | test_set=first_person | done=50/50 | elapsed=9.8s
+[eval] model=base | test_set=sdf | n_examples=50
+[eval] model=base | test_set=sdf | done=50/50 | elapsed=10.1s
+[eval] checkpoint_model 1/27: c3po-demos-n52
+[eval] model=c3po-demos-n52 | start
+[eval] model=c3po-demos-n52 | test_set=demos | n_examples=50
+[eval] model=c3po-demos-n52 | test_set=demos | done=50/50 | elapsed=10.3s
+[eval] model=c3po-demos-n52 | test_set=first_person | n_examples=50
+[eval] model=c3po-demos-n52 | test_set=first_person | done=50/50 | elapsed=9.1s
+[eval] model=c3po-demos-n52 | test_set=sdf | n_examples=50
+[eval] model=c3po-demos-n52 | test_set=sdf | done=50/50 | elapsed=9.4s
+[eval] checkpoint_model 2/27: c3po-demos-n100
+[eval] model=c3po-demos-n100 | start
+[eval] model=c3po-demos-n100 | test_set=demos | n_examples=50
+[eval] model=c3po-demos-n100 | test_set=demos | done=50/50 | elapsed=9.6s
+[eval] model=c3po-demos-n100 | test_set=first_person | n_examples=50
+[eval] model=c3po-demos-n100 | test_set=first_person | done=50/50 | elapsed=10.0s
+[eval] model=c3po-demos-n100 | test_set=sdf | n_examples=50
+[eval] model=c3po-demos-n100 | test_set=sdf | done=50/50 | elapsed=10.5s
+[eval] checkpoint_model 3/27: c3po-demos-n200
+[eval] model=c3po-demos-n200 | start
+[eval] model=c3po-demos-n200 | test_set=demos | n_examples=50
+[eval] model=c3po-demos-n200 | test_set=demos | done=50/50 | elapsed=12.2s
+[eval] model=c3po-demos-n200 | test_set=first_person | n_examples=50
+[eval] model=c3po-demos-n200 | test_set=first_person | done=50/50 | elapsed=8.7s
+[eval] model=c3po-demos-n200 | test_set=sdf | n_examples=50
+[eval] model=c3po-demos-n200 | test_set=sdf | done=50/50 | elapsed=10.8s
+[eval] checkpoint_model 4/27: c3po-demos-n300
+[eval] model=c3po-demos-n300 | start
+[eval] model=c3po-demos-n300 | test_set=demos | n_examples=50
+[eval] model=c3po-demos-n300 | test_set=demos | done=50/50 | elapsed=27.1s
+[eval] model=c3po-demos-n300 | test_set=first_person | n_examples=50
+[eval] model=c3po-demos-n300 | test_set=first_person | done=50/50 | elapsed=9.7s
+[eval] model=c3po-demos-n300 | test_set=sdf | n_examples=50
+[eval] model=c3po-demos-n300 | test_set=sdf | done=50/50 | elapsed=9.3s
+[eval] checkpoint_model 5/27: c3po-demos-n400
+[eval] model=c3po-demos-n400 | start
+[eval] model=c3po-demos-n400 | test_set=demos | n_examples=50
+[eval] model=c3po-demos-n400 | test_set=demos | done=50/50 | elapsed=10.1s
+[eval] model=c3po-demos-n400 | test_set=first_person | n_examples=50
+[eval] model=c3po-demos-n400 | test_set=first_person | done=50/50 | elapsed=8.7s
+[eval] model=c3po-demos-n400 | test_set=sdf | n_examples=50
+[eval] model=c3po-demos-n400 | test_set=sdf | done=50/50 | elapsed=9.2s
+[eval] checkpoint_model 6/27: c3po-demos-n500
+[eval] model=c3po-demos-n500 | start
+[eval] model=c3po-demos-n500 | test_set=demos | n_examples=50
+[eval] model=c3po-demos-n500 | test_set=demos | done=50/50 | elapsed=10.1s
+[eval] model=c3po-demos-n500 | test_set=first_person | n_examples=50
+[eval] model=c3po-demos-n500 | test_set=first_person | done=50/50 | elapsed=9.3s
+[eval] model=c3po-demos-n500 | test_set=sdf | n_examples=50
+[eval] model=c3po-demos-n500 | test_set=sdf | done=50/50 | elapsed=9.1s
+[eval] checkpoint_model 7/27: c3po-demos-n752
+[eval] model=c3po-demos-n752 | start
+[eval] model=c3po-demos-n752 | test_set=demos | n_examples=50
+[eval] model=c3po-demos-n752 | test_set=demos | done=50/50 | elapsed=9.4s
+[eval] model=c3po-demos-n752 | test_set=first_person | n_examples=50
+[eval] model=c3po-demos-n752 | test_set=first_person | done=50/50 | elapsed=9.4s
+[eval] model=c3po-demos-n752 | test_set=sdf | n_examples=50
+[eval] model=c3po-demos-n752 | test_set=sdf | done=50/50 | elapsed=9.0s
+[eval] checkpoint_model 8/27: c3po-demos-n1000
+[eval] model=c3po-demos-n1000 | start
+[eval] model=c3po-demos-n1000 | test_set=demos | n_examples=50
+[eval] model=c3po-demos-n1000 | test_set=demos | done=50/50 | elapsed=10.0s
+[eval] model=c3po-demos-n1000 | test_set=first_person | n_examples=50
+[eval] model=c3po-demos-n1000 | test_set=first_person | done=50/50 | elapsed=9.3s
+[eval] model=c3po-demos-n1000 | test_set=sdf | n_examples=50
+[eval] model=c3po-demos-n1000 | test_set=sdf | done=50/50 | elapsed=10.4s
+[eval] checkpoint_model 9/27: c3po-demos-n1500
+[eval] model=c3po-demos-n1500 | start
+[eval] model=c3po-demos-n1500 | test_set=demos | n_examples=50
+[eval] model=c3po-demos-n1500 | test_set=demos | done=50/50 | elapsed=9.0s
+[eval] model=c3po-demos-n1500 | test_set=first_person | n_examples=50
+[eval] model=c3po-demos-n1500 | test_set=first_person | done=50/50 | elapsed=9.5s
+[eval] model=c3po-demos-n1500 | test_set=sdf | n_examples=50
+[eval] model=c3po-demos-n1500 | test_set=sdf | done=50/50 | elapsed=9.2s
+[eval] checkpoint_model 10/27: c3po-first_person-n52
+[eval] model=c3po-first_person-n52 | start
+[eval] model=c3po-first_person-n52 | test_set=demos | n_examples=50
+[eval] model=c3po-first_person-n52 | test_set=demos | done=50/50 | elapsed=15.5s
+[eval] model=c3po-first_person-n52 | test_set=first_person | n_examples=50
+[eval] model=c3po-first_person-n52 | test_set=first_person | done=50/50 | elapsed=14.9s
+[eval] model=c3po-first_person-n52 | test_set=sdf | n_examples=50
+[eval] model=c3po-first_person-n52 | test_set=sdf | done=50/50 | elapsed=9.3s
+[eval] checkpoint_model 11/27: c3po-first_person-n100
+[eval] model=c3po-first_person-n100 | start
+[eval] model=c3po-first_person-n100 | test_set=demos | n_examples=50
+[eval] model=c3po-first_person-n100 | test_set=demos | done=50/50 | elapsed=9.4s
+[eval] model=c3po-first_person-n100 | test_set=first_person | n_examples=50
+[eval] model=c3po-first_person-n100 | test_set=first_person | done=50/50 | elapsed=10.6s
+[eval] model=c3po-first_person-n100 | test_set=sdf | n_examples=50
+[eval] model=c3po-first_person-n100 | test_set=sdf | done=50/50 | elapsed=10.6s
+[eval] checkpoint_model 12/27: c3po-first_person-n200
+[eval] model=c3po-first_person-n200 | start
+[eval] model=c3po-first_person-n200 | test_set=demos | n_examples=50
+[eval] model=c3po-first_person-n200 | test_set=demos | done=50/50 | elapsed=18.8s
+[eval] model=c3po-first_person-n200 | test_set=first_person | n_examples=50
+[eval] model=c3po-first_person-n200 | test_set=first_person | done=50/50 | elapsed=67.1s
+[eval] model=c3po-first_person-n200 | test_set=sdf | n_examples=50
+[eval] model=c3po-first_person-n200 | test_set=sdf | done=50/50 | elapsed=23.0s
+[eval] checkpoint_model 13/27: c3po-first_person-n300
+[eval] model=c3po-first_person-n300 | start
+[eval] model=c3po-first_person-n300 | test_set=demos | n_examples=50
+[eval] model=c3po-first_person-n300 | test_set=demos | done=50/50 | elapsed=10.5s
+[eval] model=c3po-first_person-n300 | test_set=first_person | n_examples=50
+[eval] model=c3po-first_person-n300 | test_set=first_person | done=50/50 | elapsed=8.5s
+[eval] model=c3po-first_person-n300 | test_set=sdf | n_examples=50
+[eval] model=c3po-first_person-n300 | test_set=sdf | done=50/50 | elapsed=9.5s
+[eval] checkpoint_model 14/27: c3po-first_person-n400
+[eval] model=c3po-first_person-n400 | start
+[eval] model=c3po-first_person-n400 | test_set=demos | n_examples=50
+[eval] model=c3po-first_person-n400 | test_set=demos | done=50/50 | elapsed=8.9s
+[eval] model=c3po-first_person-n400 | test_set=first_person | n_examples=50
+[eval] model=c3po-first_person-n400 | test_set=first_person | done=50/50 | elapsed=9.1s
+[eval] model=c3po-first_person-n400 | test_set=sdf | n_examples=50
+[eval] model=c3po-first_person-n400 | test_set=sdf | done=50/50 | elapsed=9.0s
+[eval] checkpoint_model 15/27: c3po-first_person-n500
+[eval] model=c3po-first_person-n500 | start
+[eval] model=c3po-first_person-n500 | test_set=demos | n_examples=50
+[eval] model=c3po-first_person-n500 | test_set=demos | done=50/50 | elapsed=9.8s
+[eval] model=c3po-first_person-n500 | test_set=first_person | n_examples=50
+[eval] model=c3po-first_person-n500 | test_set=first_person | done=50/50 | elapsed=9.5s
+[eval] model=c3po-first_person-n500 | test_set=sdf | n_examples=50
+[eval] model=c3po-first_person-n500 | test_set=sdf | done=50/50 | elapsed=9.6s
+[eval] checkpoint_model 16/27: c3po-first_person-n752
+[eval] model=c3po-first_person-n752 | start
+[eval] model=c3po-first_person-n752 | test_set=demos | n_examples=50
+[eval] model=c3po-first_person-n752 | test_set=demos | done=50/50 | elapsed=10.2s
+[eval] model=c3po-first_person-n752 | test_set=first_person | n_examples=50
+[eval] model=c3po-first_person-n752 | test_set=first_person | done=50/50 | elapsed=10.0s
+[eval] model=c3po-first_person-n752 | test_set=sdf | n_examples=50
+[eval] model=c3po-first_person-n752 | test_set=sdf | done=50/50 | elapsed=9.5s
+[eval] checkpoint_model 17/27: c3po-first_person-n1000
+[eval] model=c3po-first_person-n1000 | start
+[eval] model=c3po-first_person-n1000 | test_set=demos | n_examples=50
+[eval] model=c3po-first_person-n1000 | test_set=demos | done=50/50 | elapsed=9.8s
+[eval] model=c3po-first_person-n1000 | test_set=first_person | n_examples=50
+[eval] model=c3po-first_person-n1000 | test_set=first_person | done=50/50 | elapsed=9.1s
+[eval] model=c3po-first_person-n1000 | test_set=sdf | n_examples=50
+[eval] model=c3po-first_person-n1000 | test_set=sdf | done=50/50 | elapsed=9.2s
+[eval] checkpoint_model 18/27: c3po-first_person-n1500
+[eval] model=c3po-first_person-n1500 | start
+[eval] model=c3po-first_person-n1500 | test_set=demos | n_examples=50
+[eval] model=c3po-first_person-n1500 | test_set=demos | done=50/50 | elapsed=9.8s
+[eval] model=c3po-first_person-n1500 | test_set=first_person | n_examples=50
+[eval] model=c3po-first_person-n1500 | test_set=first_person | done=50/50 | elapsed=8.9s
+[eval] model=c3po-first_person-n1500 | test_set=sdf | n_examples=50
+[eval] model=c3po-first_person-n1500 | test_set=sdf | done=50/50 | elapsed=9.4s
+[eval] checkpoint_model 19/27: c3po-sdf-n52
+[eval] model=c3po-sdf-n52 | start
+[eval] model=c3po-sdf-n52 | test_set=demos | n_examples=50
+[eval] model=c3po-sdf-n52 | test_set=demos | done=50/50 | elapsed=9.1s
+[eval] model=c3po-sdf-n52 | test_set=first_person | n_examples=50
+[eval] model=c3po-sdf-n52 | test_set=first_person | done=50/50 | elapsed=10.0s
+[eval] model=c3po-sdf-n52 | test_set=sdf | n_examples=50
+[eval] model=c3po-sdf-n52 | test_set=sdf | done=50/50 | elapsed=11.6s
+[eval] checkpoint_model 20/27: c3po-sdf-n100
+[eval] model=c3po-sdf-n100 | start
+[eval] model=c3po-sdf-n100 | test_set=demos | n_examples=50
+[eval] model=c3po-sdf-n100 | test_set=demos | done=50/50 | elapsed=9.2s
+[eval] model=c3po-sdf-n100 | test_set=first_person | n_examples=50
+[eval] model=c3po-sdf-n100 | test_set=first_person | done=50/50 | elapsed=10.0s
+[eval] model=c3po-sdf-n100 | test_set=sdf | n_examples=50
+[eval] model=c3po-sdf-n100 | test_set=sdf | done=50/50 | elapsed=9.1s
+[eval] checkpoint_model 21/27: c3po-sdf-n200
+[eval] model=c3po-sdf-n200 | start
+[eval] model=c3po-sdf-n200 | test_set=demos | n_examples=50
+[eval] model=c3po-sdf-n200 | test_set=demos | done=50/50 | elapsed=8.9s
+[eval] model=c3po-sdf-n200 | test_set=first_person | n_examples=50
+[eval] model=c3po-sdf-n200 | test_set=first_person | done=50/50 | elapsed=9.3s
+[eval] model=c3po-sdf-n200 | test_set=sdf | n_examples=50
+[eval] model=c3po-sdf-n200 | test_set=sdf | done=50/50 | elapsed=9.3s
+[eval] checkpoint_model 22/27: c3po-sdf-n300
+[eval] model=c3po-sdf-n300 | start
+[eval] model=c3po-sdf-n300 | test_set=demos | n_examples=50
+[eval] model=c3po-sdf-n300 | test_set=demos | done=50/50 | elapsed=9.9s
+[eval] model=c3po-sdf-n300 | test_set=first_person | n_examples=50
+[eval] model=c3po-sdf-n300 | test_set=first_person | done=50/50 | elapsed=9.2s
+[eval] model=c3po-sdf-n300 | test_set=sdf | n_examples=50
+[eval] model=c3po-sdf-n300 | test_set=sdf | done=50/50 | elapsed=9.3s
+[eval] checkpoint_model 23/27: c3po-sdf-n400
+[eval] model=c3po-sdf-n400 | start
+[eval] model=c3po-sdf-n400 | test_set=demos | n_examples=50
+[eval] model=c3po-sdf-n400 | test_set=demos | done=50/50 | elapsed=9.4s
+[eval] model=c3po-sdf-n400 | test_set=first_person | n_examples=50
+[eval] model=c3po-sdf-n400 | test_set=first_person | done=50/50 | elapsed=9.8s
+[eval] model=c3po-sdf-n400 | test_set=sdf | n_examples=50
+[eval] model=c3po-sdf-n400 | test_set=sdf | done=50/50 | elapsed=9.9s
+[eval] checkpoint_model 24/27: c3po-sdf-n500
+[eval] model=c3po-sdf-n500 | start
+[eval] model=c3po-sdf-n500 | test_set=demos | n_examples=50
+[eval] model=c3po-sdf-n500 | test_set=demos | done=50/50 | elapsed=10.2s
+[eval] model=c3po-sdf-n500 | test_set=first_person | n_examples=50
+[eval] model=c3po-sdf-n500 | test_set=first_person | done=50/50 | elapsed=12.1s
+[eval] model=c3po-sdf-n500 | test_set=sdf | n_examples=50
+[eval] model=c3po-sdf-n500 | test_set=sdf | done=50/50 | elapsed=9.8s
+[eval] checkpoint_model 25/27: c3po-sdf-n752
+[eval] model=c3po-sdf-n752 | start
+[eval] model=c3po-sdf-n752 | test_set=demos | n_examples=50
+[eval] model=c3po-sdf-n752 | test_set=demos | done=50/50 | elapsed=10.3s
+[eval] model=c3po-sdf-n752 | test_set=first_person | n_examples=50
+[eval] model=c3po-sdf-n752 | test_set=first_person | done=50/50 | elapsed=9.9s
+[eval] model=c3po-sdf-n752 | test_set=sdf | n_examples=50
+[eval] model=c3po-sdf-n752 | test_set=sdf | done=50/50 | elapsed=9.4s
+[eval] checkpoint_model 26/27: c3po-sdf-n1000
+[eval] model=c3po-sdf-n1000 | start
+[eval] model=c3po-sdf-n1000 | test_set=demos | n_examples=50
+[eval] model=c3po-sdf-n1000 | test_set=demos | done=50/50 | elapsed=9.2s
+[eval] model=c3po-sdf-n1000 | test_set=first_person | n_examples=50
+[eval] model=c3po-sdf-n1000 | test_set=first_person | done=50/50 | elapsed=9.5s
+[eval] model=c3po-sdf-n1000 | test_set=sdf | n_examples=50
+[eval] model=c3po-sdf-n1000 | test_set=sdf | done=50/50 | elapsed=9.0s
+[eval] checkpoint_model 27/27: c3po-sdf-n1500
+[eval] model=c3po-sdf-n1500 | start
+[eval] model=c3po-sdf-n1500 | test_set=demos | n_examples=50
+[eval] model=c3po-sdf-n1500 | test_set=demos | done=50/50 | elapsed=9.1s
+[eval] model=c3po-sdf-n1500 | test_set=first_person | n_examples=50
+[eval] model=c3po-sdf-n1500 | test_set=first_person | done=50/50 | elapsed=9.9s
+[eval] model=c3po-sdf-n1500 | test_set=sdf | n_examples=50
+[eval] model=c3po-sdf-n1500 | test_set=sdf | done=50/50 | elapsed=11.3s
+Wrote /Users/ella/code-ws/personal/SFT-C3PO/src/data/outputs/eval_loss_raw_final_20260425.json

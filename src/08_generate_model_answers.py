@@ -126,15 +126,15 @@ def generate_answers(
 
 def main():
     p = argparse.ArgumentParser()
-    p.add_argument("--prompts", type=Path, required=True, help="JSONL file from 07_generate_probe_prompts.py")
+    p.add_argument("--prompts", type=Path, default="data/probes.jsonl", help="get from running JSONL file from 07_generate_probe_prompts.py")
     p.add_argument("--manifest-dir", type=Path, default=Path(__file__).resolve().parent / "data")
     p.add_argument("--run-tag", type=str, required=True)
-    p.add_argument("--target-n", type=int, default=500)
+    p.add_argument("--target-n", type=int, default=1500)
     p.add_argument("--allow-leq", action="store_true")
     p.add_argument("--max-prompts", type=int, default=None)
     p.add_argument("--max-tokens", type=int, default=220)
     p.add_argument("--temperature", type=float, default=0.7)
-    p.add_argument("--prompt-batch-size", type=int, default=8,
+    p.add_argument("--prompt-batch-size", type=int, default=16,
                    help="Number of prompts to submit per batch across all models.")
     p.add_argument("--progress-every", type=int, default=5,
                    help="Print progress every N prompts (0 disables).")
