@@ -6,6 +6,8 @@ import matplotlib.pyplot as plt
 
 
 CONDS = ["demos", "first_person", "sdf"]
+VIRIDIS = plt.colormaps["viridis"]
+COND_COLORS = {cond: VIRIDIS(i / max(len(CONDS) - 1, 1)) for i, cond in enumerate(CONDS)}
 
 
 def read_jsonl(path: Path):
@@ -39,7 +41,7 @@ def main():
             continue
         xs = [r["examples_seen"] for r in rows]
         ys = [r["loss"] for r in rows]
-        ax.plot(xs, ys, marker="o", label=cond)
+        ax.plot(xs, ys, marker="o", label=cond, color=COND_COLORS[cond])
         found = True
 
     if not found:

@@ -8,6 +8,8 @@ import matplotlib.pyplot as plt
 
 CKPT_RE = re.compile(r"^c3po-(?P<cond>demos|first_person|sdf)-n(?P<n>\d+)$")
 CONDS = ["demos", "first_person", "sdf"]
+VIRIDIS = plt.colormaps["viridis"]
+COND_COLORS = {cond: VIRIDIS(i / max(len(CONDS) - 1, 1)) for i, cond in enumerate(CONDS)}
 
 
 def load_eval(path: Path):
@@ -50,10 +52,10 @@ def plot_diagonal(results: dict, out_path: Path):
         if points:
             xs = [p[0] for p in points]
             ys = [p[1] for p in points]
-            ax.plot(xs, ys, marker="o", label=f"{cond} -> {cond}")
+            ax.plot(xs, ys, marker="o", label=f"{cond} -> {cond}", color=COND_COLORS[cond])
         if cond in base_losses:
             yb = base_losses[cond]["mean_loss_per_trained_token"]
-            ax.axhline(y=yb, linestyle="--", alpha=0.35, label=f"base on {cond}")
+            ax.axhline(y=yb, linestyle="--", alpha=0.35, label=f"base on {cond}", color=COND_COLORS[cond])
 
     ax.set_title("Sample Efficiency (Diagonal: train cond -> same test cond)")
     ax.set_xlabel("Examples Seen")
@@ -79,11 +81,11 @@ def plot_per_testset(results: dict, out_prefix: Path):
             any_points = True
             xs = [p[0] for p in points]
             ys = [p[1] for p in points]
-            ax.plot(xs, ys, marker="o", label=f"{train_cond} -> {test_set}")
+            ax.plot(xs, ys, marker="o", label=f"{train_cond} -> {test_set}", color=COND_COLORS[train_cond])
 
         if test_set in base_losses:
             yb = base_losses[test_set]["mean_loss_per_trained_token"]
-            ax.axhline(y=yb, linestyle="--", alpha=0.35, label=f"base on {test_set}")
+            ax.axhline(y=yb, linestyle="--", alpha=0.35, label=f"base on {test_set}", color=VIRIDIS(0.98))
 
         ax.set_title(f"Loss Curves on Test Set: {test_set}")
         ax.set_xlabel("Examples Seen")
